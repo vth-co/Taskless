@@ -5,7 +5,7 @@ import { createProject } from "../../../store/projects";
 
 
 
-function CreateProject() {
+function CreateProject({setShowModal}) {
     const dispatch = useDispatch()
     const [title, setTitle] = useState('');
     const [errors, setErrors] = useState([]);
@@ -29,12 +29,15 @@ function CreateProject() {
         const data = await dispatch(createProject(new_project));
         if (data.errors) {
             setErrors(data.errors);
-        } 
+        } else {
+            setShowModal(false)
+            history.push(`/project`)
+        }
     }
 
     return (
         <div className="project-create-container">
-            <form>
+            <form onSubmit={handleSubmit}>
                 <h2>Add Project</h2>
                 <div>
                     {errors && errors.map((error, ind) => (
@@ -50,6 +53,8 @@ function CreateProject() {
                         maxLength='255'
                     />
                 </div>
+                <button className="post-button" type='submit'>Submit</button>
+                <button className="post-button" onClick={() => setShowModal(false)}>Cancel</button>
                 </form>    
             </div>
     )
