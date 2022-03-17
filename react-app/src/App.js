@@ -10,7 +10,7 @@ import User from './components/User';
 import { authenticate } from './store/session';
 import { getProjects } from './store/projects';
 
-import DisplayForm from './components/Projects/DisplayProject'
+import HomePage from './components/HomePage';
 
 // import {}
 
@@ -45,7 +45,7 @@ function App() {
           <SignUpForm />
         </Route>
         <Route path='/project' exact={true}>
-          <DisplayForm />
+          <HomePage />
         </Route>
         {/* <ProtectedRoute path='/users' exact={true} >
           <UsersList/>

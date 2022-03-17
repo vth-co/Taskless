@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux"
 
-const DisplayProjects = () => {
+function DisplayProjects () {
 
     const projects = useSelector((state) => state.projects)
     const projectsArr = Object.values(projects);
