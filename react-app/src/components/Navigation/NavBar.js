@@ -1,9 +1,32 @@
 
 import React from 'react';
-import { NavLink } from 'react-router-dom';
-import LogoutButton from './auth/LogoutButton';
+import { NavLink, useLocation } from 'react-router-dom';
+import LogoutButton from '../auth/LogoutButton';
+import CreateProjectModal from '../Projects/CreateProject';
+
 
 const NavBar = () => {
+  let location = useLocation();
+  let sessionLinks;
+  if (location.pathname === '/') {
+    sessionLinks = (
+      <>
+      {/* <LoginModal />
+      <SignupModal /> */}
+        
+      </>
+    )
+  } else {
+    sessionLinks = (
+      <>
+        <li>
+          <CreateProjectModal />
+        </li>
+      </>
+    )
+  }
+
+
   return (
     <nav>
       <ul>
@@ -27,6 +50,11 @@ const NavBar = () => {
             Users
           </NavLink>
         </li>
+        <ul>
+          <div>
+            {sessionLinks}
+          </div>
+        </ul>
         <li>
           <LogoutButton />
         </li>
