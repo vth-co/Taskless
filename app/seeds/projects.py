@@ -1,3 +1,4 @@
+from turtle import title
 from app.models import db, Project
 
 
@@ -5,16 +6,32 @@ from app.models import db, Project
 def seed_projects():
 
     project1 = Project(
-        title = "New task list"
+        title = "New task list",
+        user_id = 1
+
     )
 
     project2 = Project(
-        title = "For tomorrow"
+        title = "For tomorrow",
+        user_id = 1
     )
+
+    project3 = Project(
+        title = "for another day",
+        user_id = 2
+    )
+
+    project4 = Project(
+        title = "yesterday's tasks",
+        user_id = 2
+    )
+
     
 
     db.session.add(project1)
     db.session.add(project2)
+    db.session.add(project3)
+    db.session.add(project4)
 
     db.session.commit()
 

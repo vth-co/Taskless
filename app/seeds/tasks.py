@@ -24,13 +24,13 @@ def seed_tasks():
     task4 = Task(
         title = "Walk dog",
         content = "Get leash, call for Haru, tie leash, bring waste bags",
-        project_id = 2
+        project_id = 3
     )
 
     task5 = Task(
         title = "Clean room",
         content = "Throw away trash, dust and declutter, organize things",
-        project_id = 2
+        project_id = 4
     )
     
 
