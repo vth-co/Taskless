@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Modal } from '../../context/Modal';
-import EditProjectForm from './EditProjectFormModal';
+import { Modal } from '../../../context/Modal';
+import EditProjectForm from './EditProjectForm';
 
 
 function EditProjectFormModal({ project }) {
@@ -8,7 +8,7 @@ function EditProjectFormModal({ project }) {
 
   return (
     <>
-      <button className='image-edit-button' onClick={() => setShowModal(true)}>Edit</button>
+      <button className='' onClick={() => setShowModal(true)}>Edit</button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
           <EditProjectForm project={project} setShowModal={setShowModal} />

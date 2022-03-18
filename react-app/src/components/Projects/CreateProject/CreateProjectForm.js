@@ -5,7 +5,7 @@ import { createProject } from "../../../store/projects";
 
 
 
-function CreateProject({setShowModal}) {
+function CreateProjectForm({setShowModal}) {
     const dispatch = useDispatch()
     const [title, setTitle] = useState('');
     const [errors, setErrors] = useState([]);
@@ -69,4 +69,4 @@ function CreateProject({setShowModal}) {
     );
 }
 
-export default CreateProject
+export default CreateProjectForm

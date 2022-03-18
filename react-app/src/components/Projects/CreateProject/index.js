@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Modal } from '../../../context/Modal';
-import CreateProject from './CreateProjectForm';
+import CreateProjectForm from './CreateProjectForm';
 // import './CreateProject.css'
 
 function CreateProjectModal() {
@@ -11,7 +11,7 @@ function CreateProjectModal() {
       <button className='createProjectModalButton' onClick={() => setShowModal(true)}><i className="+"></i></button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
-          <CreateProject setShowModal={setShowModal} />
+          <CreateProjectForm setShowModal={setShowModal} />
         </Modal>
 
       )}

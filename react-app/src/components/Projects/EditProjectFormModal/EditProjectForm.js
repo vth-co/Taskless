@@ -1,22 +1,24 @@
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { editProject } from "../../../store/projects";
+import { useEditModal } from "../ProjectEditDeleteModal";
 
 function EditProjectForm({ project, setShowModal }) {
     const dispatch = useDispatch();
     const [title, setTitle] = useState(project.title);
     const [errors, setErrors] = useState([]);
     const { setShowEditModal } = useEditModal();
+    const user = useSelector((state) => state.session.user)
 
-
-    const id = project.id;
     const handleSubmit = async (e) => {
         e.preventDefault();
 
         const edit_project = {
-            title: title,
+            id: project.id,
+            user_id:user.id,
+            title
         }
-        const data = await dispatch(editProject(edit_project, id));
+        const data = await dispatch(editProject(edit_project));
         if (data.errors) {
             setErrors(data.errors)
         } else {
