@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Modal } from '../../context/Modal';
+import EditProjectForm from './EditProjectFormModal';
 
 
 function EditProjectFormModal({ project }) {
@@ -10,7 +11,7 @@ function EditProjectFormModal({ project }) {
       <button className='image-edit-button' onClick={() => setShowModal(true)}>Edit</button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
-          <EditImageForm image={image} setShowModal={setShowModal} />
+          <EditProjectForm project={project} setShowModal={setShowModal} />
         </Modal>
       )}
     </>

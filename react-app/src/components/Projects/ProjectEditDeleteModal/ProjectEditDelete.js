@@ -3,8 +3,6 @@ import { useEditModal } from ".";
 import { deleteProject } from "../../../store/projects";
 import EditProjectFormModal from "../../Projects/EditProjectFormModal"
 
-
-
 function ProjectEditDelete({ project }) {
 
     const dispatch = useDispatch();
