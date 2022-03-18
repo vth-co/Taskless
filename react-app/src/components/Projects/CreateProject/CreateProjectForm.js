@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { createProject } from "../../../store/projects";
 
@@ -9,6 +9,7 @@ function CreateProject({setShowModal}) {
     const dispatch = useDispatch()
     const [title, setTitle] = useState('');
     const [errors, setErrors] = useState([]);
+    const user = useSelector((state) => state.session.user);
     const history = useHistory();
 
     useEffect(() => {
@@ -23,8 +24,9 @@ function CreateProject({setShowModal}) {
         e.preventDefault()
 
         const new_project = {
-            title,
-        }
+          title,
+          user_id: user?.id,
+        };
 
         const data = await dispatch(createProject(new_project));
         if (data.errors) {
@@ -36,28 +38,35 @@ function CreateProject({setShowModal}) {
     }
 
     return (
-        <div className="project-create-container">
-            <form onSubmit={handleSubmit}>
-                <h2>Add Project</h2>
-                <div>
-                    {errors && errors.map((error, ind) => (
-                        <div className='error-message' key={ind}>{error}</div>
-                    ))} 
+      <div className="project-create-container">
+        <form onSubmit={handleSubmit}>
+          <h2>Add Project</h2>
+          <div>
+            {errors &&
+              errors.map((error, ind) => (
+                <div className="error-message" key={ind}>
+                  {error}
                 </div>
-                <div className="project-form">
-                    <input
-                        className="title-input"
-                        type='text'
-                        name='Name'
-                        onChange={(e) => setTitle(e.target.value)}
-                        maxLength='255'
-                    />
-                </div>
-                <button className="post-button" type='submit'>Submit</button>
-                <button className="post-button" onClick={() => setShowModal(false)}>Cancel</button>
-                </form>    
-            </div>
-    )
+              ))}
+          </div>
+          <div className="project-form">
+            <input
+              className="title-input"
+              type="text"
+              name="Name"
+              onChange={(e) => setTitle(e.target.value)}
+              maxLength="255"
+            />
+          </div>
+          <button className="post-button" type="submit">
+            Submit
+          </button>
+          <button className="post-button" onClick={() => setShowModal(false)}>
+            Cancel
+          </button>
+        </form>
+      </div>
+    );
 }
 
 export default CreateProject

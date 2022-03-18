@@ -2,13 +2,15 @@ import { useSelector } from "react-redux"
 
 function DisplayProjects () {
 
+    const user = useSelector((state) => state.session.user);
     const projects = useSelector((state) => state.projects)
     const projectsArr = Object.values(projects);
-    console.log(projectsArr)
+    const filterProjectsArr = projectsArr.filter((project) => project.user_id === +user?.id);
+
 
     return (
         <div>
-            {projectsArr.map((project) => (
+            {filterProjectsArr.map((project) => (
                 <div key={project.id}> 
                     <p>{project.title}</p>
                 </div>
