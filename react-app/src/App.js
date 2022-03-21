@@ -12,6 +12,8 @@ import { getProjects } from './store/projects';
 
 import HomePage from './components/HomePage';
 import LandingPage from './components/LandingPage';
+import { getTasks } from './store/tasks';
+import ProjectDetail from './components/Projects/ProjectDetail';
 
 // import {}
 
@@ -22,6 +24,7 @@ function App() {
   useEffect(() => {
     dispatch(authenticate());
     dispatch(getProjects());
+    dispatch(getTasks());
   }, [dispatch])
 
   useEffect(() => {
@@ -46,6 +49,9 @@ function App() {
         </Route>
         <Route path='/project' exact={true}>
           <HomePage />
+        </Route>
+        <Route path='/project/:id'>
+          <ProjectDetail />
         </Route>
         {/* <ProtectedRoute path='/users' exact={true} >
           <UsersList/>

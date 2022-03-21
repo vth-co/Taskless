@@ -1,11 +1,11 @@
 import React, { createContext, useContext, useState } from 'react';
-import { Modal } from '../../context/Modal';
-import EditDeleteComment from './EditDeleteComment';
+import { Modal } from '../../../context/Modal';
+import TaskEditDelete from './TaskEditDelete';
 
 export const EditModalContext = createContext()
 export const useEditModal = () => useContext(EditModalContext)
 
-function EditDeleteCommentModal({ comment }) {
+function TaskEditDeleteModal({ project, task }) {
   const [showEditModal, setShowEditModal] = useState(false);
 
   return (
@@ -18,11 +18,11 @@ function EditDeleteCommentModal({ comment }) {
       <button className='editDeleteImageModalButton' onClick={() => setShowEditModal(true)}>...</button>
       {showEditModal && (
         <Modal onClose={() => setShowEditModal(false)}>
-          <EditDeleteComment comment={comment} />
+          <TaskEditDelete project={project} task={task} />
         </Modal>
       )}
     </EditModalContext.Provider>
   );
 }
 
-export default EditDeleteCommentModal;
+export default TaskEditDeleteModal;

@@ -1,15 +1,14 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { createProject } from "../../../store/projects";
+import { createTask} from "../../../store/tasks";
 
 
-
-function CreateProjectForm({setShowModal}) {
+function CreateTaskForm({ project, setShowModal }) {
     const dispatch = useDispatch()
     const [title, setTitle] = useState('');
+    const [content, setContent] = useState('');
     const [errors, setErrors] = useState([]);
-    const user = useSelector((state) => state.session.user);
     const history = useHistory();
 
     useEffect(() => {
@@ -23,24 +22,26 @@ function CreateProjectForm({setShowModal}) {
     const handleSubmit = async (e) => {
         e.preventDefault()
 
-        const new_project = {
+        const new_task = {
           title,
-          user_id: user?.id,
+          content,
+          project_id: project?.id
+        //   user_id: user?.id,
         };
 
-        const data = await dispatch(createProject(new_project));
+        const data = await dispatch(createTask(new_task));
         if (data.errors) {
             setErrors(data.errors);
         } else {
             setShowModal(false)
-            history.push(`/project`)
+            history.push(`/project/${project.id}`)
         }
     }
 
     return (
       <div className="project-create-container">
         <form onSubmit={handleSubmit}>
-          <h2>Add Project</h2>
+          <h2>Add Task</h2>
           <div>
             {errors &&
               errors.map((error, ind) => (
@@ -57,9 +58,16 @@ function CreateProjectForm({setShowModal}) {
               onChange={(e) => setTitle(e.target.value)}
               maxLength="255"
             />
+            <input
+              className="title-input"
+              type="text"
+              name="Name"
+              onChange={(e) => setContent(e.target.value)}
+              maxLength="255"
+            />
           </div>
           <button className="post-button" type="submit">
-            Add
+            Add task
           </button>
           <button className="post-button" onClick={() => setShowModal(false)}>
             Cancel
@@ -69,4 +77,4 @@ function CreateProjectForm({setShowModal}) {
     );
 }
 
-export default CreateProjectForm
+export default CreateTaskForm;
