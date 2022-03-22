@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux"
 import { NavLink } from "react-router-dom";
+import TaskDetailModal from "../TaskDetailModal";
 // import ProjectEditDeleteModal from "../ProjectEditDeleteModal";
 import TaskEditDeleteModal from "../TaskEditDeleteModal";
 
@@ -14,7 +15,8 @@ function DisplayTasks ({ project }) {
         <div>
             {filterTasksArr.map((task) => (
                 <div key={task.id}> 
-                <NavLink to={`/task/${task.id}`}>{task.title}</NavLink>
+                {/* <NavLink to={`/task/${task.id}`}>{task.title}</NavLink> */}
+                <TaskDetailModal task={task}/>
                 <TaskEditDeleteModal project={project} task={task}/>
                 </div>
             ))}

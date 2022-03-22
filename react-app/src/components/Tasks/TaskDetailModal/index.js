@@ -8,7 +8,7 @@ function TaskDetailModal({ project, task }) {
 
   return (
     <>
-      <button className='' onClick={() => setShowModal(true)}>Edit</button>
+      <button className='' onClick={() => setShowModal(true)}>{task.title}</button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
           <TaskDetail project={project} task={task} setShowModal={setShowModal} />

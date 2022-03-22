@@ -9,8 +9,6 @@ function EditTaskForm({ project, task, setShowModal }) {
     const [content, setContent] = useState(task.content);
     const [errors, setErrors] = useState([]);
     const { setShowEditModal } = useEditModal();
-    const user = useSelector((state) => state.session.user)
-    console.log(project)
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -20,7 +18,6 @@ function EditTaskForm({ project, task, setShowModal }) {
             project_id:project.id,
             title,
             content
-
         }
         const data = await dispatch(editTask(edit_task));
         if (data.errors) {
