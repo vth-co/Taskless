@@ -38,6 +38,7 @@ function EditProjectForm({ project, setShowModal }) {
                 </div>
                 <input 
                     className="title-input"
+                    value={title}
                     type='text'
                     name='Name'
                     onChange={(e) => setTitle(e.target.value)}

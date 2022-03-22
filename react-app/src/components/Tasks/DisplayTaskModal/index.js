@@ -16,7 +16,7 @@ function DisplayTasks ({ project }) {
             {filterTasksArr.map((task) => (
                 <div key={task.id}> 
                 {/* <NavLink to={`/task/${task.id}`}>{task.title}</NavLink> */}
-                <TaskDetailModal task={task}/>
+                <TaskDetailModal project={project} task={task}/>
                 <TaskEditDeleteModal project={project} task={task}/>
                 </div>
             ))}

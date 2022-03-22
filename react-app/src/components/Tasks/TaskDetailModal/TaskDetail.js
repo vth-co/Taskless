@@ -2,7 +2,7 @@ import { useDispatch } from "react-redux"
 import TaskEditDeleteModal from "../TaskEditDeleteModal";
 
 
-const TaskDetail = ({ task }) => {
+const TaskDetail = ({ project ,task }) => {
 
     const dispatch = useDispatch();
 
@@ -10,7 +10,7 @@ const TaskDetail = ({ task }) => {
         <div>
             <h2>{task.title}</h2>
             <h3>{task.content}</h3>
-            <TaskEditDeleteModal />
+            <TaskEditDeleteModal project={project} task={task}/>
         </div>
     )
 }

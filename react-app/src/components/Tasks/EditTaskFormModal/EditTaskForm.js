@@ -39,6 +39,7 @@ function EditTaskForm({ project, task, setShowModal }) {
                 </div>
                 <input 
                     className="title-input"
+                    value={title}
                     type='text'
                     name='Name'
                     onChange={(e) => setTitle(e.target.value)}
@@ -46,6 +47,7 @@ function EditTaskForm({ project, task, setShowModal }) {
                 />
                 <input 
                     className="content-input"
+                    value={content}
                     type='text'
                     name='Description'
                     onChange={(e) => setContent(e.target.value)}
