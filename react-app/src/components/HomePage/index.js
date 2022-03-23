@@ -3,7 +3,6 @@ import { Redirect, useHistory } from "react-router-dom";
 import DisplayProjectsSideBar from "../Projects/DisplayProjectsSideBar";
 
 function HomePage() {
-  const history = useHistory();
   const user = useSelector((state) => state.session.user);
   const projects = useSelector((state) => state.projects);
   const projectsArr = Object.values(projects);

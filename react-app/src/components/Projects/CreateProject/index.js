@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Modal } from '../../../context/Modal';
 import CreateProjectForm from './CreateProjectForm';
-// import './CreateProject.css'
+import './CreateProject.css'
 
 function CreateProjectModal() {
   const [showModal, setShowModal] = useState(false);

@@ -53,6 +53,7 @@ function CreateTaskForm({ project, setShowModal }) {
           <div className="project-form">
             <input
               className="title-input"
+              value={title}
               type="text"
               name="Name"
               onChange={(e) => setTitle(e.target.value)}
@@ -60,6 +61,7 @@ function CreateTaskForm({ project, setShowModal }) {
             />
             <input
               className="title-input"
+              value={content}
               type="text"
               name="Name"
               onChange={(e) => setContent(e.target.value)}

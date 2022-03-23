@@ -14,13 +14,15 @@ const NavBar = () => {
   if (location.pathname === "/") {
     sessionLinks = (
       <div className="icon-name-user-container">
-        <div className="icon-name-container">
-          <div>
+        <div className="icon-container">
+          <div className="icon">
             <NavLink to={"/"}>
-              <img  src="../../../static/icon.png"></img>
+              <img src="../../../static/icon.png"></img>
             </NavLink>
           </div>
-          <h3 className="app-name">taskless</h3>
+          <div>
+            <h2 className="app-name">taskless</h2>
+          </div>
         </div>
         <div>
           <LoginModal />
@@ -30,14 +32,16 @@ const NavBar = () => {
     );
   } else if (user) {
     sessionLinks = (
-      <div className="icon-name-user-container">
+      <div className="icon-name-loggedin-container">
         <div className="icon-buttons-container">
-          <NavLink to={"/project"}>
-            <img src="../../../static/icon.png"></img>
-          </NavLink>
-          <button>
-            <i class="fa-solid fa-house"></i>
-          </button>
+          <div className="icon">
+            <NavLink to={"/project"}>
+              <i class="fa-solid fa-house"></i>
+            </NavLink>
+            <button className="toggle">
+              <img src="../../../static/icon.png"></img>
+            </button>
+          </div>
         </div>
         <div className="user-buttons-container">
           <CreateProjectModal />
@@ -51,11 +55,7 @@ const NavBar = () => {
 
   return (
     <div>
-      <nav>
-        <ul>
-          <div>{sessionLinks}</div>
-        </ul>
-      </nav>
+      <nav>{sessionLinks}</nav>
     </div>
   );
 };

@@ -1,0 +1,8 @@
+.createProjectModalButton {
+    border: transparent;
+    background-color: transparent;
+}
+
+.createProjectModalButton:hover {
+    background-color: lightgrey;
+}
