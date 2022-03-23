@@ -7,7 +7,6 @@ export const useEditModal = () => useContext(EditModalContext)
 
 function TaskEditDeleteModal({ project, task }) {
   const [showEditModal, setShowEditModal] = useState(false);
-  console.log("this is the task", task)
 
   return (
     <EditModalContext.Provider

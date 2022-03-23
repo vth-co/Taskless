@@ -1,0 +1,11 @@
+.login-signup-button {
+    border: transparent;
+    background-color: transparent;
+    border-radius: 3px;
+}
+
+.login-signup-button:hover {
+    background-color: lightgrey;
+    border-bottom: 2px solid red;
+    
+}

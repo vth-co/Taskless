@@ -8,7 +8,7 @@ function CreateProjectModal() {
 
   return (
     <>
-      <button className='createProjectModalButton' onClick={() => setShowModal(true)}><i className="+"></i></button>
+      <button className='createProjectModalButton' onClick={() => setShowModal(true)}><i class="fa-solid fa-plus"></i></button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
           <CreateProjectForm setShowModal={setShowModal} />

@@ -1,6 +1,6 @@
-import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import ProjectEditDeleteModal from "../ProjectEditDeleteModal";
+import "./SideBar.css"
 
 function DisplayProjectsSideBar({ project }) {
 
@@ -8,7 +8,7 @@ function DisplayProjectsSideBar({ project }) {
     <div>
       <div>
         <div key={project.id}>
-          <NavLink to={`/project/${project.id}`} project={project}>{project.title}</NavLink>
+          <NavLink className="project-titles" to={`/project/${project.id}`} project={project}>{project.title}</NavLink>
           <ProjectEditDeleteModal project={project} />
         </div>
       </div>

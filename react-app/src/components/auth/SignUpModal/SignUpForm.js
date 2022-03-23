@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import { Redirect } from 'react-router-dom';
-import { signUp } from '../../store/session';
+import { signUp } from '../../../store/session';
 
 const SignUpForm = () => {
   const [errors, setErrors] = useState([]);
@@ -12,11 +12,24 @@ const SignUpForm = () => {
   const user = useSelector(state => state.session.user);
   const dispatch = useDispatch();
 
+  useEffect(() => {
+    let errors = []
+    if (username.length >= 40) {
+        errors.push('Username: Max length of 40 characters reached.')
+    }
+    if (email.length >= 255) {
+        errors.push(['Email: Max length of 255 characters reached.'])
+    }
+    setErrors(errors)
+}, [username,email])
+
   const onSignUp = async (e) => {
     e.preventDefault();
       const data = await dispatch(signUp(username, email, password, repeatPassword));
       if (data) {
-        setErrors(data)
+        let errors = []
+      errors.push(...data)
+      setErrors(errors)
       }
   };
 
@@ -47,13 +60,16 @@ const SignUpForm = () => {
           <div key={ind}>{error}</div>
         ))}
       </div>
+      <h2>Sign up</h2>
       <div>
         <label>User Name</label>
         <input
           type='text'
           name='username'
+          placeholder='Username'
           onChange={updateUsername}
           value={username}
+          maxLength='40'
         ></input>
       </div>
       <div>
@@ -61,8 +77,10 @@ const SignUpForm = () => {
         <input
           type='text'
           name='email'
+          placeholder='Email'
           onChange={updateEmail}
           value={email}
+          maxLength='255'
         ></input>
       </div>
       <div>
@@ -70,8 +88,10 @@ const SignUpForm = () => {
         <input
           type='password'
           name='password'
+          placeholder='Password'
           onChange={updatePassword}
           value={password}
+          maxLength='255'
         ></input>
       </div>
       <div>
@@ -79,8 +99,10 @@ const SignUpForm = () => {
         <input
           type='password'
           name='repeat_password'
+          placeholder='Confirm Password'
           onChange={updateRepeatPassword}
           value={repeatPassword}
+          maxLength='255'
         ></input>
       </div>
       <button type='submit'>Sign Up</button>

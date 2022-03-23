@@ -1,53 +1,63 @@
-
-import React from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
-import LogoutButton from '../auth/LogoutButton';
-import LoginModal from '../LoginModal';
-import CreateProjectModal from '../Projects/CreateProject';
-import SignupModal from '../SignUpModal';
-
+import React from "react";
+import { NavLink, useLocation } from "react-router-dom";
+import LogoutButton from "./LogoutButton";
+import LoginModal from "../auth/LoginModal";
+import CreateProjectModal from "../Projects/CreateProject";
+import SignupModal from "../auth/SignUpModal";
+import { useSelector } from "react-redux";
+import "./NavBar.css";
 
 const NavBar = () => {
+  const user = useSelector((state) => state.session.user);
   let location = useLocation();
   let sessionLinks;
-  if (location.pathname === '/') {
+  if (location.pathname === "/") {
     sessionLinks = (
-      <>
-      <LoginModal />
-      <SignupModal />
-        
-      </>
-    )
-  } else {
+      <div className="icon-name-user-container">
+        <div className="icon-name-container">
+          <div>
+            <NavLink to={"/"}>
+              <img  src="../../../static/icon.png"></img>
+            </NavLink>
+          </div>
+          <h3 className="app-name">taskless</h3>
+        </div>
+        <div>
+          <LoginModal />
+          <SignupModal />
+        </div>
+      </div>
+    );
+  } else if (user) {
     sessionLinks = (
-      <>
-        <li>
+      <div className="icon-name-user-container">
+        <div className="icon-buttons-container">
+          <NavLink to={"/project"}>
+            <img src="../../../static/icon.png"></img>
+          </NavLink>
+          <button>
+            <i class="fa-solid fa-house"></i>
+          </button>
+        </div>
+        <div className="user-buttons-container">
           <CreateProjectModal />
-        </li>
-      </>
-    )
+          <LogoutButton />
+        </div>
+      </div>
+    );
+  } else {
+    <></>;
   }
 
-
   return (
-    <nav>
-      <ul>
-        <li>
-          <NavLink to='/users' exact={true} activeClassName='active'>
-            Users
-          </NavLink>
-        </li>
+    <div>
+      <nav>
         <ul>
-          <div>
-            {sessionLinks}
-          </div>
+          <div>{sessionLinks}</div>
         </ul>
-        <li>
-          <LogoutButton />
-        </li>
-      </ul>
-    </nav>
+      </nav>
+    </div>
   );
-}
+};
 
 export default NavBar;
