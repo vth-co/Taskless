@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useState } from 'react';
 import { Modal } from '../../../context/Modal';
 import TaskEditDelete from './TaskEditDelete';
+import "./TaskEditDelete.css"
 
 export const EditModalContext = createContext()
 export const useEditModal = () => useContext(EditModalContext)
@@ -15,7 +16,7 @@ function TaskEditDeleteModal({ project, task }) {
         setShowEditModal
       }}
     >
-      <button className='editDeleteImageModalButton' onClick={() => setShowEditModal(true)}>...</button>
+      <button className='task-edit-delete-button' onClick={() => setShowEditModal(true)}>...</button>
       {showEditModal && (
         <Modal onClose={() => setShowEditModal(false)}>
           <TaskEditDelete project={project} task={task} />

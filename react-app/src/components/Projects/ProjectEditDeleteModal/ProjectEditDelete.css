@@ -6,3 +6,12 @@
 .project-edit-button:hover {
     background-color: lightgrey;
 }
+
+.project-delete-button {
+    border: transparent;
+    background-color: transparent;
+}
+
+.project-edit-delete-button {
+    margin: 25px 25px;
+}

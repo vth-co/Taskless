@@ -10,10 +10,10 @@ const Footer = () => {
       <div>
         <ul className="unordered-list">
           <li>
-            <Link to="https://github.com/vth-co/Taskless" className="link">Github</Link>
+            <a href="https://github.com/vth-co/Taskless" className="link">Github</a>
           </li>
           <li>
-            <Link to="https://www.linkedin.com/in/vu-co/" className="link">LinkedIn</Link>
+            <a href="https://www.linkedin.com/in/vu-co/" className="link">LinkedIn</a>
           </li>
         </ul>
       </div>

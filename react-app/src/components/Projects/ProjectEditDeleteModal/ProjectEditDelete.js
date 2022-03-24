@@ -13,7 +13,7 @@ function ProjectEditDelete({ project }) {
         dispatch(deleteProject(project.id))
     }
     return (
-        <div>
+        <div className="project-edit-delete-buttons">
             <EditProjectFormModal project={project} />
             <button className="project-delete-button" onClick={handleClick}>
                 Delete

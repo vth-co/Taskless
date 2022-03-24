@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { createTask} from "../../../store/tasks";
-
+import "./CreateTask.css"
 
 function CreateTaskForm({ project, setShowModal }) {
     const dispatch = useDispatch()
@@ -51,17 +51,21 @@ function CreateTaskForm({ project, setShowModal }) {
               ))}
           </div>
           <div className="project-form">
+            <label>Title</label>
             <input
               className="title-input"
               value={title}
+              placeholder="Title"
               type="text"
               name="Name"
               onChange={(e) => setTitle(e.target.value)}
               maxLength="255"
             />
+            <label>Description</label>
             <input
               className="title-input"
               value={content}
+              placeholder="Description"
               type="text"
               name="Name"
               onChange={(e) => setContent(e.target.value)}

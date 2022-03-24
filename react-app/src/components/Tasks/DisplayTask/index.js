@@ -1,12 +1,10 @@
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import Checkbox from "../../Checkbox";
-import TaskDetailModal from "../TaskDetailModal";
 import TaskEditDeleteModal from "../TaskEditDeleteModal";
-import "./DisplayTask.css"
+import "./DisplayTask.css";
 
 function DisplayTasks({ project }) {
-  // const user = useSelector((state) => state.session.user);
   const tasks = useSelector((state) => state.tasks);
   const tasksArr = Object.values(tasks);
   const filterTasksArr = tasksArr.filter(
@@ -15,17 +13,27 @@ function DisplayTasks({ project }) {
 
   const [finished, setFinished] = useState();
 
-    const handleChangeOne = () => {
-        setFinished(!finished);
-      };
+  const handleChangeOne = () => {
+    setFinished(!finished);
+  };
   return (
     <div>
       {filterTasksArr.map((task) => (
         <div className="task-container" key={task.id}>
-          <Checkbox task={task} />
-          <TaskDetailModal project={project} task={task} />
-          <TaskEditDeleteModal project={project} task={task} />
-          <p>{task.content}</p>
+          <div className="task-buttons-container">
+            <div className="task-checkbox">
+              <div className="checkbox">
+              <Checkbox task={task} />
+              </div>
+              <p className="title">{task.title}</p>
+            </div>
+            <div className="edit-buttons">
+              <TaskEditDeleteModal project={project} task={task} />
+            </div>
+          </div>
+          <div className="content">
+            <p>{task.content}</p>
+          </div>
         </div>
       ))}
     </div>

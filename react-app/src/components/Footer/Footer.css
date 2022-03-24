@@ -3,6 +3,9 @@
     justify-content: space-evenly;
     background: linear-gradient(white, bisque);
     width: 100%;
+    position: fixed;
+    bottom: 0;
+
 }
 
 .link {

@@ -1,3 +1,31 @@
 .task-container {
     border-bottom: 1px solid lightgrey;
+    display: flex;
+    flex-direction: column;
+    width: 750px;
+}
+
+.task-buttons-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.title {
+    font-size: larger;
+}
+
+.task-checkbox {
+    display: flex;
+    flex-direction: row;
+}
+
+.checkbox {
+    padding-top: 21px;
+}
+
+.content {
+    padding-left: 30px;
+    color: gray;
 }

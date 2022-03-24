@@ -21,6 +21,7 @@ img {
 }
 
 .toggle {
+  margin-top: 5px;
   border: transparent;
   background-color: transparent;
 }
@@ -30,6 +31,7 @@ img {
   justify-content: space-around;
   background-color: rgb(61, 61, 61);
   align-items: center;
+  height: 45px;
 }
 
 .app-name {
@@ -44,8 +46,29 @@ img {
 .home-button {
   border: transparent;
   background-color: transparent;
+  padding: 12px 7px;
+}
+
+.home-button:hover {
+  background-color: grey;
 }
 
 .fa-solid.fa-house {
   color: white;
+}
+
+.user-buttons-container {
+  display: flex;
+  align-items: center;
+}
+
+.logout-button {
+  border: transparent;
+  background-color: transparent;
+  color: white;
+  padding: 12px 7px;
+}
+
+.logout-button:hover {
+  background-color: grey;
 }

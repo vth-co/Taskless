@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import CreateTaskModal from "../../Tasks/CreateTask";
 import DisplayTasks from "../../Tasks/DisplayTask";
 import ProjectEditDeleteModal from "../ProjectEditDeleteModal";
-import "./ProjectDetail.css"
+import "./ProjectDetail.css";
 
 const ProjectDetail = () => {
   const { id } = useParams();
@@ -12,22 +12,20 @@ const ProjectDetail = () => {
   const filteredArr = projectsArr.filter((project) => project?.id === +id);
 
   return (
-    <div>
+    <div className="project-task-container">
       {filteredArr.map((proj) => (
-            <div className="project-task-container">
-              <div className="title-edit">
-                <h2>{proj?.title}</h2>
-                <div>
-                <ProjectEditDeleteModal project={proj} />
-                </div>
-              </div>
-              <div className="task-container">
-                <DisplayTasks project={proj} />
-              </div>
-              <div>
-                <CreateTaskModal project={proj} />
-              </div>
-            </div>
+        <div>
+          <div className="title-edit">
+            <h2>{proj?.title}</h2>
+            <ProjectEditDeleteModal project={proj} />
+          </div>
+          <div className="task-container">
+            <DisplayTasks project={proj} />
+          </div>
+          <div>
+            <CreateTaskModal project={proj} />
+          </div>
+        </div>
       ))}
     </div>
   );

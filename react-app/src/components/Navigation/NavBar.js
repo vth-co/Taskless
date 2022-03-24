@@ -48,8 +48,12 @@ const NavBar = () => {
           </div>
         </div>
         <div className="user-buttons-container">
-          <CreateProjectModal />
-          <LogoutButton />
+          <div>
+            <CreateProjectModal />
+          </div>
+          <div>
+            <LogoutButton />
+          </div>
         </div>
       </div>
     );
