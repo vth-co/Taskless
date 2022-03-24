@@ -97,6 +97,7 @@ export const deleteTask = (id) => async dispatch => {
     return response;
 }
 
+
 const tasksReducer = (state= {}, action) => {
     let newState;
     switch(action.type) {
