@@ -130,10 +130,10 @@ const tasksReducer = (state= {}, action) => {
             newState = {...state};
             delete newState[action.remove_task];
             return newState;
-        case LOAD_FINISHED:
-            newState = {};
-            action.tasks.forEach(task => newState[task.id] = task);
-            return newState;
+        // case LOAD_FINISHED:
+        //     newState = {};
+        //     action.tasks.forEach(task => newState[task.id] = task);
+        //     return newState;
         default:
             return state;
     }

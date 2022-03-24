@@ -6,7 +6,7 @@ import { authenticate } from "./store/session";
 import { getProjects } from "./store/projects";
 import HomePage from "./components/HomePage";
 import LandingPage from "./components/LandingPage";
-import { getFinishedTasks, getTasks } from "./store/tasks";
+import { getTasks } from "./store/tasks";
 import ProjectDetail from "./components/Projects/ProjectDetail";
 import ErrorPage from "./components/404";
 import Footer from "./components/Footer";
@@ -20,7 +20,6 @@ function App() {
     dispatch(authenticate());
     dispatch(getProjects());
     dispatch(getTasks());
-    dispatch(getFinishedTasks())
   }, [dispatch]);
 
   useEffect(() => {

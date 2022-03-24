@@ -9,7 +9,6 @@ function CreateTaskForm({ project, setShowModal }) {
     const [title, setTitle] = useState('');
     const [content, setContent] = useState('');
     const [errors, setErrors] = useState([]);
-    const history = useHistory();
 
     useEffect(() => {
         if (title.length >= 255) {
@@ -34,7 +33,6 @@ function CreateTaskForm({ project, setShowModal }) {
             setErrors(data.errors);
         } else {
             setShowModal(false)
-            history.push(`/project/${project.id}`)
         }
     }
 
