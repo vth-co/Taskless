@@ -30,22 +30,24 @@ function EditProjectForm({ project, setShowModal }) {
     return (
         <div>
             <form onSubmit={handleSubmit}>
-                <h2>Edit Title</h2>
+                <h2 className="title-container">Edit Title</h2>
                 <div>
                     {errors && errors.map((error, ind) => (
                         <div className='error-message' key={ind}>{error}</div>
                     ))}
                 </div>
                 <input 
-                    className="title-input"
+                    className="input"
                     value={title}
                     type='text'
                     name='Name'
                     onChange={(e) => setTitle(e.target.value)}
                     maxLength='255'
                 />
+                <div className="button-container">
                 <button className="post-button" type='submit'>Submit</button>
                 <button className="post-button" onClick={() => setShowModal(false)}>Cancel</button>
+                </div>
             </form>
         </div>
     )

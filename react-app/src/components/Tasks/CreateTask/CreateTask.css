@@ -27,3 +27,12 @@
 .form-title {
     text-align: center;
 }
+
+.project-create-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.label-container {
+    text-align: center;
+}

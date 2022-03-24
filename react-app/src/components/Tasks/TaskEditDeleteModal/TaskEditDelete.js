@@ -1,6 +1,4 @@
 import { useDispatch } from "react-redux";
-import { useHistory } from "react-router-dom";
-import { deleteProject } from "../../../store/projects";
 import { deleteTask } from "../../../store/tasks";
 import EditTaskFormModal from "../EditTaskFormModal";
 

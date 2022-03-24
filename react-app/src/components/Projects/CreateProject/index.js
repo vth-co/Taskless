@@ -8,7 +8,7 @@ function CreateProjectModal() {
 
   return (
     <>
-      <button className='createProjectModalButton' onClick={() => setShowModal(true)}>+</button>
+      <button className='createProjectModalButton' onClick={() => setShowModal(true)}>+ Add Tasklist</button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
           <CreateProjectForm setShowModal={setShowModal} />

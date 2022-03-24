@@ -46,9 +46,11 @@ function CreateProjectForm({ setShowModal }) {
           ))}
         </div>
         <div className="project-form">
+          <div className="label-container">
           <label>Title</label>
+          </div>
           <input
-            className="title-input"
+            className="input"
             placeholder="Title"
             value={title}
             type="text"

@@ -1,37 +1,39 @@
-import React, { useEffect, useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux'
-import { Redirect } from 'react-router-dom';
-import { signUp } from '../../../store/session';
-import "./SignUp.css"
+import React, { useEffect, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { Redirect } from "react-router-dom";
+import { signUp } from "../../../store/session";
+import "./SignUp.css";
 
 const SignUpForm = () => {
   const [errors, setErrors] = useState([]);
-  const [username, setUsername] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [repeatPassword, setRepeatPassword] = useState('');
-  const user = useSelector(state => state.session.user);
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [repeatPassword, setRepeatPassword] = useState("");
+  const user = useSelector((state) => state.session.user);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    let errors = []
+    let errors = [];
     if (username.length >= 40) {
-        errors.push('Username: Max length of 40 characters reached.')
+      errors.push("Username: Max length of 40 characters reached.");
     }
     if (email.length >= 255) {
-        errors.push(['Email: Max length of 255 characters reached.'])
+      errors.push(["Email: Max length of 255 characters reached."]);
     }
-    setErrors(errors)
-}, [username,email])
+    setErrors(errors);
+  }, [username, email]);
 
   const onSignUp = async (e) => {
     e.preventDefault();
-      const data = await dispatch(signUp(username, email, password, repeatPassword));
-      if (data) {
-        let errors = []
-      errors.push(...data)
-      setErrors(errors)
-      }
+    const data = await dispatch(
+      signUp(username, email, password, repeatPassword)
+    );
+    if (data) {
+      let errors = [];
+      errors.push(...data);
+      setErrors(errors);
+    }
   };
 
   const updateUsername = (e) => {
@@ -51,7 +53,7 @@ const SignUpForm = () => {
   };
 
   if (user) {
-    return <Redirect to='/' />;
+    return <Redirect to="/" />;
   }
 
   return (
@@ -61,52 +63,58 @@ const SignUpForm = () => {
           <div key={ind}>{error}</div>
         ))}
       </div>
-      <h2>Sign up</h2>
-      <div>
+      <h2 className="signup-title">Sign up</h2>
+      <div className="field">
         <label>User Name</label>
         <input
-          type='text'
-          name='username'
-          placeholder='Username'
+          className="input"
+          type="text"
+          name="username"
+          placeholder="Username"
           onChange={updateUsername}
           value={username}
-          maxLength='40'
+          maxLength="40"
         ></input>
       </div>
-      <div>
+      <div className="field">
         <label>Email</label>
         <input
-          type='text'
-          name='email'
-          placeholder='Email'
+          className="input"
+          type="text"
+          name="email"
+          placeholder="Email"
           onChange={updateEmail}
           value={email}
-          maxLength='255'
+          maxLength="255"
         ></input>
       </div>
-      <div>
+      <div className="field">
         <label>Password</label>
         <input
-          type='password'
-          name='password'
-          placeholder='Password'
+          className="input"
+          type="password"
+          name="password"
+          placeholder="Password"
           onChange={updatePassword}
           value={password}
-          maxLength='255'
+          maxLength="255"
         ></input>
       </div>
-      <div>
+      <div className="field">
         <label>Confirm Password</label>
         <input
-          type='password'
-          name='repeat_password'
-          placeholder='Confirm Password'
+          className="input"
+          type="password"
+          name="repeat_password"
+          placeholder="Confirm Password"
           onChange={updateRepeatPassword}
           value={repeatPassword}
-          maxLength='255'
+          maxLength="255"
         ></input>
       </div>
-      <button className='login-button' type='submit'>Sign Up</button>
+      <button className="signup-button" type="submit">
+        Sign Up
+      </button>
     </form>
   );
 };

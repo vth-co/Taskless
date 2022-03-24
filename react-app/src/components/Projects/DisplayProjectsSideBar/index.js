@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import CreateProjectModal from "../CreateProject";
 import ProjectEditDeleteModal from "../ProjectEditDeleteModal";
 import "./SideBar.css";
 
