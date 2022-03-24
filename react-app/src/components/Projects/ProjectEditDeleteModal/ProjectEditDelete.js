@@ -1,16 +1,21 @@
 import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
 import { deleteProject } from "../../../store/projects";
 import EditProjectFormModal from "../../Projects/EditProjectFormModal"
 
 function ProjectEditDelete({ project }) {
 
     const dispatch = useDispatch();
-    
+    const history = useHistory();
 
-    const handleClick = (e) => {
+
+    const handleClick = async (e) => {
         e.preventDefault()
 
-        dispatch(deleteProject(project.id))
+        const data = await dispatch(deleteProject(project.id))
+        if (data) {
+            history.push(`/project`)
+        }
     }
     return (
         <div className="">
