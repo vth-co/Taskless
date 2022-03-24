@@ -18,3 +18,12 @@
     border-radius: 8px;
 
 }
+
+.post-cancel-button-container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.form-title {
+    text-align: center;
+}

@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 import { Redirect, useHistory } from "react-router-dom";
 import DisplayProjectsSideBar from "../Projects/DisplayProjectsSideBar";
+import "./HomePage.css"
 
 function HomePage() {
   const user = useSelector((state) => state.session.user);
@@ -11,14 +12,15 @@ function HomePage() {
   );
 
   if (!user) {
-    return <Redirect to='/' />;
+    return <Redirect to="/" />;
   }
 
   return (
-    <div>
+    <div className="project-main-content">
+      <h1>Tasklists:</h1>
       {filterProjectsArr.map((project) => (
         <div>
-          <DisplayProjectsSideBar project={project} />
+          <DisplayProjectsSideBar key={project.id} project={project} />
         </div>
       ))}
     </div>

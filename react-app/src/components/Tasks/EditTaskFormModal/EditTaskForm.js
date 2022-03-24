@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { editTask } from "../../../store/tasks";
 import { useEditModal } from "../TaskEditDeleteModal";
+import "./EditTask.css"
 
 function EditTaskForm({ project, task, setShowModal }) {
     const dispatch = useDispatch();

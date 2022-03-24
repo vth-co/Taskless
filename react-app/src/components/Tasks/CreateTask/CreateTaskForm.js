@@ -41,7 +41,7 @@ function CreateTaskForm({ project, setShowModal }) {
     return (
       <div className="project-create-container">
         <form onSubmit={handleSubmit}>
-          <h2>Add Task</h2>
+          <h2 className="form-title">Add Task</h2>
           <div>
             {errors &&
               errors.map((error, ind) => (
@@ -72,12 +72,14 @@ function CreateTaskForm({ project, setShowModal }) {
               maxLength="255"
             />
           </div>
+          <div className="post-cancel-button-container">
           <button className="post-button" type="submit">
             Add task
           </button>
-          <button className="post-button" onClick={() => setShowModal(false)}>
+          <button className="cancel-button" onClick={() => setShowModal(false)}>
             Cancel
           </button>
+          </div>
         </form>
       </div>
     );

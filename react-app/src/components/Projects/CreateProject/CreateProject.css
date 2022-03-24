@@ -8,3 +8,17 @@
 .createProjectModalButton:hover {
     background-color: grey;
 }
+
+.cancel-button {
+    border: transparent;
+    background-color: transparent;
+}
+
+.post-delete-buttons-container{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.form-title {
+    text-align: center;
+}

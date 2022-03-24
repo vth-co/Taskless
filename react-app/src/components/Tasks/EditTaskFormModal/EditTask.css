@@ -1,7 +1,7 @@
-.edit-project-button {
+.edit-task-button {
+    border-radius: 8px;
     border: transparent;
     background-color: #E44232;
     color: white;
     padding: 5px 30px;
-    border-radius: 8px;
 }

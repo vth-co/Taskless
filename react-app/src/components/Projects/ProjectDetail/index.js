@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { Redirect, useParams } from "react-router-dom";
 import CreateTaskModal from "../../Tasks/CreateTask";
 import DisplayTasks from "../../Tasks/DisplayTask";
 import ProjectEditDeleteModal from "../ProjectEditDeleteModal";
@@ -8,8 +8,13 @@ import "./ProjectDetail.css";
 const ProjectDetail = () => {
   const { id } = useParams();
   const projects = useSelector((state) => state.projects);
+  const user = useSelector((state) => state.session.user);
   const projectsArr = Object.values(projects);
   const filteredArr = projectsArr.filter((project) => project?.id === +id);
+
+  if (!user) {
+    return <Redirect to='/' />;
+  }
 
   return (
     <div className="project-task-container">

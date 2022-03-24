@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Modal } from '../../../context/Modal';
 import EditTaskForm from './EditTaskForm';
+import "./EditTask.css"
 
 
 function EditTaskFormModal({ project, task }) {
@@ -8,7 +9,7 @@ function EditTaskFormModal({ project, task }) {
 
   return (
     <>
-      <button className='' onClick={() => setShowModal(true)}>Edit</button>
+      <button className='edit-task-button' onClick={() => setShowModal(true)}>Edit</button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
           <EditTaskForm project={project} task={task} setShowModal={setShowModal} />

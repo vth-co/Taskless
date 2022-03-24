@@ -1,18 +1,21 @@
 import { NavLink } from "react-router-dom";
 import ProjectEditDeleteModal from "../ProjectEditDeleteModal";
-import "./SideBar.css"
+import "./SideBar.css";
 
 function DisplayProjectsSideBar({ project }) {
-
   return (
-    <div>
       <div>
-        <div key={project.id}>
-          <NavLink className="project-titles" to={`/project/${project.id}`} project={project}>{project.title}</NavLink>
+        <div className="project-container" key={project.id}>
+          <NavLink
+            className="project-titles"
+            to={`/project/${project.id}`}
+            project={project}
+          >
+            {project.title}
+          </NavLink>
           <ProjectEditDeleteModal project={project} />
         </div>
       </div>
-    </div>
   );
 }
 

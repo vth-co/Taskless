@@ -1,4 +1,16 @@
 .project-titles {
     text-decoration: none;
     color: black;
+    font-size: x-large;
+    text-align: center;
+}
+
+.project-titles:hover {
+    background-color: grey;
+}
+
+.project-container {
+    border-bottom: 1px solid grey;
+    padding-top: 50px;
+    padding-bottom: 50px;
 }

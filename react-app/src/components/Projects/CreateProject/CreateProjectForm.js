@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { createProject } from "../../../store/projects";
+import "./CreateProject.css"
 
 function CreateProjectForm({ setShowModal }) {
   const dispatch = useDispatch();
@@ -38,7 +39,7 @@ function CreateProjectForm({ setShowModal }) {
   return (
     <div className="project-create-container">
       <form onSubmit={handleSubmit}>
-        <h2>Add Project</h2>
+        <h2 className="form-title">Add Project</h2>
         <div>
           {errors.map((error, ind) => (
             <div key={ind}>{error}</div>
@@ -56,12 +57,14 @@ function CreateProjectForm({ setShowModal }) {
             maxLength="255"
           />
         </div>
+        <div className="post-delete-buttons-container">
         <button className="post-button" type="submit">
           Add
         </button>
-        <button className="post-button" onClick={() => setShowModal(false)}>
+        <button className="cancel-button" onClick={() => setShowModal(false)}>
           Cancel
         </button>
+        </div>
       </form>
     </div>
   );
