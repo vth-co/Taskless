@@ -35,12 +35,16 @@ const NavBar = () => {
       <div className="icon-name-loggedin-container">
         <div className="icon-buttons-container">
           <div className="icon">
-            <NavLink to={"/project"}>
-              <i class="fa-solid fa-house"></i>
-            </NavLink>
             <button className="toggle">
-              <img src="../../../static/icon.png"></img>
+              <img src="../../../static/loggedin.png"></img>
             </button>
+          </div>
+          <div>
+            <NavLink to={"/project"}>
+              <button className="home-button">
+                <i className="fa-solid fa-house"></i>
+              </button>
+            </NavLink>
           </div>
         </div>
         <div className="user-buttons-container">

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Modal } from '../../../context/Modal';
 import TaskDetail from './TaskDetail';
+import "./TaskDetail.css"
 
 
 function TaskDetailModal({ project, task }) {
@@ -8,7 +9,7 @@ function TaskDetailModal({ project, task }) {
 
   return (
     <>
-      <button className='' onClick={() => setShowModal(true)}>{task.title}</button>
+      <button className='task-detail' onClick={() => setShowModal(true)}>{task.title}</button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
           <TaskDetail project={project} task={task} setShowModal={setShowModal} />

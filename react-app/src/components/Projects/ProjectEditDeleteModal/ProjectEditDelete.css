@@ -1,0 +1,8 @@
+.project-edit-button {
+    border: transparent;
+    background-color: transparent;
+}
+
+.project-edit-button:hover {
+    background-color: lightgrey;
+}

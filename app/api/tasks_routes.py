@@ -1,3 +1,5 @@
+from cmath import log
+from crypt import methods
 from flask import Blueprint, json, jsonify, redirect, request
 from flask_login import login_required
 from app.models import db, Task
@@ -54,6 +56,17 @@ def edit_task(id):
         return edit_task.to_dict()
     else:
         return {"errors": validation_errors_to_error_messages(form.errors)}, 400
+
+@task_routes.route('/finished/<int:id>', methods=["PUT"])
+@login_required
+def finish_task(id):
+    boolean = request.get_json()["check"]
+    task = Task.query.get(id)
+
+    task.is_finished = boolean
+    db.session.commit()
+
+    return task.to_dict()
 
 @task_routes.route('/<int:id>', methods=['DELETE'])
 @login_required

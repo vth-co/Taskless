@@ -1,0 +1,15 @@
+.footer-container {
+    display: flex;
+    justify-content: space-evenly;
+    background: linear-gradient(white, bisque);
+    width: 100%;
+}
+
+.link {
+    text-decoration: none;
+    color: black;
+}
+
+.unordered-list {
+    list-style: none;
+}

@@ -21,8 +21,6 @@ class Task(db.Model):
             "id": self.id,
             "project_id": self.project_id,
             "title": self.title,
-            # "user_id": self.user_id,
-            # "username": self.user.username,
             "content": self.content,
             "is_finished": self.is_finished,
         }

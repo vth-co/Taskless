@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useState } from 'react';
 import { Modal } from '../../../context/Modal';
 import ProjectEditDelete from './ProjectEditDelete';
+import "./ProjectEditDelete.css"
 
 export const EditModalContext = createContext()
 export const useEditModal = () => useContext(EditModalContext)
@@ -15,7 +16,7 @@ function ProjectEditDeleteModal({ project }) {
         setShowEditModal
       }}
     >
-      <button className='' onClick={() => setShowEditModal(true)}>...</button>
+      <button className='project-edit-button' onClick={() => setShowEditModal(true)}><i class="fa-solid fa-ellipsis"></i></button>
       {showEditModal && (
         <Modal onClose={() => setShowEditModal(false)}>
           <ProjectEditDelete project={project} />

@@ -42,6 +42,27 @@ export const createTask = (payload) => async dispatch => {
     return response;
 }
 
+export const finishedTask = (payload) => async dispatch => {
+    const response = await fetch(`/api/tasks/finished/${payload.id}`, {
+        method: 'PUT',
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(payload)
+    });
+    if(response.ok) {
+        const edit_task = await response.json();
+        dispatch(updateTask(edit_task));
+        return edit_task;
+    } else if (response.status < 500) {
+        const data = await response.json();
+        if (data.errors) {
+            return data;
+        }
+    }
+    return response;
+}
+
 export const editTask = (payload) => async dispatch => {
     const response = await fetch(`/api/tasks/${payload.id}`, {
         method: 'PUT',
