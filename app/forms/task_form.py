@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, IntegerField, BooleanField
-from wtforms.validators import DataRequired, ValidationError, Length
+from wtforms import StringField, IntegerField
+from wtforms.validators import DataRequired, Length
 
 class TaskForm(FlaskForm):
     title = StringField("Task", validators=[DataRequired(), Length(min=3, max=255, message="Title must be between 3-255 characters.")])

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { createTask} from "../../../store/tasks";
 import "./CreateTask.css"
@@ -53,7 +53,7 @@ function CreateTaskForm({ project, setShowModal }) {
           <div className="project-form">
             <label>Title</label>
             <input
-              className="title-input"
+              className="input"
               value={title}
               placeholder="Title"
               type="text"
@@ -63,7 +63,7 @@ function CreateTaskForm({ project, setShowModal }) {
             />
             <label>Description</label>
             <input
-              className="title-input"
+              className="input"
               value={content}
               placeholder="Description"
               type="text"

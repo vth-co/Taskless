@@ -6,9 +6,9 @@ const ErrorPage = () => {
 
     return (
         <div className="errorpage-content">
-            <img src="../../../static/errorPage.png"></img>
+            <img src="../../../static/errorPage.png" alt=""></img>
             <h1>Hmmm, that page doesn't exist.</h1>
-            <p>Get back to organizing work and life or visit our Help Center.</p>
+            <p>Get back to organizing work and life.</p>
             <div>
             <NavLink to='/'>
                 <button className="button" >Home</button>
