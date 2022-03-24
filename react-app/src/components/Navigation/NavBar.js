@@ -17,7 +17,7 @@ const NavBar = () => {
         <div className="icon-container">
           <div className="icon">
             <NavLink to={"/"}>
-              <img src="../../../static/icon.png"></img>
+              <img src="../../../static/icon.png" alt=""></img>
             </NavLink>
           </div>
           <div>
@@ -36,7 +36,7 @@ const NavBar = () => {
         <div className="icon-buttons-container">
           <div className="icon">
             <button className="toggle">
-              <img src="../../../static/loggedin.png"></img>
+              <img src="../../../static/loggedin.png" alt=""></img>
             </button>
           </div>
           <div>

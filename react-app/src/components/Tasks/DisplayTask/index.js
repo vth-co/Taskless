@@ -11,11 +11,9 @@ function DisplayTasks({ project }) {
     (task) => task.project_id === project?.id
   );
 
-  const [finished, setFinished] = useState();
 
-  const handleChangeOne = () => {
-    setFinished(!finished);
-  };
+
+
   return (
     <div>
       {filterTasksArr.map((task) => (
@@ -33,6 +31,10 @@ function DisplayTasks({ project }) {
           </div>
           <div className="content">
             <p>{task.content}</p>
+          </div>
+
+          <div>
+            
           </div>
         </div>
       ))}

@@ -2,8 +2,11 @@ const LOAD = '/tasks/load'
 const ADD = '/tasks/add'
 const UPDATE = '/tasks/edit'
 const REMOVE = '/tasks/remove'
+const LOAD_FINISHED = '/tasks/loadFinished'
 
 const loadTasks = tasks => ({ type: LOAD, tasks })
+
+const loadFinishedTasks = finished_tasks => ({ type: LOAD, finished_tasks})
 
 const addTask = new_task => ({ type: ADD, new_task })
 
@@ -42,26 +45,36 @@ export const createTask = (payload) => async dispatch => {
     return response;
 }
 
-export const finishedTask = (payload) => async dispatch => {
-    const response = await fetch(`/api/tasks/finished/${payload.id}`, {
-        method: 'PUT',
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(payload)
-    });
+export const getFinishedTasks = () => async dispatch => {
+    const response = await fetch('/api/tasks/finished');
     if(response.ok) {
-        const edit_task = await response.json();
-        dispatch(updateTask(edit_task));
-        return edit_task;
-    } else if (response.status < 500) {
-        const data = await response.json();
-        if (data.errors) {
-            return data;
-        }
+        const tasks = await response.json();
+        dispatch(loadFinishedTasks(tasks));
+        return tasks;
     }
     return response;
 }
+
+// export const finishedTask = (payload) => async dispatch => {
+//     const response = await fetch(`/api/tasks/finished/${payload.id}`, {
+//         method: 'PUT',
+//         headers: {
+//             "Content-Type": "application/json"
+//         },
+//         body: JSON.stringify(payload)
+//     });
+//     if(response.ok) {
+//         const edit_task = await response.json();
+//         dispatch(updateTask(edit_task));
+//         return edit_task;
+//     } else if (response.status < 500) {
+//         const data = await response.json();
+//         if (data.errors) {
+//             return data;
+//         }
+//     }
+//     return response;
+// }
 
 export const editTask = (payload) => async dispatch => {
     const response = await fetch(`/api/tasks/${payload.id}`, {
@@ -116,6 +129,10 @@ const tasksReducer = (state= {}, action) => {
         case REMOVE:
             newState = {...state};
             delete newState[action.remove_task];
+            return newState;
+        case LOAD_FINISHED:
+            newState = {};
+            action.tasks.forEach(task => newState[task.id] = task);
             return newState;
         default:
             return state;

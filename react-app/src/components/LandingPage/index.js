@@ -1,5 +1,4 @@
 import LoginForm from "../auth/LoginModal/LoginForm";
-import SignUpModal from "../auth/SignUpModal";
 import "./LandingPage.css"
 
 const LandingPage = () => {
@@ -10,7 +9,7 @@ const LandingPage = () => {
       <LoginForm />
       </div>
       <div className="landing-page-image-container">
-        <img src="../../../static/landingPage.jpg"></img>
+        <img src="../../../static/landingPage.jpg" alt=""></img>
       </div>
     </div>
   );

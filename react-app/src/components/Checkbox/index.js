@@ -9,8 +9,8 @@ function Checkbox({ task }) {
   return (
       <input
         type="checkbox"
-        defaultChecked={finished}
-        onChange={(e) => setFinished()}
+        value={finished}
+        checked={task?.finished === true}
       />
   );
 }

@@ -6,31 +6,36 @@ def seed_tasks():
     task1 = Task(
         title = "Wash car",
         content = "Rinse, soap up, lather, rinse and repeat",
-        project_id = 1
+        project_id = 1,
+        finished=False,
     )
 
     task2 = Task(
         title = "Take out the trash",
         content = "Tie trash bag, take out trash can, take out to bigger trash can outside",
-        project_id = 1
+        project_id = 1,
+        finished=False,
     )
 
     task3 = Task(
         title = "Mop",
         content = "Rinse, soap up, lather, rinse and repeat",
-        project_id = 2
+        project_id = 2,
+        finished=False,
     )
 
     task4 = Task(
         title = "Walk dog",
         content = "Get leash, call for Haru, tie leash, bring waste bags",
-        project_id = 3
+        project_id = 3,
+        finished=False,
     )
 
     task5 = Task(
         title = "Clean room",
         content = "Throw away trash, dust and declutter, organize things",
-        project_id = 4
+        project_id = 4,
+        finished=False,
     )
     
 
