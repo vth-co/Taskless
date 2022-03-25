@@ -3,10 +3,14 @@
     background-color: transparent;
     font-size:large;
     color: white;
+    margin-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .createProjectModalButton:hover {
     background-color: grey;
+    cursor: pointer;
 }
 
 .cancel-button {
@@ -16,9 +20,26 @@
 
 .post-delete-buttons-container{
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: column;
 }
 
 .form-title {
     text-align: center;
+    font-family: sans-serif;
+}
+
+.project-button {
+    border-radius: 3px;
+    border: transparent;
+    background-color: #E44232;
+    color: white;
+    padding: 5px 10px;
+    font-weight: bold;
+    margin-top: 7px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.project-button:hover {
+    cursor: pointer;
 }

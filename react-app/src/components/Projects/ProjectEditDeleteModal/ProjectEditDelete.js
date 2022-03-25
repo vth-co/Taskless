@@ -18,11 +18,13 @@ function ProjectEditDelete({ project }) {
         }
     }
     return (
-        <div className="">
+        <div className="form-container">
+            <div className="edit-delete-container">
             <EditProjectFormModal project={project} />
-            <button className="project-delete-button" onClick={handleClick}>
-                Delete
+            <button className="delete-button" onClick={handleClick}>
+            <i className="fa-solid fa-trash-can"></i> Delete project
             </button>
+            </div>
         </div>
     )
 }

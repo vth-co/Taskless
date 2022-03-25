@@ -11,6 +11,7 @@ function Checkbox({ task }) {
         type="checkbox"
         value={finished}
         checked={task?.finished === true}
+        onChange={(e) => setFinished(e.target.value)}
       />
   );
 }

@@ -20,9 +20,9 @@ function DisplayTasks({ project }) {
         <div className="task-container" key={task.id}>
           <div className="task-buttons-container">
             <div className="task-checkbox">
-              <div className="checkbox">
+              {/* <div className="checkbox">
               <Checkbox task={task} />
-              </div>
+              </div> */}
               <p className="title">{task.title}</p>
             </div>
             <div className="edit-buttons">

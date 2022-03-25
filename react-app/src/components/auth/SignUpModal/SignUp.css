@@ -1,8 +1,14 @@
 .signup-button {
-    border-radius: 8px;
+    border-radius: 3px;
     border: transparent;
     background-color: #E44232;
     color: white;
-    padding: 5px 30px;
+    padding: 5px 70px;
     font-weight: bold;
+    margin-top: 7px;
+    margin-left: 10px;
+}
+
+.signup-title {
+    font-family: sans-serif;
 }

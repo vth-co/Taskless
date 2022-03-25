@@ -1,19 +1,41 @@
 .login-signup-button {
-    border: transparent;
-    background-color: transparent;
-    border-radius: 3px;
-    padding-top: 26px;
-    padding-bottom: 26px;
-    font-size: large;
+  border: transparent;
+  background-color: transparent;
+  border-radius: 3px;
+  padding-top: 26px;
+  padding-bottom: 26px;
+  font-size: large;
 }
 
 .login-signup-button:hover {
-    background-color: rgba(235, 231, 231, 0.465);
-    border-bottom: 2px solid red;
-    
+  background-color: rgba(235, 231, 231, 0.465);
+  border-bottom: 2px solid red;
 }
 
-
 .signup-title {
-    text-align: center;
+  text-align: center;
+}
+
+.form-container {
+  margin: 40px 25px;
+}
+
+.field-label-button-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+}
+
+.label-container {
+  margin: 5px 15px;
+}
+
+label {
+  font-weight: bold;
+  font-family: sans-serif;
+  font-size: smaller;
 }

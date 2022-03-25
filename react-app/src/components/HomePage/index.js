@@ -17,7 +17,7 @@ function HomePage() {
 
   return (
     <div className="project-main-content">
-      <h1>Tasklists:</h1>
+      <h1 className="tasklist-title">Tasklists:</h1>
       {filterProjectsArr.map((project) => (
         <div>
           <div>

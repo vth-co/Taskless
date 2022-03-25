@@ -37,7 +37,7 @@ function CreateProjectForm({ setShowModal }) {
   };
 
   return (
-    <div className="project-create-container">
+    <div className="form-container">
       <form onSubmit={handleSubmit}>
         <h2 className="form-title">Add Project</h2>
         <div>
@@ -60,10 +60,10 @@ function CreateProjectForm({ setShowModal }) {
           />
         </div>
         <div className="post-delete-buttons-container">
-        <button className="post-button" type="submit">
+        <button className="project-button" type="submit">
           Add
         </button>
-        <button className="cancel-button" onClick={() => setShowModal(false)}>
+        <button className="project-button" onClick={() => setShowModal(false)}>
           Cancel
         </button>
         </div>

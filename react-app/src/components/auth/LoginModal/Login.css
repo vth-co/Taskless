@@ -1,10 +1,12 @@
 .login-button {
-    border-radius: 8px;
+    border-radius: 3px;
     border: transparent;
     background-color: #E44232;
     color: white;
-    padding: 5px 30px;
+    padding: 5px 78px;
     font-weight: bold;
+    margin-top: 7px;
+    margin-left: 10px;
 }
 
 .login-form-container {
@@ -19,11 +21,12 @@
 
 .button-container {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+
 }
 
 .input {
-    border-radius: 5px;
+    border-radius: 3px;
     border: 1px solid grey;
     padding-top: 9px;
     padding-bottom: 9px;

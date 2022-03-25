@@ -1,15 +1,26 @@
 .project-edit-button {
     border: transparent;
     background-color: transparent;
+
 }
 
 .project-edit-button:hover {
     background-color: lightgrey;
 }
 
-.project-delete-button {
+.delete-button {
     border: transparent;
     background-color: transparent;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-radius: 2px;
 }
 
+.delete-button:hover {
+    background-color: rgba(211, 211, 211, 0.459);
+}
 
+.edit-delete-container {
+    display: flex;
+    flex-direction: column;
+}

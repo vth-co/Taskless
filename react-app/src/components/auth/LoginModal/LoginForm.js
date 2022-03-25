@@ -45,45 +45,63 @@ const LoginForm = () => {
 
   return (
     <div>
-      <form onSubmit={onLogin}>
-        <div>
-          {errors.map((error, ind) => (
-            <div key={ind}>{error}</div>
-          ))}
-        </div>
-        <div className="field">
-          <div className="label-container">
-          <label htmlFor="email">Email</label>
+      <div className="form-container">
+        <form onSubmit={onLogin}>
+          <div>
+            {errors.map((error, ind) => (
+              <div key={ind}>{error}</div>
+            ))}
           </div>
-          <input
-            className="input"
-            name="email"
-            type="text"
-            placeholder="Email"
-            value={email}
-            onChange={updateEmail}
-          />
-        </div>
-        <div className="field">
-          <label htmlFor="password">Password</label>
-          <input
-            className="input"
-            name="password"
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={updatePassword}
-          />
-        </div>
-        <div className="button-container">
-          <button className="login-button" type="submit">
-            Login
-          </button>
-          <button className="login-button" type="button" onClick={handleClick}>
-            Demo
-          </button>
-        </div>
-      </form>
+          <div className="field-label-button-container">
+            <div className="field">
+              <div className="label-container">
+                <label htmlFor="email">Email</label>
+              </div>
+              <div>
+                <input
+                  className="input"
+                  name="email"
+                  type="text"
+                  placeholder="Email"
+                  value={email}
+                  onChange={updateEmail}
+                />
+              </div>
+            </div>
+            <div className="field">
+              <div className="label-container">
+                <label htmlFor="password">Password</label>
+              </div>
+              <div>
+                <input
+                  className="input"
+                  name="password"
+                  type="password"
+                  placeholder="Password"
+                  value={password}
+                  onChange={updatePassword}
+                />
+              </div>
+            </div>
+            <div className="button-container">
+              <div>
+                <button className="login-button" type="submit">
+                  Login
+                </button>
+              </div>
+              <div>
+                <button
+                  className="login-button"
+                  type="button"
+                  onClick={handleClick}
+                >
+                  Demo
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
   );
 };

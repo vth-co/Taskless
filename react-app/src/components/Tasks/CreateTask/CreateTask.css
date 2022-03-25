@@ -12,16 +12,34 @@
 
 .post-button {
     border: transparent;
-    background-color: #E44232;
+    background-color: rgb(177, 177, 177);
     color: white;
-    padding: 5px 30px;
-    border-radius: 8px;
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 5px;
+}
 
+.post-button:hover {
+    background-color: rgb(61, 61, 61);
+    cursor: pointer;
+}
+
+.cancel-task-button {
+    background-color: white;
+    border: 1px solid rgba(128, 128, 128, 0.507);
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.cancel-task-button:hover {
+    background-color: rgba(235, 235, 235);
+    cursor: pointer;
 }
 
 .post-cancel-button-container {
     display: flex;
     justify-content: space-evenly;
+    margin-top: 10px;
 }
 
 .form-title {
@@ -31,8 +49,4 @@
 .project-create-container {
     display: flex;
     flex-direction: column;
-}
-
-.label-container {
-    text-align: center;
 }

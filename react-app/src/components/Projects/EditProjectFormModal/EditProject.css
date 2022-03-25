@@ -1,11 +1,51 @@
-.edit-project-button {
-    border: transparent;
-    background-color: #E44232;
-    color: white;
-    padding: 5px 30px;
-    border-radius: 8px;
+.edit-button {
+  border: transparent;
+  background-color: white;
+  border-bottom: 1px solid grey;
+  padding: 5px 30px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  border-radius: 2px;
 }
 
-.title-container {
-    text-align: center;
+
+.edit-button:hover {
+  cursor: pointer;
+  background-color: rgba(211, 211, 211, 0.493);
+}
+
+.save-cancel-container {
+  display: flex;
+  flex-direction: column;
+}
+.save-button {
+  background-color: rgb(61, 61, 61);
+  color: white;
+  border-radius: 3px;
+  border: transparent;
+  padding: 5px 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 7px;
+}
+
+.save-button:hover {
+  cursor: pointer;
+}
+
+.cancel-button {
+  background-color: rgb(243, 243, 243);
+  color: rgb(32, 32, 32);
+  border-radius: 3px;
+  border: 1px solid grey;
+  padding: 5px 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 7px;
+}
+
+.cancel-button:hover {
+  cursor: pointer;
+  border: 1px solid grey;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }

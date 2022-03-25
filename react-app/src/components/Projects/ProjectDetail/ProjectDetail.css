@@ -6,9 +6,9 @@
 
 .title-edit {
     display: flex;
-    /* align-items: center; */
     text-align: center;
     justify-content: space-around;
+    
 }
 
 /* .task-container {

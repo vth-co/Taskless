@@ -31,49 +31,58 @@ function EditTaskForm({ project, task, setShowModal }) {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
-        <h2 className="title-container">Edit Task</h2>
-        <div>
-          {errors &&
-            errors.map((error, ind) => (
-              <div className="error-message" key={ind}>
-                {error}
+      <div className="form-container">
+        <form onSubmit={handleSubmit}>
+          <h2 className="form-title">Edit Task</h2>
+          <div>
+            {errors &&
+              errors.map((error, ind) => (
+                <div className="error-message" key={ind}>
+                  {error}
+                </div>
+              ))}
+          </div>
+          <div>
+            <div className="field">
+              <div className="label-container">
+                <label>Title</label>
               </div>
-            ))}
-        </div>
-        <div>
-        <div className="field">
-            <label>Title</label>
-          <input
-            className="input"
-            value={title}
-            type="text"
-            name="Name"
-            onChange={(e) => setTitle(e.target.value)}
-            maxLength="255"
-          />
-        </div>
-        <div className="field">
-            <label>Content</label>
-          <input
-            className="input"
-            value={content}
-            type="text"
-            name="Description"
-            onChange={(e) => setContent(e.target.value)}
-            maxLength="255"
-          />
-        </div>
-        </div>
-        <div className="button-container">
-          <button className="post-button" type="submit">
-            Submit
-          </button>
-          <button className="post-button" onClick={() => setShowModal(false)}>
-            Cancel
-          </button>
-        </div>
-      </form>
+              <input
+                className="input"
+                value={title}
+                type="text"
+                name="Name"
+                onChange={(e) => setTitle(e.target.value)}
+                maxLength="255"
+              />
+            </div>
+            <div className="field">
+              <div className="label-container">
+                <label>Content</label>
+              </div>
+              <input
+                className="input"
+                value={content}
+                type="text"
+                name="Description"
+                onChange={(e) => setContent(e.target.value)}
+                maxLength="255"
+              />
+            </div>
+          </div>
+          <div className="save-cancel-container">
+            <button className="save-button" type="submit">
+              Save
+            </button>
+            <button
+              className="cancel-button"
+              onClick={() => setShowModal(false)}
+            >
+              Cancel
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 }

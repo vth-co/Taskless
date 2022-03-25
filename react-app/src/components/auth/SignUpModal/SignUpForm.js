@@ -57,65 +57,82 @@ const SignUpForm = () => {
   }
 
   return (
-    <form onSubmit={onSignUp}>
-      <div>
-        {errors.map((error, ind) => (
-          <div key={ind}>{error}</div>
-        ))}
+    <div>
+      <div className="form-container">
+        <form onSubmit={onSignUp}>
+          <div>
+            {errors.map((error, ind) => (
+              <div key={ind}>{error}</div>
+            ))}
+          </div>
+          <div>
+            <h2 className="signup-title">Sign up</h2>
+            <div className="field">
+              <div className="label-container">
+                <label>User Name</label>
+              </div>
+              <input
+                className="input"
+                type="text"
+                name="username"
+                placeholder="Username"
+                onChange={updateUsername}
+                value={username}
+                maxLength="40"
+              ></input>
+            </div>
+            <div className="field">
+              <div className="label-container">
+                <label>Email</label>
+              </div>
+              <input
+                className="input"
+                type="text"
+                name="email"
+                placeholder="Email"
+                onChange={updateEmail}
+                value={email}
+                maxLength="255"
+              ></input>
+            </div>
+            <div className="field">
+              <div className="label-container">
+                <label>Password</label>
+              </div>
+              <input
+                className="input"
+                type="password"
+                name="password"
+                placeholder="Password"
+                onChange={updatePassword}
+                value={password}
+                maxLength="255"
+              ></input>
+            </div>
+            <div className="field">
+              <div className="label-container">
+                <label>Confirm Password</label>
+              </div>
+              <div>
+
+              <input
+                className="input"
+                type="password"
+                name="repeat_password"
+                placeholder="Confirm Password"
+                onChange={updateRepeatPassword}
+                value={repeatPassword}
+                maxLength="255"
+              ></input>
+              </div>
+            </div>
+            <button className="signup-button" type="submit">
+              Sign Up
+            </button>
+          </div>
+        </form>
       </div>
-      <h2 className="signup-title">Sign up</h2>
-      <div className="field">
-        <label>User Name</label>
-        <input
-          className="input"
-          type="text"
-          name="username"
-          placeholder="Username"
-          onChange={updateUsername}
-          value={username}
-          maxLength="40"
-        ></input>
-      </div>
-      <div className="field">
-        <label>Email</label>
-        <input
-          className="input"
-          type="text"
-          name="email"
-          placeholder="Email"
-          onChange={updateEmail}
-          value={email}
-          maxLength="255"
-        ></input>
-      </div>
-      <div className="field">
-        <label>Password</label>
-        <input
-          className="input"
-          type="password"
-          name="password"
-          placeholder="Password"
-          onChange={updatePassword}
-          value={password}
-          maxLength="255"
-        ></input>
-      </div>
-      <div className="field">
-        <label>Confirm Password</label>
-        <input
-          className="input"
-          type="password"
-          name="repeat_password"
-          placeholder="Confirm Password"
-          onChange={updateRepeatPassword}
-          value={repeatPassword}
-          maxLength="255"
-        ></input>
-      </div>
-      <button className="signup-button" type="submit">
-        Sign Up
-      </button>
-    </form>
+    </div>
   );
 };
 
