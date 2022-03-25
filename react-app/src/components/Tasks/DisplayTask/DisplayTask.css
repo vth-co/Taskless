@@ -28,4 +28,5 @@
 .content {
     padding-left: 30px;
     color: gray;
+    word-break: break-all;
 }

@@ -18,7 +18,7 @@ function ProjectEditDelete({ project }) {
         }
     }
     return (
-        <div className="form-container">
+        <div className="edit-buttons-container">
             <div className="edit-delete-container">
             <EditProjectFormModal project={project} />
             <button className="delete-button" onClick={handleClick}>

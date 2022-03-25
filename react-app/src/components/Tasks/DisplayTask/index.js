@@ -11,9 +11,6 @@ function DisplayTasks({ project }) {
     (task) => task.project_id === project?.id
   );
 
-
-
-
   return (
     <div>
       {filterTasksArr.map((task) => (

@@ -40,11 +40,14 @@ function App() {
         <Route path="/project" exact={true}>
           <HomePage />
         </Route>
-        <Route path="/project/:id" exact={true}>
+        <Route path="/project/:id">
           <ProjectDetail />
         </Route>
         <Route path="/" exact={true}>
           <LandingPage />
+        </Route>
+        <Route path="/404-Not-Found">
+          <ErrorPage />
         </Route>
         <Route>
           <ErrorPage />

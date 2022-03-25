@@ -58,15 +58,15 @@ const SignUpForm = () => {
 
   return (
     <div>
-      <div className="form-container">
+      <div className="signup-form-container">
         <form onSubmit={onSignUp}>
+        <h2 className="signup-title">Sign up</h2>
           <div>
             {errors.map((error, ind) => (
               <div key={ind}>{error}</div>
             ))}
           </div>
           <div>
-            <h2 className="signup-title">Sign up</h2>
             <div className="field">
               <div className="label-container">
                 <label>User Name</label>
@@ -92,7 +92,7 @@ const SignUpForm = () => {
                 placeholder="Email"
                 onChange={updateEmail}
                 value={email}
-                maxLength="255"
+                maxLength="50"
               ></input>
             </div>
             <div className="field">
@@ -106,15 +106,13 @@ const SignUpForm = () => {
                 placeholder="Password"
                 onChange={updatePassword}
                 value={password}
-                maxLength="255"
+                maxLength="50"
               ></input>
             </div>
             <div className="field">
               <div className="label-container">
                 <label>Confirm Password</label>
               </div>
-              <div>
-
               <input
                 className="input"
                 type="password"
@@ -122,13 +120,12 @@ const SignUpForm = () => {
                 placeholder="Confirm Password"
                 onChange={updateRepeatPassword}
                 value={repeatPassword}
-                maxLength="255"
+                maxLength="50"
               ></input>
-              </div>
-            </div>
             <button className="signup-button" type="submit">
               Sign Up
             </button>
+            </div>
           </div>
         </form>
       </div>

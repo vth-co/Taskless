@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { editTask } from "../../../store/tasks";
 import { useEditModal } from "../TaskEditDeleteModal";
@@ -10,6 +10,23 @@ function EditTaskForm({ project, task, setShowModal }) {
   const [content, setContent] = useState(task.content);
   const [errors, setErrors] = useState([]);
   const { setShowEditModal } = useEditModal();
+
+  useEffect(() => {
+    if (title.length >= 50) {
+      setErrors(["Title: Max length of 50 characters reached."]);
+    } else if (title.length <= 3) {
+      setErrors(["Please input a title of 3 or more characters."]);
+    } else if (content.length <= 3) {
+      setErrors(["Please input a content of 3 or more characters."]);
+    } else if (content.length >= 255) {
+      setErrors(["Content: Max length of 255 characters reached."]);
+    } else {
+      setErrors([]);
+    }
+  }, [title, content]);
+
+
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -53,7 +70,7 @@ function EditTaskForm({ project, task, setShowModal }) {
                 type="text"
                 name="Name"
                 onChange={(e) => setTitle(e.target.value)}
-                maxLength="255"
+                maxLength="50"
               />
             </div>
             <div className="field">

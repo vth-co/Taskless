@@ -11,7 +11,7 @@ function TaskEditDelete({ project, task }) {
     dispatch(deleteTask(task.id));
   };
   return (
-    <div className="form-container">
+    <div className="edit-buttons-container">
       <div className="edit-delete-container">
         <EditTaskFormModal project={project} task={task} />
         <button className="delete-button" onClick={handleClick}>

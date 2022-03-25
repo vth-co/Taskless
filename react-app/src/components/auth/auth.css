@@ -18,6 +18,14 @@
 
 .form-container {
   margin: 40px 25px;
+  width: 200px;
+  height: 250px;
+}
+
+.signup-form-container {
+  margin: 40px 25px;
+  width: 300px;
+  height: 425px;
 }
 
 .field-label-button-container {
