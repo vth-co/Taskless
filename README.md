@@ -1,134 +1,88 @@
-# Flask React Project
+# Taskless
 
-This is the starter for the Flask React project.
+Taskless is a clone of [Todoist](https://todoist.com/) allowing users to create tasklists and add tasks.
 
-## Getting started
+## Live Site
 
-1. Clone this repository (only this branch)
+A live deployment of [Taskless](https://taskless-app.herokuapp.com/) is hosted on heroku.
 
-   ```bash
-   git clone https://github.com/appacademy-starters/python-project-starter.git
-   ```
+## Screenshots 
 
-2. Install dependencies
+### Welcome
 
-      ```bash
-      pipenv install --dev -r dev-requirements.txt && pipenv install -r requirements.txt
-      ```
+![](https://i.gyazo.com/e91a927ba75f2a467ab8a465fde27c00.jpg)
 
-3. Create a **.env** file based on the example with proper settings for your
-   development environment
-4. Setup your PostgreSQL user, password and database and make sure it matches your **.env** file
+### Tasklists
 
-5. Get into your pipenv, migrate your database, seed your database, and run your flask app
+![](https://i.gyazo.com/1313ba55e614ee039c7fa8612a6b9807.png)
 
-   ```bash
-   pipenv shell
-   ```
+### Tasks
 
-   ```bash
-   flask db upgrade
-   ```
+![](https://i.gyazo.com/bddd9de8c87cc813608c48d022c107e5.png)
 
-   ```bash
-   flask seed all
-   ```
+## Features
 
-   ```bash
-   flask run
-   ```
+* Full CRUD Features for Tasklists
+* Full CRUF Features for Tasks
 
-6. To run the React App in development, checkout the [README](./react-app/README.md) inside the `react-app` directory.
+### Future Features
+* Users can add due dates
+* Users can add tags on any tasklist or task
+* Users can search for any tasklist or task either by name, description, and/or tags
+* Users can set reminders on specific tasks
 
-***
-*IMPORTANT!*
-   If you add any python dependencies to your pipfiles, you'll need to regenerate your requirements.txt before deployment.
-   You can do this by running:
+## Technologies Used
+* React.js
+* Python
+* Flask
+* Heroku
+* Docker
+* PostgreSQL
 
-   ```bash
-   pipenv lock -r > requirements.txt
-   ```
-
-*ALSO IMPORTANT!*
-   psycopg2-binary MUST remain a dev dependency because you can't install it on apline-linux.
-   There is a layer in the Dockerfile that will install psycopg2 (not binary) for us.
-***
-
-## Deploy to Heroku
-
-1. Before you deploy, don't forget to run the following command in order to
-ensure that your production environment has all of your up-to-date
-dependencies. You only have to run this command when you have installed new
-Python packages since your last deployment, but if you aren't sure, it won't
-hurt to run it again.
-
-   ```bash
-   pipenv lock -r > requirements.txt
-   ```
-
-2. Create a new project on Heroku
-3. Under Resources click "Find more add-ons" and add the add on called "Heroku Postgres"
-4. Install the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-command-line)
-5. Run
-
-   ```bash
-   heroku login
-   ```
-
-6. Login to the heroku container registry
-
-   ```bash
-   heroku container:login
-   ```
-
-7. Update the `REACT_APP_BASE_URL` variable in the Dockerfile.
-   This should be the full URL of your Heroku app: i.e. "https://flask-react-aa.herokuapp.com"
-8. Push your docker container to heroku from the root directory of your project.
-   (If you are using an M1 mac, follow [these steps below](#for-m1-mac-users) instead, then continue on to step 9.)
-   This will build the Dockerfile and push the image to your heroku container registry.
-
-   ```bash
-   heroku container:push web -a {NAME_OF_HEROKU_APP}
-   ```
-
-9. Release your docker container to heroku
-
-      ```bash
-      heroku container:release web -a {NAME_OF_HEROKU_APP}
-      ```
-
-10. set up your database
-
-      ```bash
-      heroku run -a {NAME_OF_HEROKU_APP} flask db upgrade
-      heroku run -a {NAME_OF_HEROKU_APP} flask seed all
-      ```
-
-11. Under Settings find "Config Vars" and add any additional/secret .env
-variables.
-
-12. profit
-
-### For M1 Mac users
-
-(Replaces **Step 8**)
-
-1. Build image with linux platform for heroku servers. Replace
-{NAME_OF_HEROKU_APP} with your own tag:
-
-   ```bash=
-   docker buildx build --platform linux/amd64 -t {NAME_OF_HEROKU_APP} .
-   ```
-
-2. Tag your app with the url for your apps registry. Make sure to use the name
-of your Heroku app in the url and tag name:
-
-   ```bash=2
-   docker tag {NAME_OF_HEROKU_APP} registry.heroku.com/{NAME_OF_HEROKU_APP}/web
-   ```
-
-3. Use docker to push the image to the Heroku container registry:
-
-   ```bash=3
-   docker push registry.heroku.com/{NAME_OF_HEROKU_APP}/web
-   ```
+## Local Installation
+1. Clone this repo
+```
+https://github.com/vth-co/Taskless.git
+```
+2. Install dependencies for the back end
+```
+pipenv install --dev -r dev-requirements.txt && pipenv install -r requirements.txt
+```
+3. Install dependencies for the react front end
+```
+cd react-app
+npm install
+```
+4. Create PostgreSQL user
+``` 
+CREATE USER taskless_user WITH CREATEDB PASSWORD 'password123'
+```
+5. Create PostgreSQL Database
+```
+CREATE DATABASE taskless_app_db WITH OWNER taskless_user
+```
+6. Create a .env file in the root directory with the same variables as .env.example and change the value of DATABASE_URL and SECRET_KEY
+* Replace 'password' with any that you see fit
+```
+DATABASE_URL=postgresql://taskless_user:any_password_here@localhost/taskless_app_db
+```
+* Replace the value of SECRET_KEY to any secure encripted string of characters
+```
+SECRET_KEY=sdlfjkjlkfas;djkl;asdf;ajsdklf;jlksd;aldjkfsasdflj
+```
+7. Flask backend, Migrate, Upgrade, and Seed! In the root directory run
+```
+pipenv shell
+flask db upgrade
+flask seed all
+```
+8. Start back end server while in root directory
+```
+flask run
+```
+9. In a new terminal, enter react frontend directory and run
+```
+npm start
+```
+10. If a new browser tab does not open, navigate to localhost:3000 in your browser
+11. Start using Taskless, Demo user is set up in the Login form. Please Enjoy!
