@@ -33,10 +33,6 @@
   flex-direction: column;
 }
 
-.field {
-  display: flex;
-  flex-direction: column;
-}
 
 .label-container {
   margin: 5px 15px;

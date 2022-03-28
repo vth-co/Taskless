@@ -2,11 +2,11 @@ const LOAD = '/tasks/load'
 const ADD = '/tasks/add'
 const UPDATE = '/tasks/edit'
 const REMOVE = '/tasks/remove'
-const LOAD_FINISHED = '/tasks/loadFinished'
+// const LOAD_FINISHED = '/tasks/loadFinished'
 
 const loadTasks = tasks => ({ type: LOAD, tasks })
 
-const loadFinishedTasks = finished_tasks => ({ type: LOAD, finished_tasks})
+// const loadFinishedTasks = finished_tasks => ({ type: LOAD, finished_tasks})
 
 const addTask = new_task => ({ type: ADD, new_task })
 
@@ -45,15 +45,15 @@ export const createTask = (payload) => async dispatch => {
     return response;
 }
 
-export const getFinishedTasks = () => async dispatch => {
-    const response = await fetch('/api/tasks/finished');
-    if(response.ok) {
-        const tasks = await response.json();
-        dispatch(loadFinishedTasks(tasks));
-        return tasks;
-    }
-    return response;
-}
+// export const getFinishedTasks = () => async dispatch => {
+//     const response = await fetch('/api/tasks/finished');
+//     if(response.ok) {
+//         const tasks = await response.json();
+//         dispatch(loadFinishedTasks(tasks));
+//         return tasks;
+//     }
+//     return response;
+// }
 
 // export const finishedTask = (payload) => async dispatch => {
 //     const response = await fetch(`/api/tasks/finished/${payload.id}`, {

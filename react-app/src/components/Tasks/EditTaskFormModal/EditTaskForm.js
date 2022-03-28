@@ -14,9 +14,9 @@ function EditTaskForm({ project, task, setShowModal }) {
   useEffect(() => {
     if (title.length >= 50) {
       setErrors(["Title: Max length of 50 characters reached."]);
-    } else if (title.length <= 3) {
+    } else if (title.length < 3) {
       setErrors(["Please input a title of 3 or more characters."]);
-    } else if (content.length <= 3) {
+    } else if (content.length < 3) {
       setErrors(["Please input a content of 3 or more characters."]);
     } else if (content.length >= 255) {
       setErrors(["Content: Max length of 255 characters reached."]);
@@ -24,8 +24,6 @@ function EditTaskForm({ project, task, setShowModal }) {
       setErrors([]);
     }
   }, [title, content]);
-
-
 
 
   const handleSubmit = async (e) => {
@@ -48,13 +46,13 @@ function EditTaskForm({ project, task, setShowModal }) {
 
   return (
     <div>
-      <div className="form-container">
+      <div className="edit-task-form-container">
         <form onSubmit={handleSubmit}>
           <h2 className="form-title">Edit Task</h2>
           <div>
             {errors &&
               errors.map((error, ind) => (
-                <div className="error-message" key={ind}>
+                <div className="errors" key={ind}>
                   {error}
                 </div>
               ))}
@@ -87,7 +85,7 @@ function EditTaskForm({ project, task, setShowModal }) {
               />
             </div>
           </div>
-          <div className="save-cancel-container">
+          <div className="post-cancel-button-container">
             <button className="save-button" type="submit">
               Save
             </button>

@@ -9,7 +9,7 @@ function EditTaskFormModal({ project, task }) {
 
   return (
     <>
-      <button className='edit-button' onClick={() => setShowModal(true)}><i class="fa-solid fa-pen"></i> Edit task</button>
+      <button className='edit-button' onClick={() => setShowModal(true)}><i className="fa-solid fa-pen"></i> Edit task</button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
           <EditTaskForm project={project} task={task} setShowModal={setShowModal} />

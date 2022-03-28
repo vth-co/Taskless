@@ -16,7 +16,7 @@ function ProjectEditDeleteModal({ project }) {
         setShowEditModal
       }}
     >
-      <button className='project-edit-button' onClick={() => setShowEditModal(true)}><i class="fa-solid fa-ellipsis"></i></button>
+      <button className='project-edit-button' onClick={() => setShowEditModal(true)}><i className="fa-solid fa-ellipsis"></i></button>
       {showEditModal && (
         <Modal onClose={() => setShowEditModal(false)}>
           <ProjectEditDelete project={project} />

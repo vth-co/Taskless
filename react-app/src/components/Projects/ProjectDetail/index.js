@@ -29,19 +29,19 @@ const ProjectDetail = () => {
   
 
   return (
-    <div className="project-task-container">
+    <div  className="project-task-container">
       {filteredArr.map((proj) => (
         
-        <div>
+        <div key={proj.id}>
           <div className="title-edit">
-            <h2>{proj?.title}</h2>
-            <ProjectEditDeleteModal project={proj} />
+            <h2>Tasklist: {proj?.title}</h2>
+            <ProjectEditDeleteModal key={proj.id} project={proj} />
           </div>
           <div className="task-container">
-            <DisplayTasks project={proj} />
+            <DisplayTasks key={proj.id} project={proj} />
           </div>
           <div>
-            <CreateTaskModal project={proj} />
+            <CreateTaskModal key={proj.id} project={proj} />
           </div>
         </div>
       ))}

@@ -15,10 +15,10 @@ function ProjectDetailModal({ project }) {
         setShowModal,
       }}
     >
-      <div>
+      <div key={project.id}>
         {showModal && (
           <Modal onClose={() => setShowModal(false)}>
-            <ProjectDetail project={project} />
+            <ProjectDetail  project={project} />
           </Modal>
         )}
       </div>

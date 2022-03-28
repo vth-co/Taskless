@@ -43,3 +43,8 @@
 .project-button:hover {
     cursor: pointer;
 }
+
+.errors {
+    text-align: center;
+    color: #E44232;
+}

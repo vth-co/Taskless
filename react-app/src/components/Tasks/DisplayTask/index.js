@@ -1,6 +1,6 @@
-import { useState } from "react";
+// import { useState } from "react";
 import { useSelector } from "react-redux";
-import Checkbox from "../../Checkbox";
+// import Checkbox from "../../Checkbox";
 import TaskEditDeleteModal from "../TaskEditDeleteModal";
 import "./DisplayTask.css";
 
@@ -28,10 +28,6 @@ function DisplayTasks({ project }) {
           </div>
           <div className="content">
             <p>{task.content}</p>
-          </div>
-
-          <div>
-            
           </div>
         </div>
       ))}

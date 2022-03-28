@@ -7,7 +7,7 @@ function DeleteWarningModal({task}) {
 
   return (
     <>
-      <button className='' onClick={() => setShowModal(true)}><i class="fa-regular fa-square"></i></button>
+      <button className='' onClick={() => setShowModal(true)}><i className="fa-regular fa-square"></i></button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
           <DeleteWarning task={task} setShowModal={setShowModal} />

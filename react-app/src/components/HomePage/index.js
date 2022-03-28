@@ -19,7 +19,7 @@ function HomePage() {
     <div className="project-main-content">
       <h1 className="tasklist-title">Tasklists:</h1>
       {filterProjectsArr.map((project) => (
-        <div>
+        <div key={project.id}>
           <div>
             <DisplayProjectsSideBar key={project.id} project={project} />
           </div>

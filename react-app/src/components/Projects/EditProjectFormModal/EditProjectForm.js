@@ -14,7 +14,7 @@ function EditProjectForm({ project, setShowModal }) {
   useEffect(() => {
     if (title.length >= 50) {
       setErrors(["Max length of 50 characters reached."]);
-    } else if (title.length <= 3) {
+    } else if (title.length < 3) {
       setErrors(["Please input a title of 3 or more characters."]);
     } else {
       setErrors([]);
@@ -47,7 +47,7 @@ function EditProjectForm({ project, setShowModal }) {
           <div>
             {errors &&
               errors.map((error, ind) => (
-                <div className="error-message" key={ind}>
+                <div className="errors" key={ind}>
                   {error}
                 </div>
               ))}
@@ -60,7 +60,7 @@ function EditProjectForm({ project, setShowModal }) {
             onChange={(e) => setTitle(e.target.value)}
             maxLength="50"
           />
-          {/* <div className="save-cancel-container"> */}
+          <div className="post-cancel-button-container">
             <button className="save-button" type="submit">
               Save
             </button>
@@ -70,7 +70,7 @@ function EditProjectForm({ project, setShowModal }) {
             >
               Cancel
             </button>
-          {/* </div> */}
+          </div>
         </form>
       </div>
     </div>

@@ -1,7 +1,13 @@
 .edit-task-button {
-    border-radius: 8px;
-    border: transparent;
-    background-color: #E44232;
-    color: white;
-    padding: 5px 30px;
+  border-radius: 8px;
+  border: transparent;
+  background-color: #e44232;
+  color: white;
+  padding: 5px 30px;
+}
+
+.edit-task-form-container {
+  margin: 40px 25px;
+  width: 275px;
+  height: 275px;
 }

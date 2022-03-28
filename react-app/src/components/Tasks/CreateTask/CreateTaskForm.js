@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { useHistory } from "react-router-dom";
 import { createTask } from "../../../store/tasks";
 import "./CreateTask.css";
 
@@ -13,9 +12,9 @@ function CreateTaskForm({ project, setShowModal }) {
   useEffect(() => {
     if (title.length >= 50) {
       setErrors(["Title: Max length of 50 characters reached."]);
-    } else if (title.length <= 3) {
+    } else if (title.length < 3) {
       setErrors(["Please input a title of 3 or more characters."]);
-    } else if (content.length <= 3) {
+    } else if (content.length < 3) {
       setErrors(["Please input a content of 3 or more characters."]);
     } else if (content.length >= 255) {
       setErrors(["Content: Max length of 255 characters reached."]);
@@ -50,7 +49,7 @@ function CreateTaskForm({ project, setShowModal }) {
           <div>
             {errors &&
               errors.map((error, ind) => (
-                <div className="error-message" key={ind}>
+                <div className="errors" key={ind}>
                   {error}
                 </div>
               ))}
@@ -66,7 +65,7 @@ function CreateTaskForm({ project, setShowModal }) {
               type="text"
               name="Name"
               onChange={(e) => setTitle(e.target.value)}
-              maxLength="255"
+              maxLength="50"
             />
             <div className="label-container">
               <label>Description</label>

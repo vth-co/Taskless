@@ -21,3 +21,8 @@ img {
 .sentence {
     font-size: xx-large;
 }
+
+.landing-page-login-form {
+    display: flex;
+    justify-content: center;
+}
