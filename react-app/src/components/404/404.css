@@ -6,3 +6,9 @@
     border-radius: 12px;
     text-align: center;
 }
+
+.errorpage-content {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}

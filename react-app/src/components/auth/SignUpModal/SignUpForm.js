@@ -18,9 +18,10 @@ const SignUpForm = () => {
     if (username.length >= 40) {
       errors.push("Username: Max length of 40 characters reached.");
     }
-    if (email.length >= 255) {
+    if (email.length >= 50) {
       errors.push(["Email: Max length of 50 characters reached."]);
     }
+    
     setErrors(errors);
   }, [username, email]);
 
@@ -61,9 +62,9 @@ const SignUpForm = () => {
       <div className="signup-form-container">
         <form onSubmit={onSignUp}>
         <h2 className="signup-title">Sign up</h2>
-          <div className="errors-container">
+          <div>
             {errors.map((error, ind) => (
-              <div key={ind}>{error}</div>
+              <div className="errors" key={ind}>{error}</div>
             ))}
           </div>
           <div>
