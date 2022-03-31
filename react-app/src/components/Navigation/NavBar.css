@@ -28,7 +28,7 @@ img {
 
 .icon-name-loggedin-container {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   background-color: rgb(61, 61, 61);
   align-items: center;
   height: 45px;
@@ -41,6 +41,7 @@ img {
 .icon-buttons-container {
   display: flex;
   align-items: center;
+  margin-left: 35px;
 }
 
 .home-button {
@@ -61,6 +62,7 @@ img {
 .user-buttons-container {
   display: flex;
   align-items: center;
+  margin-right: 30px;
 }
 
 .logout-button {

@@ -8,7 +8,7 @@
 }
 
 .login-signup-button:hover {
-  background-color: rgba(235, 231, 231, 0.465);
+  background-color: rgba(235, 231, 231, 0.26);
   border-bottom: 2px solid red;
 }
 
