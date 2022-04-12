@@ -1,9 +1,7 @@
 import React from "react";
-import { NavLink, useLocation } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import LogoutButton from "./LogoutButton";
-import LoginModal from "../auth/LoginModal";
 import CreateProjectModal from "../Projects/CreateProject";
-import SignupModal from "../auth/SignUpModal";
 import { useSelector } from "react-redux";
 import "./NavBar.css";
 
@@ -14,19 +12,21 @@ const NavBar = () => {
   if (location.pathname === "/") {
     sessionLinks = (
       <div className="icon-name-user-container">
-        <div className="icon-container">
-          <div className="icon">
-            <NavLink to={"/"}>
+        <div>
+            <Link className="icon-container" to={"/"}>
               <img src="../../../static/icon.png" alt=""></img>
-            </NavLink>
-          </div>
-          <div>
-            <h2 className="app-name">taskless</h2>
-          </div>
+              <div className="app-name">
+              <h2>taskless</h2>
+              </div>
+            </Link>
         </div>
         <div>
-          <LoginModal />
-          <SignupModal />
+          <NavLink to={"/users/login"}>
+            <button className="login-signup-button">Log in</button>
+          </NavLink>
+          <NavLink to={"/users/register"}>
+            <button className="login-signup-button">Sign up</button>
+          </NavLink>
         </div>
       </div>
     );
@@ -34,7 +34,7 @@ const NavBar = () => {
     sessionLinks = (
       <div className="icon-name-loggedin-container">
         <div className="icon-buttons-container">
-          <div className="icon">
+          <div className="icon-container">
             <button className="toggle">
               <img src="../../../static/loggedin.png" alt=""></img>
             </button>

@@ -19,10 +19,40 @@ img {
 }
 
 .sentence {
-    font-size: xx-large;
+    font-size: 4.4em;
+    font-family: sans-serif;
+    /* word-wrap: break-word; */
+    letter-spacing: -3px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.h1-loginform-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    max-width: 550px;
+    margin-bottom: -90px;
+    z-index: 1;
 }
 
 .landing-page-login-form {
     display: flex;
     justify-content: center;
+}
+
+.get-started-button {
+    text-align: center;
+    color: white;
+    border-radius: 10px;
+    border: transparent;
+    background-color: #E44232;
+    font-weight: bolder;
+    padding: 10px 28px;
+    font-size: 18px;
+}
+
+.get-started-button:hover {
+    cursor: pointer;
+    background-color: #f05446;
 }

@@ -9,7 +9,8 @@ import LandingPage from "./components/LandingPage";
 import { getTasks } from "./store/tasks";
 import ProjectDetail from "./components/Projects/ProjectDetail";
 import ErrorPage from "./components/404";
-import Footer from "./components/Footer";
+import SignupPage from "./components/auth/SignupPage";
+import LoginPage from "./components/auth/LoginPage";
 
 
 function App() {
@@ -49,11 +50,16 @@ function App() {
         <Route path="/404-Not-Found">
           <ErrorPage />
         </Route>
+        <Route path="/users/register">
+          <SignupPage />
+        </Route>
+        <Route path="/users/login">
+          <LoginPage />
+        </Route>
         <Route>
           <ErrorPage />
         </Route>
       </Switch>
-      <Footer />
     </BrowserRouter>
   );
 }
