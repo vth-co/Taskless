@@ -41,36 +41,40 @@ function CreateProjectForm({ setShowModal }) {
   return (
     <div className="form-container">
       <form onSubmit={handleSubmit}>
-        <h2 className="form-title">Add Project</h2>
-        <div >
+        <h2 className="form-title">Add project</h2>
+        <div>
           {errors.map((error, ind) => (
-            <div className="errors" key={ind}>{error}</div>
+            <div className="errors" key={ind}>
+              {error}
+            </div>
           ))}
         </div>
-        <div className="project-form">
-          <div className="label-container">
-            <label>Title</label>
+        <div className="field-label-button-container">
+          <div className="field">
+            <div className="login-label-container">
+              <label>Title</label>
+            </div>
+            <input
+              className="input"
+              // placeholder="Title"
+              value={title}
+              type="text"
+              name="Name"
+              onChange={(e) => setTitle(e.target.value)}
+              maxLength="50"
+            />
           </div>
-          <input
-            className="input"
-            placeholder="Title"
-            value={title}
-            type="text"
-            name="Name"
-            onChange={(e) => setTitle(e.target.value)}
-            maxLength="50"
-          />
-        </div>
-        <div className="post-cancel-button-container">
-          <button className="post-button" type="submit">
-            Add
-          </button>
-          <button
-            className="cancel-task-button"
-            onClick={() => setShowModal(false)}
-          >
-            Cancel
-          </button>
+          <div className="post-cancel-button-container">
+            <button className="post-button" type="submit">
+              Add
+            </button>
+            <button
+              className="cancel-project-button"
+              onClick={() => setShowModal(false)}
+            >
+              Cancel
+            </button>
+          </div>
         </div>
       </form>
     </div>

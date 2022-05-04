@@ -1,0 +1,114 @@
+.form-background {
+    display: flex;
+    justify-content: center;
+}
+
+.login-button {
+    border-radius: 3px;
+    border: transparent;
+    background-color: #E44232;
+    color: white;
+    padding: 5px 78px;
+    font-weight: bold;
+    margin-top: 7px;
+}
+
+.login-button:hover {
+    cursor: pointer;
+    background-color: #8d2920;
+}
+
+.login-form-container {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    padding: 30px 25px;
+    border-radius: 10px;
+    border: 1px solid grey;
+    max-width: 400px;
+    min-width: 350px;
+    max-height: 650px;
+    background-color: rgb(250, 250, 250);
+    margin-top: 55px;
+}
+
+.field {
+    display: flex;
+    /* justify-content: space-evenly; */
+  flex-direction: column;
+
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.input {
+    border-radius: 3px;
+    border: 1px solid grey;
+    padding-top: 9px;
+    padding-bottom: 9px;
+    padding-right: 13px;
+    padding-left: 13px;
+
+}
+
+.errors-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    color: red;
+}
+
+label {
+    font-weight: bolder;
+    font-family: sans-serif;
+    font-size: 13px;
+}
+
+.login-label-container {
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+.form-icon {
+    height: 50px;
+    width: 50px;
+}
+
+h2 {
+    font-family: sans-serif;
+}
+
+.links {
+    text-decoration: none;
+    color: black;
+}
+
+.sign-up-button {
+    text-decoration: none;
+    color: red;
+    font-size: small;
+    font-family: sans-serif;
+}
+
+.sign-up-button:hover {
+    text-decoration: underline;
+}
+
+p {
+    font-family: sans-serif;
+}
+
+.no-account {
+    font-size: small;
+}
+
+.form-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}

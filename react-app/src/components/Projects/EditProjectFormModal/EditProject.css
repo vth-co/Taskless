@@ -1,11 +1,10 @@
 .edit-button {
   border: transparent;
   background-color: white;
-  border-bottom: 1px solid grey;
-  padding: 5px 30px;
-  padding-bottom: 10px;
-  padding-top: 10px;
+  margin-top: 12.5px;
+  padding: 10px;
   border-radius: 2px;
+  border-bottom: 1px grey dashed;
 }
 
 

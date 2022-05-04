@@ -43,7 +43,7 @@ function EditProjectForm({ project, setShowModal }) {
     <div>
       <div className="form-container">
         <form onSubmit={handleSubmit}>
-          <h2 className="form-title">Edit Title</h2>
+          <h2 className="form-title">Edit project</h2>
           <div>
             {errors &&
               errors.map((error, ind) => (
@@ -52,6 +52,9 @@ function EditProjectForm({ project, setShowModal }) {
                 </div>
               ))}
           </div>
+          <div className="field-label-button-container">
+          <div className="field">
+
           <input
             className="input"
             value={title}
@@ -60,6 +63,7 @@ function EditProjectForm({ project, setShowModal }) {
             onChange={(e) => setTitle(e.target.value)}
             maxLength="50"
           />
+          </div>
           <div className="post-cancel-button-container">
             <button className="save-button" type="submit">
               Save
@@ -70,6 +74,7 @@ function EditProjectForm({ project, setShowModal }) {
             >
               Cancel
             </button>
+          </div>
           </div>
         </form>
       </div>

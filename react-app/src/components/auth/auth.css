@@ -1,26 +1,8 @@
-.login-signup-button {
-  border: transparent;
-  background-color: transparent;
-  border-radius: 3px;
-  padding-top: 26px;
-  padding-bottom: 26px;
-  font-size: large;
-}
-
-.login-signup-button:hover {
-  background-color: rgba(235, 231, 231, 0.26);
-  border-bottom: 2px solid red;
-}
 
 .signup-title {
   text-align: center;
 }
 
-.form-container {
-  margin: 40px 25px;
-  width: 200px;
-  height: 250px;
-}
 
 .signup-form-container {
   margin: 40px 25px;
