@@ -15,7 +15,7 @@ function TaskEditDelete({ project, task }) {
       <div className="edit-delete-container">
         <EditTaskFormModal project={project} task={task} />
         <button className="delete-button" onClick={handleClick}>
-          <i className="fa-solid fa-trash-can"></i> Delete task
+          <i className="fa-solid fa-trash-can"></i> Delete
         </button>
       </div>
     </div>

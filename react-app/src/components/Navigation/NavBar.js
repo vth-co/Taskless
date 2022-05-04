@@ -12,7 +12,7 @@ const NavBar = () => {
   if (location.pathname === "/") {
     sessionLinks = (
       <div className="icon-name-user-container">
-        <div>
+                <div>
             <Link className="icon-container" to={"/"}>
               <img src="../../../static/icon.png" alt=""></img>
               <div className="app-name">

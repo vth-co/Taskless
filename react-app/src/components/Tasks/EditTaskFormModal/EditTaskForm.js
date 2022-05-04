@@ -46,7 +46,7 @@ function EditTaskForm({ project, task, setShowModal }) {
 
   return (
     <div>
-      <div className="edit-task-form-container">
+      <div className="form-container">
         <form onSubmit={handleSubmit}>
           <h2 className="form-title">Edit Task</h2>
           <div>
@@ -59,7 +59,7 @@ function EditTaskForm({ project, task, setShowModal }) {
           </div>
           <div>
             <div className="field">
-              <div className="label-container">
+              <div className="login-label-container">
                 <label>Title</label>
               </div>
               <input
@@ -72,7 +72,7 @@ function EditTaskForm({ project, task, setShowModal }) {
               />
             </div>
             <div className="field">
-              <div className="label-container">
+              <div className="login-label-container">
                 <label>Content</label>
               </div>
               <input

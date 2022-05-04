@@ -42,10 +42,9 @@ function CreateTaskForm({ project, setShowModal }) {
   };
 
   return (
-    <div>
       <div className="form-container">
         <form onSubmit={handleSubmit}>
-          <h2 className="form-title">Add Task</h2>
+          <h2 className="form-title">Add task</h2>
           <div>
             {errors &&
               errors.map((error, ind) => (
@@ -54,46 +53,49 @@ function CreateTaskForm({ project, setShowModal }) {
                 </div>
               ))}
           </div>
-          <div className="project-form">
-            <div className="label-container">
-              <label>Title</label>
+          <div className="field-label-button-container">
+            <div className="field">
+              <div className="login-label-container">
+                <label>Title</label>
+              </div>
+              <input
+                className="input"
+                value={title}
+                // placeholder="Title"
+                type="text"
+                name="Name"
+                onChange={(e) => setTitle(e.target.value)}
+                maxLength="50"
+              />
             </div>
-            <input
-              className="input"
-              value={title}
-              placeholder="Title"
-              type="text"
-              name="Name"
-              onChange={(e) => setTitle(e.target.value)}
-              maxLength="50"
-            />
-            <div className="label-container">
-              <label>Description</label>
+            <div className="field">
+              <div className="login-label-container">
+                <label>Description</label>
+              </div>
+              <input
+                className="input"
+                value={content}
+                // placeholder="Description"
+                type="text"
+                name="Name"
+                onChange={(e) => setContent(e.target.value)}
+                maxLength="255"
+              />
             </div>
-            <input
-              className="input"
-              value={content}
-              placeholder="Description"
-              type="text"
-              name="Name"
-              onChange={(e) => setContent(e.target.value)}
-              maxLength="255"
-            />
-          </div>
-          <div className="post-cancel-button-container">
-            <button className="post-button" type="submit">
-              Add task
-            </button>
-            <button
-              className="cancel-task-button"
-              onClick={() => setShowModal(false)}
-            >
-              Cancel
-            </button>
+            <div className="post-cancel-button-container">
+              <button className="post-button" type="submit">
+                Add task
+              </button>
+              <button
+                className="cancel-task-button"
+                onClick={() => setShowModal(false)}
+              >
+                Cancel
+              </button>
+            </div>
           </div>
         </form>
       </div>
-    </div>
   );
 }
 
