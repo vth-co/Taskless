@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { Link, NavLink, Redirect } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import { login } from "../../../store/session";
 import "./Login.css";
 
