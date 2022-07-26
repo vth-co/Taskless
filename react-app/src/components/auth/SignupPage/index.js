@@ -54,7 +54,7 @@ const SignupPage = () => {
   };
 
   if (user) {
-    return <Redirect to="/" />;
+    return <Redirect to="/project" />;
   }
 
   return (
