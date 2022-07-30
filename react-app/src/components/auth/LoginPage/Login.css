@@ -89,14 +89,18 @@ h2 {
 }
 
 .sign-up-button {
-    text-decoration: none;
-    color: red;
+    color: rgb(255, 0, 0);
     font-size: small;
     font-family: sans-serif;
+    text-decoration: none;
 }
 
 .sign-up-button:hover {
     text-decoration: underline;
+}
+
+.other-form-container {
+    text-align: center;
 }
 
 p {

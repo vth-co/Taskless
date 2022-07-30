@@ -40,7 +40,7 @@ const NavBar = () => {
             </button>
           </div>
           <div>
-            <NavLink to={"/project"}>
+            <NavLink to={"/app"}>
               <button className="home-button">
                 <i className="fa-solid fa-house"></i>
               </button>

@@ -34,7 +34,7 @@ const ProjectDetail = () => {
         
         <div key={proj.id}>
           <div className="title-edit">
-            <h2>Tasklist: {proj?.title}</h2>
+            <h2>{proj?.title}</h2>
             <ProjectEditDeleteModal key={proj.id} project={proj} />
           </div>
           <div className="task-container">

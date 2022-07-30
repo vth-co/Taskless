@@ -16,7 +16,7 @@ function TaskEditDeleteModal({ project, task }) {
         setShowEditModal
       }}
     >
-      <button className='task-edit-delete-button' onClick={() => setShowEditModal(true)}>...</button>
+      <button className='task-edit-delete-button' onClick={() => setShowEditModal(true)}><i class="fa-solid fa-ellipsis"></i></button>
       {showEditModal && (
         <Modal onClose={() => setShowEditModal(false)}>
           <TaskEditDelete project={project} task={task} />

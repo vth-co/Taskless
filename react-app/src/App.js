@@ -38,7 +38,7 @@ function App() {
     <BrowserRouter>
       <NavBar />
       <Switch>
-        <Route path="/project" exact={true}>
+        <Route path="/app">
           <HomePage />
         </Route>
         <Route path="/project/:id">

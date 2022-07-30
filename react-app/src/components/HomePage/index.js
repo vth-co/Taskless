@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
+import CreateProjectModal from "../Projects/CreateProject";
 import DisplayProjectsSideBar from "../Projects/DisplayProjectsSideBar";
 import "./HomePage.css";
 
@@ -17,7 +18,7 @@ function HomePage() {
 
   return (
     <div className="project-main-content">
-      <h1 className="tasklist-title">Tasklists:</h1>
+      <h1 className="tasklist-title">{user.username}'s Tasklists:</h1>
       {filterProjectsArr.map((project) => (
         <div key={project.id}>
           <div>
@@ -25,6 +26,9 @@ function HomePage() {
           </div>
         </div>
       ))}
+          <div className="add-tasklist-button">
+          <CreateProjectModal />
+          </div>
     </div>
   );
 }

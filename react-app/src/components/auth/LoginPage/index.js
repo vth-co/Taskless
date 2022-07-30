@@ -28,7 +28,7 @@ const LoginPage = () => {
   };
 
   if (user) {
-    return <Redirect to="/project" />;
+    return <Redirect to="/app" />;
   }
 
   const handleClick = async (e) => {
@@ -107,12 +107,12 @@ const LoginPage = () => {
                   </button>
                 </div>
                 <div className="form-footer">
-                  <p className="no-account">
-                    Don't have an account?
+                  <p>Don't have an account?</p>
+                </div>
+                <div className="other-form-container">
                     <Link className="sign-up-button" to={"/users/register"}>
                       Sign up
                     </Link>
-                  </p>
                 </div>
               </div>
             </form>

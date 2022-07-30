@@ -34,14 +34,14 @@ function CreateProjectForm({ setShowModal }) {
       setErrors(data.errors);
     } else {
       setShowModal(false);
-      history.push(`/project`);
+      history.push(`/app`);
     }
   };
 
   return (
     <div className="form-container">
       <form onSubmit={handleSubmit}>
-        <h2 className="form-title">Add project</h2>
+        <h2 className="form-title">Add tasklist</h2>
         <div>
           {errors.map((error, ind) => (
             <div className="errors" key={ind}>

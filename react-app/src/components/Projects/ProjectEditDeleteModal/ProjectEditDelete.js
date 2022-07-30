@@ -14,7 +14,7 @@ function ProjectEditDelete({ project }) {
 
         const data = await dispatch(deleteProject(project.id))
         if (data) {
-            history.push(`/project`)
+            history.push(`/app`)
         }
     }
     return (

@@ -54,7 +54,7 @@ const SignupPage = () => {
   };
 
   if (user) {
-    return <Redirect to="/project" />;
+    return <Redirect to="/app" />;
   }
 
   return (
@@ -140,11 +140,12 @@ const SignupPage = () => {
                   </button>
                 </div>
                 <div className="form-footer">
-                  <p> Already signed up?
+                  <p> Already signed up?</p>
+                </div>
+                <div className="other-form-container">
                   <Link className="sign-up-button" to={"/users/login"}>
                     Go to login
                   </Link>
-                  </p>
                 </div>
               </div>
             </div>
