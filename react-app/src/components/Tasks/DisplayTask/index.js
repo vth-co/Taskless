@@ -1,5 +1,6 @@
 // import { useState } from "react";
 import { useSelector } from "react-redux";
+import Checkbox from "../../Checkbox";
 // import Checkbox from "../../Checkbox";
 import TaskEditDeleteModal from "../TaskEditDeleteModal";
 import "./DisplayTask.css";
@@ -17,17 +18,15 @@ function DisplayTasks({ project }) {
         <div className="task-container" key={task.id}>
           <div className="task-buttons-container">
             <div className="task-checkbox">
-              {/* <div className="checkbox">
+              <div className="checkbox">
               <Checkbox task={task} />
-              </div> */}
               <p className="title">{task.title}</p>
-            </div>
-            <div className="edit-buttons">
+              </div>
               <TaskEditDeleteModal project={project} task={task} />
             </div>
-          </div>
-          <div className="content">
-            <p>{task.content}</p>
+            <div>
+              <p className="content">{task.content}</p>
+            </div>
           </div>
         </div>
       ))}

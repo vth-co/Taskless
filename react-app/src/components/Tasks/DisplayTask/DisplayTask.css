@@ -2,31 +2,40 @@
     border-bottom: 1px solid lightgrey;
     display: flex;
     flex-direction: column;
-    width: 750px;
+    max-width: 800px;
 }
 
 .task-buttons-container {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+    flex-direction: column;
+}
+
+.task-buttons-container:hover .task-edit-delete-button {
+    display: block;
+}
+
+.task-buttons-container .task-edit-delete-button{
+    display: none;
 }
 
 .title {
-    font-size: larger;
+    margin-bottom: 2px;
 }
 
 .task-checkbox {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
 }
 
 .checkbox {
-    padding-top: 21px;
+    display: flex;
+    
 }
 
 .content {
-    padding-left: 30px;
     color: gray;
     word-break: break-all;
+    margin-top: 5px;
+    font-size: small;
 }
