@@ -2,12 +2,17 @@
     border-bottom: 1px solid lightgrey;
     display: flex;
     flex-direction: column;
-    max-width: 800px;
+    min-width: 40vw;
 }
 
 .task-buttons-container {
     display: flex;
     flex-direction: column;
+}
+
+.task-checkbox {
+    display: flex;
+    flex-direction: row;
 }
 
 .task-buttons-container:hover .task-edit-delete-button {
@@ -18,24 +23,14 @@
     display: none;
 }
 
-.title {
-    margin-bottom: 2px;
-}
-
-.task-checkbox {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.checkbox {
-    display: flex;
-    
-}
 
 .content {
     color: gray;
-    word-break: break-all;
+    /* word-break: break-all; */
     margin-top: 5px;
     font-size: small;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 800px;
 }

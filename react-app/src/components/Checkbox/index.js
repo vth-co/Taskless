@@ -8,12 +8,12 @@ function Checkbox({ task }) {
 
   return (
     <div>
-      <input
+      {/* <input
         type="checkbox"
         value={finished}
         checked={task?.finished === true}
         onChange={(e) => setFinished(e.target.value)}
-      />
+      /> */}
       <div className="checkbox-container">
         <button className="checkbox-button" id="empty">
           <i class="fa-regular fa-circle"></i>
