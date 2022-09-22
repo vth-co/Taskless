@@ -15,17 +15,17 @@
     cursor: pointer;
 }
 
-.createProjectModalButton {
+.add-tasklist-button {
     border: transparent;
     background-color: transparent;
     font-size: 17px;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     margin-right: 10px;
     padding-top: 10px;
     padding-bottom: 10px;
 }
 
-.createProjectModalButton:hover {
+.add-tasklist-button:hover {
     background-color: grey;
     cursor: pointer;
 }

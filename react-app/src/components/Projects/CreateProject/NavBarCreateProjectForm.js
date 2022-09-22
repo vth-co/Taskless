@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 import { createProject } from "../../../store/projects";
 import "./CreateProject.css";
 
-function CreateProjectForm({ setShowModal, showTaskForm }) {
+function CreateProjectForm({ setShowModal }) {
   const dispatch = useDispatch();
   const [title, setTitle] = useState("");
   const [errors, setErrors] = useState([]);
@@ -33,17 +33,10 @@ function CreateProjectForm({ setShowModal, showTaskForm }) {
     if (data.errors) {
       setErrors(data.errors);
     } else {
-      // setShowModal(false);
-      showTaskForm()
-      setTitle('')
+      setShowModal(false);
       history.push(`/app`);
     }
   };
-
-  const handleCancel = async () => {
-    showTaskForm()
-    setTitle('')
-  }
 
   return (
     <div className="form-container">
@@ -77,7 +70,7 @@ function CreateProjectForm({ setShowModal, showTaskForm }) {
             </button>
             <button
               className="cancel-project-button"
-              onClick={handleCancel}
+              onClick={() => setShowModal(false)}
             >
               Cancel
             </button>

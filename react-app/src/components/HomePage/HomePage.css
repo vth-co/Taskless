@@ -1,7 +1,8 @@
-.project-main-content {
-    text-align: center;
+.split-flex {
+  display: flex;
+  flex-direction: row;
 }
 
-.tasklist-title {
-    font-family: sans-serif;
+.gutter.gutter-horizontal {
+  cursor: ew-resize;
 }
