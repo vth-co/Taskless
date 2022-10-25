@@ -98,21 +98,20 @@ const LoginPage = () => {
                   <button className="login-button" type="submit">
                     Login
                   </button>
-                  <button
-                    className="login-button"
-                    type="button"
-                    onClick={handleClick}
-                  >
-                    Demo User
-                  </button>
                 </div>
                 <div className="form-footer">
-                  <p>Don't have an account?</p>
-                </div>
-                <div className="other-form-container">
+                  <p>
+                    Don't have an account?
                     <Link className="sign-up-button" to={"/users/register"}>
                       Sign up
                     </Link>
+                  </p>
+                  <p>
+                    Not ready to commit?
+                    <button type="button" className="sign-up-button" onClick={handleClick}>
+                      Demo
+                    </button>
+                  </p>
                 </div>
               </div>
             </form>

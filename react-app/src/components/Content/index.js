@@ -4,6 +4,7 @@ import { Redirect } from "react-router-dom";
 import CreateProjectModal from "../Projects/CreateProject";
 import CreateProjectForm from "../Projects/CreateProject/CreateProjectForm";
 import DisplayProjectsSideBar from "../Projects/DisplayProjectsSideBar";
+import DisplayTasks2 from "../Tasks/DisplayTask2";
 import "./Content.css";
 
 function Content() {
@@ -11,9 +12,13 @@ function Content() {
   const projects = useSelector((state) => state.projects);
   const projectsArr = Object.values(projects);
   const [showTaskForm, setShowTaskForm] = useState(false);
-  const [closeSideBar, setCloseSideBar] = useState(false);
   const filterProjectsArr = projectsArr.filter(
     (project) => project.user_id === user?.id
+  );
+  const tasks = useSelector((state) => state.tasks);
+  const tasksArr = Object.values(tasks);
+  const filterTasksArr = tasksArr.filter(
+    (task) => task.user_id === user?.id
   );
 
   if (!user) {
@@ -31,14 +36,17 @@ function Content() {
             </div>
           </div>
         ))}
+        {filterTasksArr.map((task) => (
+          <div key={task.id}>
+            <div>
+              <DisplayTasks2 key={task.id} task={task} />
+            </div>
+          </div>
+        ))}
         <span className="add-tasklist-button">
           <div hidden={showTaskForm}>
             <a className="main-add" onClick={() => setShowTaskForm(true)}>
-              <svg
-                class="fa-solid fa-plus"
-                onClick={() => setShowTaskForm(true)}
-              >
-              </svg>
+              <i class="fa-solid fa-plus"></i>
               <div className="add-task">Add Tasklist</div>
             </a>
           </div>

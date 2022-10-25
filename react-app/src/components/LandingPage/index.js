@@ -14,10 +14,6 @@ const LandingPage = () => {
       <div className="landing-page-image-container">
         <img className="background-img" src="../../../static/landingPage.jpg" alt=""></img>
       </div>
-      <div>
-        <h2 className="sentence">Free up your mental space</h2>
-        <p>Regain clarity and calmness by getting all those tasks out of your head and onto your to-do list(no matter where you are or what device you use).</p>
-      </div>
           <Footer />
     </div>
   );

@@ -8,9 +8,12 @@
     border: transparent;
     background-color: #E44232;
     color: white;
-    padding: 5px 78px;
     font-weight: bold;
-    margin-top: 7px;
+    margin-top: 15px;
+    padding-top: 9px;
+    padding-bottom: 9px;
+    padding-right: 13px;
+    padding-left: 13px;
 }
 
 .login-button:hover {
@@ -90,21 +93,23 @@ h2 {
 
 .sign-up-button {
     color: rgb(255, 0, 0);
-    font-size: small;
     font-family: sans-serif;
     text-decoration: none;
+    padding-left: 10px;
+    border: none;
+    background-color: transparent;
 }
 
 .sign-up-button:hover {
     text-decoration: underline;
+    cursor: pointer;
 }
 
-.other-form-container {
-    text-align: center;
-}
+
 
 p {
     font-family: sans-serif;
+    margin-bottom: 0;
 }
 
 .no-account {
@@ -113,6 +118,9 @@ p {
 
 .form-footer {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    flex-direction:column;
+    margin-top: 25px;
+    border-top: 1px gray solid;
+    font-size: small;
+    text-align: center;
 }

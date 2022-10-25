@@ -4,6 +4,7 @@ import LogoutButton from "./LogoutButton";
 import CreateProjectModal from "../Projects/CreateProject";
 import { useSelector } from "react-redux";
 import "./NavBar.css";
+import CreateTaskModal from "../Tasks/CreateTask";
 
 const NavBar = () => {
   const user = useSelector((state) => state.session.user);
@@ -12,13 +13,11 @@ const NavBar = () => {
   if (location.pathname === "/") {
     sessionLinks = (
       <div className="icon-name-user-container">
-                <div>
-            <Link className="icon-container" to={"/"}>
-              <img src="../../../static/icon.png" alt=""></img>
-              <div className="app-name">
-              <h2>taskless</h2>
-              </div>
-            </Link>
+        <div >
+          <Link className="icon-container" to={"/"}>
+            <img src="../../../static/icon.png" alt=""></img>
+            <h2 className="app-name">taskless</h2>
+          </Link>
         </div>
         <div>
           <NavLink to={"/users/login"}>
@@ -34,15 +33,111 @@ const NavBar = () => {
     sessionLinks = (
       <div className="icon-name-loggedin-container">
         <div className="icon-buttons-container">
-          <div className="icon-container">
-            <button className="toggle">
-              <img src="../../../static/loggedin.png" alt=""></img>
-            </button>
+          <div>
+            <svg className="toggle">
+              <line
+                x1="4"
+                y1="18"
+                x2="20"
+                y2="18"
+                stroke="white"
+                stroke-width="1"
+              ></line>
+              <line
+                x1="4"
+                y1="11.5"
+                x2="20"
+                y2="11.5"
+                stroke="white"
+                stroke-width="1"
+              ></line>
+              <line
+                x1="4"
+                y1="5"
+                x2="20"
+                y2="5"
+                stroke="white"
+                stroke-width="1"
+              ></line>
+            </svg>
           </div>
           <div>
             <NavLink to={"/app"}>
               <button className="home-button">
-                <i className="fa-solid fa-house"></i>
+                <svg width="24" height="24" viewBox="0 0 24 24">
+                  <line
+                    x1="4"
+                    y1="11.5"
+                    x2="12.25"
+                    y2="4"
+                    stroke="white"
+                    stroke-width="1"
+                  ></line>
+                  <line
+                    x1="4"
+                    y1="11.25"
+                    x2="4"
+                    y2="19"
+                    stroke="white"
+                    stroke-width="1"
+                  ></line>
+                  <line
+                    x1="10"
+                    y1="19"
+                    x2="3.5"
+                    y2="19"
+                    stroke="white"
+                    stroke-width="1"
+                  ></line>
+                  <line
+                    x1="9.5"
+                    y1="19"
+                    x2="9.5"
+                    y2="13"
+                    stroke="white"
+                    stroke-width="1"
+                  ></line>
+                  <line
+                    x1="11.75"
+                    y1="4"
+                    x2="20"
+                    y2="11.5"
+                    stroke="white"
+                    stroke-width="1"
+                  ></line>
+                  <line
+                    x1="15"
+                    y1="13"
+                    x2="9"
+                    y2="13"
+                    stroke="white"
+                    stroke-width="1"
+                  ></line>
+                  <line
+                    x1="14.5"
+                    y1="13"
+                    x2="14.5"
+                    y2="19"
+                    stroke="white"
+                    stroke-width="1"
+                  ></line>
+                  <line
+                    x1="20.5"
+                    y1="19"
+                    x2="14"
+                    y2="19"
+                    stroke="white"
+                    stroke-width="1"
+                  ></line>
+                  <line
+                    x1="20"
+                    y1="19"
+                    x2="20"
+                    y2="11.25"
+                    stroke="white"
+                    stroke-width="1"
+                  ></line>
+                </svg>
               </button>
             </NavLink>
           </div>

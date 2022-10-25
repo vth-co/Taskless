@@ -1,28 +1,44 @@
 .footer-container {
     display: flex;
     justify-content: space-evenly;
-    background: linear-gradient(white, #FED054);
+    background: linear-gradient(white, #FAE8D5);
     /* position: fixed; */
     bottom: 0;
     width: 100%;
-    height: 75px;
-
 }
 
 .link {
+    display: flex;
+    flex-direction: row;
     text-decoration: none;
     color: black;
-    font-size: 20px;
+    font-family: "Segoe UI","Helvetica Neue",sans-serif;
+}
+
+.fa-brands {
+    padding-top: 16px;
+    padding-right: 16px;
 }
 
 .link-and-icon {
-    display: flex;
-    flex-direction: row;
     margin-top: 10px;
     width: 100px;
-    text-align: center;
 }
 
 .fa-brands.fa-github-square {
     text-align: center;
 }
+
+.footer-ul {
+    font-family: "Segoe UI","Helvetica Neue",sans-serif;
+    list-style-type: none; /* Remove bullets */
+}
+ li {
+    margin-top: 15px;
+ }
+
+ .footer-section {
+    font-weight: bold;
+    color: gray;
+    font-size: small;
+ }

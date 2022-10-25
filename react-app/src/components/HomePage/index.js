@@ -8,7 +8,8 @@ function HomePage() {
   return (
     <Split
       sizes={[15, 85]}
-      minSize={[250, 2000]}
+      minSize={[200]}
+      maxSize={[400]}
       direction="horizontal"
       cursor="col-resize"
       className="split-flex"
