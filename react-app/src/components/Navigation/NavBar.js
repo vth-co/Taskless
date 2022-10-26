@@ -8,6 +8,8 @@ import CreateTaskModal from "../Tasks/CreateTask";
 
 const NavBar = () => {
   const user = useSelector((state) => state.session.user);
+  // const [toggleSideBar, setToggleSideBar] = useState(false)
+
   let location = useLocation();
   let sessionLinks;
   if (location.pathname === "/") {
@@ -34,7 +36,10 @@ const NavBar = () => {
       <div className="icon-name-loggedin-container">
         <div className="icon-buttons-container">
           <div>
-            <svg className="toggle">
+            <svg 
+            className="toggle" 
+            // onClick={toggleSideBar}
+            >
               <line
                 x1="4"
                 y1="18"

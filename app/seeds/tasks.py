@@ -7,6 +7,7 @@ def seed_tasks():
         title = "Wash car",
         content = "Rinse, soap up, lather, rinse and repeat",
         project_id = 1,
+        user_id = 1,
         finished=False,
     )
 
@@ -14,6 +15,7 @@ def seed_tasks():
         title = "Take out the trash",
         content = "Tie trash bag, take out trash can, take out to bigger trash can outside",
         project_id = 1,
+        user_id = 1,
         finished=False,
     )
 
@@ -21,6 +23,7 @@ def seed_tasks():
         title = "Mop",
         content = "Rinse, soap up, lather, rinse and repeat",
         project_id = 2,
+        user_id = 1,
         finished=False,
     )
 
@@ -28,6 +31,7 @@ def seed_tasks():
         title = "Walk dog",
         content = "Get leash, call for Haru, tie leash, bring waste bags",
         project_id = 3,
+        user_id = 2,
         finished=False,
     )
 
@@ -35,6 +39,7 @@ def seed_tasks():
         title = "Clean room",
         content = "Throw away trash, dust and declutter, organize things",
         project_id = 4,
+        user_id = 2,
         finished=False,
     )
     

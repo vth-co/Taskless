@@ -1,10 +1,11 @@
-import { useState } from "react";
-import { useSelector } from "react-redux";
+import { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 import CreateProjectModal from "../Projects/CreateProject";
 import CreateProjectForm from "../Projects/CreateProject/CreateProjectForm";
 import DisplayProjectsSideBar from "../Projects/DisplayProjectsSideBar";
 import DisplayTasks2 from "../Tasks/DisplayTask2";
+import { getTasks } from '../../store/tasks';
 import "./Content.css";
 
 function Content() {
@@ -21,6 +22,8 @@ function Content() {
     (task) => task.user_id === user?.id
   );
 
+
+
   if (!user) {
     return <Redirect to="/" />;
   }
@@ -28,14 +31,14 @@ function Content() {
   return (
     <div>
       <div className="project-main-content">
-        <h1 className="tasklist-title">{user.username}'s Tasklists:</h1>
-        {filterProjectsArr.map((project) => (
+        <h1 className="tasklist-title">{user.username}'s Tasks</h1>
+        {/* {filterProjectsArr.map((project) => (
           <div key={project.id}>
             <div>
               <DisplayProjectsSideBar key={project.id} project={project} />
             </div>
           </div>
-        ))}
+        ))} */}
         {filterTasksArr.map((task) => (
           <div key={task.id}>
             <div>

@@ -13,10 +13,13 @@ function DisplayTasks2({ task }) {
       <div>
         <div className="project-container" key={task.id}>
           <NavLink
+            className="project-titles"
             to={`/task/${task.id}`}
+            task={task}
           >
             {task.title}
           </NavLink>
+          <p>{task.content}</p>
         </div>
       </div>
   );
