@@ -1,20 +1,27 @@
 import Split from "react-split";
 import Content from "../Content";
 import Sidebar from "../Sidebar";
+import { useState } from "react";
 
 import "./HomePage.css";
 
 function HomePage() {
+
   return (
     <Split
       sizes={[15, 85]}
-      minSize={[250, 2000]}
+      minSize={[200]}
+      maxSize={[400]}
       direction="horizontal"
       cursor="col-resize"
       className="split-flex"
     >
-      <Sidebar />
-      <Content />
+      <Sidebar
+      //  className={toggleSideBar ? "sidebar-open" : "sidebar-close"}
+       />
+      <Content
+      //  className={toggleSideBar ? "content-close" : "content-open"}
+       />
     </Split>
   );
 }

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link, Redirect } from "react-router-dom";
 import { signUp } from "../../../store/session";
+import { login } from "../../../store/session";
 import "./SignUp.css";
 
 const SignupPage = () => {
@@ -56,6 +57,18 @@ const SignupPage = () => {
   if (user) {
     return <Redirect to="/app" />;
   }
+
+  const handleClick = async (e) => {
+    e.preventDefault();
+    const demo = {
+      email: "demo@aa.io",
+      password: "password",
+    };
+    const data = await dispatch(login(demo.email, demo.password));
+    if (data) {
+      setErrors(data);
+    }
+  };
 
   return (
     <div className="form-background">
@@ -140,12 +153,22 @@ const SignupPage = () => {
                   </button>
                 </div>
                 <div className="form-footer">
-                  <p> Already signed up?</p>
-                </div>
-                <div className="other-form-container">
-                  <Link className="sign-up-button" to={"/users/login"}>
-                    Go to login
-                  </Link>
+                  <p>
+                    Already signed up?
+                    <Link className="sign-up-button" to={"/users/login"}>
+                      Log in
+                    </Link>
+                  </p>
+                  <p>
+                    Not ready to commit?
+                    <button
+                      type="button"
+                      className="sign-up-button"
+                      onClick={handleClick}
+                    >
+                      Demo
+                    </button>
+                  </p>
                 </div>
               </div>
             </div>

@@ -3,45 +3,36 @@ import "./Footer.css";
 const Footer = () => {
   return (
     <div className="footer-container">
+      <ul className="footer-ul">
+        <p className="footer-section">Resources</p>
+        <li>Alembic</li>
+        <li>CSS</li>
+        <li>Flask</li>
+        <li>JavaScript</li>
+        <li>PostgreSQL</li>
+        <li>SQLAlchemy</li>
+        <li>React</li>
+        <li>Redux</li>
+      </ul>
       <div className="link-and-icon">
+        <p className="footer-section">Company</p>
         <a
           href="https://github.com/vth-co/Taskless"
           className="link"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <div>
-            <i className="fa-brands fa-github-square"></i>
-          </div>
-          <div>
-            <p>Github</p>
-          </div>
+          <i className="fa-brands fa-github-square"></i>
+          <p>Github</p>
         </a>
-      </div>
-      <div className="link-and-icon">
         <a
           href="https://www.linkedin.com/in/vu-co/"
           className="link"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <div>
-            <i class="fa-brands fa-linkedin"></i>
-            <p>Linkedin</p>
-          </div>
-        </a>
-      </div>
-      <div className="link-and-icon">
-        <a
-          href="https://vth-co.github.io/"
-          className="link"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <div>
-            <i class="fa-solid fa-circle-user"></i>
-            <p>Portfolio</p>
-          </div>
+          <i class="fa-brands fa-linkedin"></i>
+          <p>Linkedin</p>
         </a>
       </div>
     </div>
