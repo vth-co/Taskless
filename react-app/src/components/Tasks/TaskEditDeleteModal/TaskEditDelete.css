@@ -5,4 +5,6 @@
 
 .task-edit-delete-button:hover {
     background-color: lightgrey;
+    cursor: pointer;
+    border-radius: 2px;
 }

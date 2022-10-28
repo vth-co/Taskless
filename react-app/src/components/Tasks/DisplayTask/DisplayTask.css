@@ -3,6 +3,8 @@
     display: flex;
     flex-direction: column;
     min-width: 40vw;
+    cursor: pointer;
+    padding: 8px 0;
 }
 
 .task-buttons-container {
@@ -10,9 +12,43 @@
     flex-direction: column;
 }
 
+.task-title {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-decoration: none;
+    color: black;
+    font-size: 17px;
+    word-wrap: break-word;
+    word-break: break-all;
+    overflow: hidden;
+    line-height: 21px;
+}
+
+.task-content {
+    font-size: 12px;
+    word-wrap: break-word;
+    word-break: break-all;
+    overflow: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: gray;
+    margin-left: 25px;
+}
+
 .task-checkbox {
     display: flex;
     flex-direction: row;
+}
+
+.task-edit-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.task-edit-container .task-edit-delete-button {
+    display: none;
+}
+
+.task-container:hover .task-edit-delete-button {
+    display: block;
 }
 
 .task-buttons-container:hover .task-edit-delete-button {
