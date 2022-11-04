@@ -147,7 +147,8 @@ const NavBar = () => {
         </div>
         <div className="user-buttons-container">
           <div>
-            <CreateProjectModal />
+            {/* <CreateProjectModal /> */}
+            <CreateTaskModal />
           </div>
           <div>
             <LogoutButton />

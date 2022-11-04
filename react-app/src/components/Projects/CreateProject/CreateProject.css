@@ -1,6 +1,6 @@
 .form-container {
     padding: 15px 15px;
-    min-width: 300px;
+    min-width: 500px;
 }
 .cancel-project-button {
     background-color: white;
@@ -65,4 +65,20 @@
 .errors {
     text-align: center;
     color: #E44232;
+}
+
+.task-input {
+    border-radius: 3px;
+    border: 1px solid grey;
+    padding-top: 9px;
+    padding-bottom: 9px;
+    padding-right: 13px;
+    padding-left: 13px;
+    outline: none;
+    border: none;
+}
+
+.task-input::placeholder {
+    font-weight: 500;
+    font-size: 14px;
 }

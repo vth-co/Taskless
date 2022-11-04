@@ -106,3 +106,13 @@ img {
 h2 {
   margin-top: 10px;
 }
+
+.add-task {
+  color: white;
+}
+
+.add-task:hover {
+  background-color: grey;
+  cursor: pointer;
+  border-radius: 2px;
+}

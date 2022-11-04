@@ -17,6 +17,7 @@
     font-weight: bold;
     padding: 8px 15px;
     border-radius: 5px;
+    margin-left: 12px;
 }
 
 .post-button:hover {
@@ -38,7 +39,7 @@
 
 .post-cancel-button-container {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: flex-end;
     margin-top: 10px;
 }
 

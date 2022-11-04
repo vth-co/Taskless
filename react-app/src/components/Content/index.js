@@ -7,11 +7,13 @@ import DisplayProjectsSideBar from "../Projects/DisplayProjectsSideBar";
 import DisplayTasks2 from "../Tasks/DisplayTask2";
 import { getTasks } from '../../store/tasks';
 import "./Content.css";
+import CreateTaskForm from "../Tasks/CreateTask/CreateTaskForm";
 
 function Content() {
   const user = useSelector((state) => state.session.user);
   const projects = useSelector((state) => state.projects);
   const projectsArr = Object.values(projects);
+  const [showModal, setShowModal] = useState(false);
   const [showTaskForm, setShowTaskForm] = useState(false);
   const filterProjectsArr = projectsArr.filter(
     (project) => project.user_id === user?.id
@@ -39,22 +41,20 @@ function Content() {
             </div>
           </div>
         ))} */}
-        {filterTasksArr.map((task) => (
+        {filterTasksArr.map(task => (
           <div key={task.id}>
-            <div>
               <DisplayTasks2 key={task.id} task={task} />
-            </div>
           </div>
         ))}
         <span className="add-tasklist-button">
-          <div hidden={showTaskForm}>
-            <a className="main-add" onClick={() => setShowTaskForm(true)}>
+          <div hidden={showModal}>
+            <a className="main-add" onClick={() => setShowModal(true)}>
               <i class="fa-solid fa-plus"></i>
-              <div className="add-task">Add Tasklist</div>
+              <div className="add-task">Add Task</div>
             </a>
           </div>
-          <div hidden={!showTaskForm}>
-            <CreateProjectForm showTaskForm={() => setShowTaskForm(false)} />
+          <div hidden={!showModal}>
+            <CreateTaskForm setShowModal={setShowModal}/>
           </div>
         </span>
       </div>
