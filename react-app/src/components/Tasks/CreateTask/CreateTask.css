@@ -17,6 +17,7 @@
     font-weight: bold;
     padding: 8px 15px;
     border-radius: 5px;
+    margin-left: 12px;
 }
 
 .post-button:hover {
@@ -38,15 +39,18 @@
 
 .post-cancel-button-container {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: flex-end;
     margin-top: 10px;
 }
 
-.form-title {
-    text-align: center;
-}
 
 .project-create-container {
     display: flex;
     flex-direction: column;
+}
+
+.select-project-button {
+    margin-left: 10px;
+    padding: 5px 5px;
+    border-radius: 5px;
 }

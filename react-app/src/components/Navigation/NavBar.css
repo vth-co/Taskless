@@ -45,6 +45,7 @@ img {
   margin: 12px 7px;
   height:24px;
   width:24px;
+  border-radius: 2px;
 }
 
 .toggle:hover {
@@ -70,15 +71,14 @@ img {
 .home-button {
   border: transparent;
   background-color: transparent;
+  height:24px;
+  width:24px;
+  border-radius: 2px;
 }
 
 .home-button:hover {
   background-color: grey;
   cursor: pointer;
-}
-
-.fa-solid.fa-house {
-  color: white;
 }
 
 .user-buttons-container {
@@ -105,4 +105,15 @@ img {
 
 h2 {
   margin-top: 10px;
+}
+
+.add-task {
+  color: white;
+}
+
+.add-task:hover {
+  background-color: grey;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  border-radius: 2px;
 }

@@ -1,8 +1,6 @@
 import Split from "react-split";
 import Content from "../Content";
 import Sidebar from "../Sidebar";
-import { useState } from "react";
-
 import "./HomePage.css";
 
 function HomePage() {

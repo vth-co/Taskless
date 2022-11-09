@@ -1,6 +1,7 @@
 .task-edit-delete-button {
     border: transparent;
     background-color: transparent;
+    cursor: pointer;
 }
 
 .task-edit-delete-button:hover {

@@ -1,10 +1,9 @@
 import React from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import LogoutButton from "./LogoutButton";
-import CreateProjectModal from "../Projects/CreateProject";
 import { useSelector } from "react-redux";
-import "./NavBar.css";
 import CreateTaskModal from "../Tasks/CreateTask";
+import "./NavBar.css";
 
 const NavBar = () => {
   const user = useSelector((state) => state.session.user);
@@ -68,8 +67,7 @@ const NavBar = () => {
           </div>
           <div>
             <NavLink to={"/app"}>
-              <button className="home-button">
-                <svg width="24" height="24" viewBox="0 0 24 24">
+                <svg className="home-button">
                   <line
                     x1="4"
                     y1="11.5"
@@ -143,13 +141,13 @@ const NavBar = () => {
                     stroke-width="1"
                   ></line>
                 </svg>
-              </button>
             </NavLink>
           </div>
         </div>
         <div className="user-buttons-container">
           <div>
-            <CreateProjectModal />
+            {/* <CreateProjectModal /> */}
+            <CreateTaskModal />
           </div>
           <div>
             <LogoutButton />

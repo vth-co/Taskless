@@ -1,18 +1,21 @@
 .project-edit-button {
   border: transparent;
   background-color: transparent;
+  cursor: pointer;
+  color: gray;
 }
 
 .project-edit-button:hover {
-  background-color: lightgrey;
+  color: black;
 }
+
 
 .delete-button {
   border: transparent;
-  background-color: transparent;
-  padding: 10px;
-  border-radius: 2px;
-
+  background-color: white;
+  padding: 10px 10px;
+  margin: 5px 10px;
+  cursor: pointer;
 }
 
 .delete-button:hover {
@@ -25,6 +28,12 @@
 }
 
 .edit-buttons-container {
- min-width: 250px;
- min-height: 100px;
+  min-width: 250px;
+  min-height: 100px;
+}
+
+.menu_separator {
+  margin: 4px;
+  border-bottom: 1px solid #ddd;
+  list-style: none;
 }

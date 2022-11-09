@@ -12,7 +12,6 @@ function DisplayProjectsSideBar({ project }) {
 
 
   return (
-      <div>
         <div className="project-container" key={project.id}>
           <NavLink
             className="project-titles"
@@ -23,7 +22,6 @@ function DisplayProjectsSideBar({ project }) {
           </NavLink>
           <ProjectEditDeleteModal project={project} />
         </div>
-      </div>
   );
 }
 
