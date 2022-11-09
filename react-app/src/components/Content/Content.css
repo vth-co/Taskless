@@ -1,4 +1,4 @@
-.project-main-content {
+.main-content {
     max-width: 40vw;
     display: flex;
     flex-direction: column;
@@ -6,7 +6,7 @@
 }
 
 .tasklist-title {
-    font-family: sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 20px;
     line-height: 25px;
     margin-top: 40px;
@@ -17,7 +17,28 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-bottom: 40px;
     text-decoration: none;
     width: auto;
-  }
+    margin-top: 10px;
+}
+
+.main-add:hover .add-circle {
+    color:white;
+    background-color: #000000;
+}
+
+.main-add:hover .button-text {
+    color: black;
+}
+
+.button-text {
+    margin-left: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+svg.add-circle {
+    height: 20px;
+    width: 20px;
+    border-radius: 25px;
+    position: relative;
+}

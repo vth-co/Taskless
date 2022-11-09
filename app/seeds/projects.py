@@ -6,23 +6,22 @@ from app.models import db, Project
 def seed_projects():
 
     project1 = Project(
-        title = "New task list",
+        title = "Inbox",
         user_id = 1
-
     )
 
     project2 = Project(
-        title = "For tomorrow",
+        title = "Project 1",
         user_id = 1
     )
 
     project3 = Project(
-        title = "for another day",
-        user_id = 2
+        title = "For Tomorrow",
+        user_id = 1
     )
 
     project4 = Project(
-        title = "yesterday's tasks",
+        title = "Random",
         user_id = 2
     )
 

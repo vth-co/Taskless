@@ -1,7 +1,8 @@
 .form-container {
     padding: 15px 15px;
-    min-width: 500px;
+    min-width: 400px;
 }
+
 .cancel-project-button {
     background-color: white;
     border: 1px solid rgba(128, 128, 128, 0.507);
@@ -29,6 +30,16 @@
     cursor: pointer;
 }
 
+.add-tasklist {
+    color: gray;
+  }
+  
+.add-tasklist:hover {
+    color: black;
+    cursor: pointer;
+    border-radius: 2px;
+}
+
 .cancel-button {
     border: transparent;
     background-color: transparent;
@@ -40,27 +51,15 @@
 }
 
 .form-title {
-    text-align: center;
     font-family: sans-serif;
-    padding-bottom: 5px;
+    margin: 0 0;
+    padding: 20px 20px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.394);
+    background-color: #FAFAFA;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
-.project-button {
-    border-radius: 3px;
-    border: transparent;
-    background-color: #E44232;
-    color: white;
-    padding: 5px 10px;
-    font-weight: bold;
-    margin-top: 7px;
-    margin-left: 10px;
-    margin-right: 10px;
-}
-
-.project-button:hover {
-    cursor: pointer;
-}
 
 .errors {
     text-align: center;
@@ -70,15 +69,30 @@
 .task-input {
     border-radius: 3px;
     border: 1px solid grey;
-    padding-top: 9px;
-    padding-bottom: 9px;
-    padding-right: 13px;
-    padding-left: 13px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 10px;
+    padding-left: 10px;
     outline: none;
     border: none;
 }
 
 .task-input::placeholder {
     font-weight: 500;
+    font-size: 14px;
+}
+
+.description-input {
+    border-radius: 3px;
+    border: 1px solid grey;
+    padding-bottom: 29px;
+    padding-right: 10px;
+    padding-left: 10px;
+    outline: none;
+    border: none;
+}
+
+.description-input::placeholder {
+    font-weight: 400;
     font-size: 14px;
 }

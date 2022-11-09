@@ -9,5 +9,5 @@ class TaskForm(FlaskForm):
     content = StringField("Description", validators=[
         # DataRequired(message="Content is required."), 
         Length(max=255, message="Content must be between 3-255 characters.")])
-    project_id = IntegerField("project_id")
+    project_id = IntegerField("project_id", validators=[DataRequired()])
     user_id = IntegerField("user_id")

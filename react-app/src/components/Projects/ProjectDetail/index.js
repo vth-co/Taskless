@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 import {  Redirect, useHistory, useParams } from "react-router-dom";
 import CreateTaskModal from "../../Tasks/CreateTask";
+import CreateTaskForm from "../../Tasks/CreateTask/CreateTaskForm";
 import DisplayTasks from "../../Tasks/DisplayTask";
 import ProjectEditDeleteModal from "../ProjectEditDeleteModal";
 import "./ProjectDetail.css";
@@ -8,8 +9,8 @@ import "./ProjectDetail.css";
 const ProjectDetail = () => {
   const { id } = useParams();
   const history = useHistory();
-  const projects = useSelector((state) => state.projects);
   const user = useSelector((state) => state.session.user);
+  const projects = useSelector((state) => state.projects);
   const projectsArr = Object.values(projects);
   const filteredArr = projectsArr.filter((project) => project?.id === +id);
 
@@ -31,7 +32,6 @@ const ProjectDetail = () => {
   return (
     <div  className="project-task-container">
       {filteredArr.map((proj) => (
-        
         <div key={proj.id}>
           <div className="title-edit">
             <h2>{proj?.title}</h2>
@@ -41,7 +41,7 @@ const ProjectDetail = () => {
             <DisplayTasks key={proj.id} project={proj} />
           </div>
           <div>
-            <CreateTaskModal key={proj.id} project={proj} />
+            <CreateTaskForm key={proj.id} project={proj} />
           </div>
         </div>
       ))}

@@ -1,10 +1,9 @@
 import React from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import LogoutButton from "./LogoutButton";
-import CreateProjectModal from "../Projects/CreateProject";
 import { useSelector } from "react-redux";
-import "./NavBar.css";
 import CreateTaskModal from "../Tasks/CreateTask";
+import "./NavBar.css";
 
 const NavBar = () => {
   const user = useSelector((state) => state.session.user);
