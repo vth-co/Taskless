@@ -1,15 +1,22 @@
 .sidebar {
     background-color: #a8a8a818;
+    position: fixed;
+    height: 100vh;
+}
+
+.sidebar-container {
+    margin-top: 70px;
 }
 
 h3 {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: 400;
-    color: gray;
+    color: #6D6D6D;
 }
 
 .sidebar-title-add {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
+    margin: 0 20px;
 }

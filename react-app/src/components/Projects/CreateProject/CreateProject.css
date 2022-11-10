@@ -38,6 +38,7 @@
     color: black;
     cursor: pointer;
     border-radius: 2px;
+    background-color: rgb(238,238,238);
 }
 
 .cancel-button {
