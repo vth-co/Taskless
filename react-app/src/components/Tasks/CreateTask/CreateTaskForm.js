@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
+// import { useHistory } from "react-router-dom";
 import { createTask } from "../../../store/tasks";
 import "./CreateTask.css";
 
@@ -10,7 +10,7 @@ function CreateTaskForm({ project, setShowModal }) {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [errors, setErrors] = useState([]);
-  const history = useHistory();
+  // const history = useHistory();
 
   const projects = useSelector((state) => state.projects);
   const projectsArr = Object.values(projects);
@@ -114,7 +114,7 @@ function CreateTaskForm({ project, setShowModal }) {
             >
               {filterProjectsArr.map((project) => (
                 <option key={project.id} value={project.id}>
-                  {project.title}
+                 {project.title}
                 </option>
               ))}
             </select>
