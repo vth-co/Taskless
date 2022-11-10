@@ -29,7 +29,7 @@
     background-color: white;
     border: 1px solid rgba(128, 128, 128, 0.507);
     border-radius: 5px;
-    font-weight: bold;
+    font-weight: 600;
 }
 
 .cancel-task-button:hover {
@@ -50,7 +50,9 @@
 }
 
 .select-project-button {
-    margin-left: 10px;
+    margin-right: 105px;
     padding: 5px 5px;
     border-radius: 5px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
 }

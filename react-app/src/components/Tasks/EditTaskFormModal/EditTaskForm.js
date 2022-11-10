@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { editTask } from "../../../store/tasks";
 import { useEditModal } from "../TaskEditDeleteModal";
 import "./EditTask.css";
 
 function EditTaskForm({ project, task, setShowModal }) {
+  const user = useSelector((state) => state.session.user);
   const dispatch = useDispatch();
   const [title, setTitle] = useState(task.title);
   const [content, setContent] = useState(task.content);
@@ -34,6 +35,7 @@ function EditTaskForm({ project, task, setShowModal }) {
       project_id: project.id,
       title,
       content,
+      user_id: user?.id,
     };
     const data = await dispatch(editTask(edit_task));
     if (data.errors) {

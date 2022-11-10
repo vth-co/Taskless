@@ -56,10 +56,14 @@ img {
 
 .icon-name-loggedin-container {
   display: flex;
+  position: fixed;
+  top: 0;
   justify-content: space-between;
+  width: 100%;
   background-color: rgb(61, 61, 61);
   align-items: center;
   height: 45px;
+  z-index: 1;
 }
 
 .icon-buttons-container {

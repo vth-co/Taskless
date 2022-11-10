@@ -19,15 +19,17 @@ function Sidebar() {
 
   return (
     <div className="sidebar">
-      <div className="sidebar-title-add">
-        <h3>Projects</h3>
-        <CreateProjectModal />
-      </div>
-      {filterProjectsArr.map((project) => (
-        <div key={project.id}>
-            <DisplayProjectsSideBar key={project.id} project={project} />
+      <div className="sidebar-container">
+        <div className="sidebar-title-add">
+          <h3>Projects</h3>
+          <CreateProjectModal />
         </div>
-      ))}
+        {filterProjectsArr.map((project) => (
+          <div key={project.id}>
+            <DisplayProjectsSideBar key={project.id} project={project} />
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
