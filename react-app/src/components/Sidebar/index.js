@@ -25,7 +25,7 @@ function Sidebar() {
           <CreateProjectModal />
         </div>
         {filterProjectsArr.map((project) => (
-          <div key={project.id}>
+          <div key={project.id} >
             <DisplayProjectsSideBar key={project.id} project={project} />
           </div>
         ))}

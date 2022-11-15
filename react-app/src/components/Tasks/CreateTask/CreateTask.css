@@ -54,5 +54,28 @@
     padding: 5px 5px;
     border-radius: 5px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    cursor: pointer;
+}
 
+.select-project-button:hover {
+    background-color: rgba(235, 235, 235);
+}
+
+.task-input {
+    border-radius: 3px;
+    border: 1px solid grey;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 10px;
+    padding-left: 10px;
+    outline: none;
+    border: none;
+    font-weight: 600;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+.task-input::placeholder {
+    font-weight: 500;
+    font-size: 14px;
 }

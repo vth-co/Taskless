@@ -101,7 +101,7 @@ function CreateTaskForm({ project, setShowModal }) {
               value={content}
               placeholder="Description"
               type="textarea"
-              name="Name"
+              name="Description"
               onChange={(e) => setContent(e.target.value)}
               maxLength="255"
             />

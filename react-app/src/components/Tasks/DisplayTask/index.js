@@ -18,7 +18,7 @@ function DisplayTasks({ project }) {
         <div className="task-container" key={task.id}>
           <div className="task-buttons-container">
             <div className="task-checkbox">
-              <Checkbox task={task} />
+              {/* <Checkbox task={task} /> */}
               <p className="title">{task.title}</p>
               <TaskEditDeleteModal project={project} task={task} />
             </div>
