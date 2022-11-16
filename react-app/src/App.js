@@ -7,7 +7,6 @@ import { getProjects } from "./store/projects";
 import HomePage from "./components/HomePage";
 import LandingPage from "./components/LandingPage";
 import { getTasks } from "./store/tasks";
-import ProjectDetail from "./components/Projects/ProjectDetail";
 import ErrorPage from "./components/404";
 import SignupPage from "./components/auth/SignupPage";
 import LoginPage from "./components/auth/LoginPage";
@@ -40,9 +39,6 @@ function App() {
       <Switch>
         <Route path="/app">
           <HomePage />
-        </Route>
-        <Route path="/project/:id">
-          <ProjectDetail />
         </Route>
         <Route path="/" exact={true}>
           <LandingPage />

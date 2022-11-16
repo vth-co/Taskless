@@ -1,9 +1,8 @@
 // import { useState } from "react";
 import { useSelector } from "react-redux";
 import Checkbox from "../../Checkbox";
-// import Checkbox from "../../Checkbox";
 import TaskEditDeleteModal from "../TaskEditDeleteModal";
-import "./DisplayTask.css";
+import "./Tasks.css";
 
 function DisplayTasks({ project }) {
   const tasks = useSelector((state) => state.tasks);
@@ -16,16 +15,14 @@ function DisplayTasks({ project }) {
     <div>
       {filterTasksArr.map((task) => (
         <div className="task-container" key={task.id}>
-          <div className="task-buttons-container">
+          <div className="task-edit-container">
             <div className="task-checkbox">
-              {/* <Checkbox task={task} /> */}
-              <p className="title">{task.title}</p>
-              <TaskEditDeleteModal project={project} task={task} />
+              <Checkbox task={task} />
+              <p className="task-title">{task.title}</p>
             </div>
-            <div>
-              <p className="content">{task.content}</p>
-            </div>
+            <TaskEditDeleteModal project={project} task={task} />
           </div>
+          <p className="task-content">{task.content}</p>
         </div>
       ))}
     </div>

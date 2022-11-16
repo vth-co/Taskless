@@ -1,6 +1,5 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-// import { useHistory } from "react-router-dom";
 import { createTask } from "../../../store/tasks";
 import "./CreateTask.css";
 
@@ -22,19 +21,19 @@ function CreateTaskForm({ project, setShowModal }) {
     (project) => project.user_id === user?.id
   );
 
-  // useEffect(() => {
-  //   if (title.length >= 50) {
-  //     setErrors(["Title: Max length of 50 characters reached."]);
-  //   } else if (title.length < 3) {
-  //     setErrors(["Please input a title of 3 or more characters."]);
-  //   } else if (content.length < 3) {
-  //     setErrors(["Please input a content of 3 or more characters."]);
-  //   } else if (content.length >= 255) {
-  //     setErrors(["Content: Max length of 255 characters reached."]);
-  //   } else {
-  //     setErrors([]);
-  //   }
-  // }, [title, content]);
+  useEffect(() => {
+    if (title.length >= 255) {
+      setErrors(["Title: Max length of 255 characters reached."]);
+    } else if (title.length < 1) {
+      setErrors(["Please input a title of 1 or more characters."]);
+    // } else if (content.length < 3) {
+    //   setErrors(["Please input a content of 3 or more characters."]);
+    // } else if (content.length >= 255) {
+    //   setErrors(["Content: Max length of 255 characters reached."]);
+    } else {
+      setErrors([]);
+    }
+  }, [title]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();

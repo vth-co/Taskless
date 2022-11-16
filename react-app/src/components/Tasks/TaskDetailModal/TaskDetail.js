@@ -1,6 +1,5 @@
 import TaskEditDeleteModal from "../TaskEditDeleteModal";
 
-
 const TaskDetail = ({ project ,task }) => {
 
     return (

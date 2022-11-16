@@ -4,7 +4,7 @@ from wtforms.validators import DataRequired, Length
 
 class TaskForm(FlaskForm):
     title = StringField("Task", validators=[
-        DataRequired(message="Title is required."), 
+        DataRequired(message="Task's name is required."), 
         Length(min=1, max=255, message="Title must be between 1-255 characters.")])
     content = StringField("Description", validators=[
         # DataRequired(message="Content is required."), 

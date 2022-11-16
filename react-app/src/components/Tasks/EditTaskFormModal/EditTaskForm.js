@@ -28,12 +28,12 @@ function EditTaskForm({ project, task, setShowModal }) {
       setErrors(["Please input a title of 1 or more characters."]);
     // } else if (content.length < 3) {
     //   setErrors(["Please input a content of 3 or more characters."]);
-    } else if (content.length >= 255) {
-      setErrors(["Content: Max length of 255 characters reached."]);
+    // } else if (content.length >= 255) {
+    //   setErrors(["Content: Max length of 255 characters reached."]);
     } else {
       setErrors([]);
     }
-  }, [title, content]);
+  }, [title]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();

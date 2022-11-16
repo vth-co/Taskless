@@ -11,15 +11,15 @@ function CreateProjectForm({ setShowModal }) {
   const user = useSelector((state) => state.session.user);
   const history = useHistory();
 
-  // useEffect(() => {
-  //   if (title.length >= 50) {
-  //     setErrors(["Max length of 50 characters reached."]);
-  //   } else if (title.length < 1) {
-  //     setErrors(["Please input a title of 1 or more characters."]);
-  //   } else {
-  //     setErrors([]);
-  //   }
-  // }, [title]);
+  useEffect(() => {
+    if (title.length >= 255) {
+      setErrors(["Max length of 255 characters reached."]);
+    } else if (title.length < 1) {
+      setErrors(["Please input a title of 1 or more characters."]);
+    } else {
+      setErrors([]);
+    }
+  }, [title]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -71,11 +71,11 @@ function CreateProjectForm({ setShowModal }) {
                 type="text"
                 name="Name"
                 onChange={(e) => setTitle(e.target.value)}
-                maxLength="50"
+                maxLength="255"
               />
             </div>
             <div className="post-cancel-button-container">
-              <button className="cancel-project-button" onClick={handleCancel}>
+              <button className="cancel-button" onClick={handleCancel}>
                 Cancel
               </button>
               <button className="post-button" type="submit">

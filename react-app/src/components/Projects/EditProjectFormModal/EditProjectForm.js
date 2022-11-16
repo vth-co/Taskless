@@ -10,7 +10,6 @@ function EditProjectForm({ project, setShowModal }) {
   const { setShowEditModal } = useEditModal();
   const user = useSelector((state) => state.session.user);
 
-
   useEffect(() => {
     if (title.length >= 50) {
       setErrors(["Max length of 50 characters reached."]);
@@ -20,7 +19,6 @@ function EditProjectForm({ project, setShowModal }) {
       setErrors([]);
     }
   }, [title]);
-
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -41,9 +39,9 @@ function EditProjectForm({ project, setShowModal }) {
 
   return (
     <div>
+      <h4 className="form-title">Edit project</h4>
       <div className="form-container">
         <form onSubmit={handleSubmit}>
-          <h2 className="form-title">Edit project</h2>
           <div>
             {errors &&
               errors.map((error, ind) => (
@@ -53,28 +51,30 @@ function EditProjectForm({ project, setShowModal }) {
               ))}
           </div>
           <div className="field-label-button-container">
-          <div className="field">
-
-          <input
-            className="input"
-            value={title}
-            type="text"
-            name="Name"
-            onChange={(e) => setTitle(e.target.value)}
-            maxLength="50"
-          />
-          </div>
-          <div className="post-cancel-button-container">
-            <button className="save-button" type="submit">
-              Save
-            </button>
-            <button
-              className="cancel-button"
-              onClick={() => setShowModal(false)}
-            >
-              Cancel
-            </button>
-          </div>
+            <div className="field">
+              <div className="login-label-container">
+                <label>Name</label>
+              </div>
+              <input
+                className="input"
+                value={title}
+                type="text"
+                name="Name"
+                onChange={(e) => setTitle(e.target.value)}
+                maxLength="255"
+              />
+            </div>
+            <div className="post-cancel-button-container">
+              <button
+                className="cancel-button"
+                onClick={() => setShowModal(false)}
+              >
+                Cancel
+              </button>
+              <button className="post-button" type="submit">
+                Save
+              </button>
+            </div>
           </div>
         </form>
       </div>

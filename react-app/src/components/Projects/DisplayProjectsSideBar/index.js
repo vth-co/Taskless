@@ -13,7 +13,7 @@ function DisplayProjectsSideBar({ project }) {
     <div className="project-container">
         <NavLink
           className="project-links"
-          to={`/project/${project.id}`}
+          to={`/app/project/${project.id}`}
           project={project}
         >
           <li className="project-titles">{project.title}</li>
