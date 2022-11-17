@@ -124,11 +124,16 @@ h2 {
 }
 
 .button-container .tooltip {
-  display: none;
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity .5s;
+  transition-delay: 1s;
 }
 
 .button-container:hover .tooltip {
-  display: block;
+  visibility:visible;
+  opacity: 1;
   position: absolute;
   background-color: black;
   color: white;

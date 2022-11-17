@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
-import CreateProjectModal from "../Projects/CreateProject";
+import CreateProjectModal from "../Projects/CreateProject/CreateModal";
 import DisplayProjectsSideBar from "../Projects/DisplayProjectsSideBar";
 import "./Sidebar.css";
 

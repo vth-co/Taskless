@@ -10,7 +10,7 @@
 }
 
 
-.delete-button {
+.delete-modal-button {
   border: transparent;
   background-color: white;
   padding: 10px 10px;
@@ -20,7 +20,7 @@
 
 }
 
-.delete-button:hover {
+.delete-modal-button:hover {
   background-color: rgba(211, 211, 211, 0.459);
 }
 

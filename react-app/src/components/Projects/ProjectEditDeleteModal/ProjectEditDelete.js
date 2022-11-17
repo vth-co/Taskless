@@ -1,7 +1,8 @@
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { deleteProject } from "../../../store/projects";
-import EditProjectFormModal from "../../Projects/EditProjectFormModal"
+import DeleteFormModal from "../../DeleteProject/DeleteModal";
+import EditProjectFormModal from "../EditProjectFormModal/EditModal"
 
 function ProjectEditDelete({ project }) {
 
@@ -22,9 +23,7 @@ function ProjectEditDelete({ project }) {
             <div className="edit-delete-container">
             <EditProjectFormModal project={project} />
             <li class="menu_separator"></li>
-            <button className="delete-button" onClick={handleClick}>
-            <i className="fa-solid fa-trash-can"></i> Delete
-            </button>
+            <DeleteFormModal project={project} />
             </div>
         </div>
     )

@@ -3,7 +3,7 @@ import { Switch } from "react-router-dom";
 import Split from "react-split";
 import ProtectedRoute from "../auth/ProtectedRoute";
 import Content from "../Content";
-import ProjectDetail from "../Projects/ProjectDetail";
+import ProjectDetail from "../Projects/ProjectDetail/Detail";
 import Sidebar from "../Sidebar";
 import "./HomePage.css";
 

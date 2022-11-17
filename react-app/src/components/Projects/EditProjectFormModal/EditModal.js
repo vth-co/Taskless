@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Modal } from '../../../context/Modal';
-import EditProjectForm from './EditProjectForm';
+import EditProjectForm from './EditForm';
 import "./EditProject.css"
 
 
