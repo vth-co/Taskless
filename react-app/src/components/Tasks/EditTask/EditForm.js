@@ -55,7 +55,6 @@ function EditTaskForm({ project, task, setShowModal }) {
   };
 
   return (
-    <div>
       <div className="form-container">
         <form onSubmit={handleSubmit}>
           {/* <h2 className="form-title">Edit Task</h2> */}
@@ -119,7 +118,6 @@ function EditTaskForm({ project, task, setShowModal }) {
           </div>
         </form>
       </div>
-    </div>
   );
 }
 
