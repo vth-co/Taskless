@@ -10,14 +10,14 @@ function DisplayProjectsSideBar({ project }) {
   }
 
   return (
-    <div className="project-container" key={project.id}>
-      <NavLink
-        className="project-links"
-        to={`/project/${project.id}`}
-        project={project}
-      >
-        <li className="project-titles">{project.title}</li>
-      </NavLink>
+    <div className="project-container">
+        <NavLink
+          className="project-links"
+          to={`/app/project/${project.id}`}
+          project={project}
+        >
+          <li className="project-titles">{project.title}</li>
+        </NavLink>
       <ProjectEditDeleteModal project={project} />
     </div>
   );

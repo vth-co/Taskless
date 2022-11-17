@@ -92,15 +92,16 @@ img {
 }
 
 .logout-button {
+  display: flex;
   border: transparent;
   background-color: transparent;
   color: white;
-  padding: 12px 7px;
-  font-size: 16px;
+  border-radius: 2px;
+  margin-bottom: 4px;
 }
 
 .logout-button:hover {
-  background-color: grey;
+  background-color: gray;
   cursor: pointer;
 }
 .app-name {
@@ -120,4 +121,25 @@ h2 {
   color: rgb(255, 255, 255);
   cursor: pointer;
   border-radius: 2px;
+}
+
+.button-container .tooltip {
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity .5s;
+  transition-delay: 1s;
+}
+
+.button-container:hover .tooltip {
+  visibility:visible;
+  opacity: 1;
+  position: absolute;
+  background-color: black;
+  color: white;
+  top: 45px;
+  right: 10px;
+  padding: 10px 10px;
+  border-radius: 3px;
+  font-family: sans-serif;
 }

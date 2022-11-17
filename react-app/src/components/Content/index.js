@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
-import DisplayTasks2 from "../Tasks/DisplayTask2";
+import DisplayTasks2 from "../Tasks/DisplayTask/AllTasks";
 import "./Content.css";
 import CreateTaskForm from "../Tasks/CreateTask/CreateTaskForm";
 

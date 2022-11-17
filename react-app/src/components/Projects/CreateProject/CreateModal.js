@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Modal } from '../../../context/Modal';
-import CreateProjectForm from './CreateProjectForm';
+import CreateProjectForm from './CreateForm';
 import './CreateProject.css'
 
 function CreateProjectModal() {
@@ -28,7 +28,6 @@ function CreateProjectModal() {
         <Modal onClose={() => setShowModal(false)}>
           <CreateProjectForm setShowModal={setShowModal} />
         </Modal>
-
       )}
     </>
   );

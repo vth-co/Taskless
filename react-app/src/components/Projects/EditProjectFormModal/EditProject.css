@@ -2,7 +2,8 @@
   border: transparent;
   background-color: white;
   padding: 10px 10px;
-  margin: 5px 10px;
+  margin: 1px 3px;
+  border-radius: 5px;
 }
 
 
@@ -28,21 +29,4 @@
 
 .save-button:hover {
   cursor: pointer;
-}
-
-.cancel-button {
-  background-color: rgb(243, 243, 243);
-  color: rgb(32, 32, 32);
-  border-radius: 3px;
-  border: 1px solid grey;
-  padding: 5px 10px;
-  margin-left: 10px;
-  margin-right: 10px;
-  margin-top: 7px;
-}
-
-.cancel-button:hover {
-  cursor: pointer;
-  border: 1px solid grey;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }

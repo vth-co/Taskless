@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState } from "react";
 import { Modal } from "../../../context/Modal";
-import ProjectDetail from ".";
+import ProjectDetail from "./Detail";
 
 export const ProjectDetailModalContext = createContext();
 export const useProjectDetailModal = () => useContext(ProjectDetailModalContext);

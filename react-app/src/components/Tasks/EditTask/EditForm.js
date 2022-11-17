@@ -12,27 +12,35 @@ function EditTaskForm({ project, task, setShowModal }) {
   const [errors, setErrors] = useState([]);
   const { setShowEditModal } = useEditModal();
 
+  const projects = useSelector((state) => state.projects);
+  const projectsArr = Object.values(projects);
+
+  const [project_id, setProjectId] = useState(task.project_id);
+
+  const filterProjectsArr = projectsArr.filter(
+    (project) => project.user_id === user?.id
+  );
+
   useEffect(() => {
-    if (title.length >= 50) {
-      setErrors(["Title: Max length of 50 characters reached."]);
-    } else if (title.length < 3) {
-      setErrors(["Please input a title of 3 or more characters."]);
-    } else if (content.length < 3) {
-      setErrors(["Please input a content of 3 or more characters."]);
-    } else if (content.length >= 255) {
-      setErrors(["Content: Max length of 255 characters reached."]);
+    if (title.length >= 255) {
+      setErrors(["Title: Max length of 255 characters reached."]);
+    } else if (title.length < 1) {
+      setErrors(["Please input a title of 1 or more characters."]);
+    // } else if (content.length < 3) {
+    //   setErrors(["Please input a content of 3 or more characters."]);
+    // } else if (content.length >= 255) {
+    //   setErrors(["Content: Max length of 255 characters reached."]);
     } else {
       setErrors([]);
     }
-  }, [title, content]);
-
+  }, [title]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     const edit_task = {
       id: task.id,
-      project_id: project.id,
+      project_id,
       title,
       content,
       user_id: user?.id,
@@ -49,7 +57,7 @@ function EditTaskForm({ project, task, setShowModal }) {
   return (
       <div className="form-container">
         <form onSubmit={handleSubmit}>
-          <h2 className="form-title">Edit Task</h2>
+          {/* <h2 className="form-title">Edit Task</h2> */}
           <div>
             {errors &&
               errors.map((error, ind) => (
@@ -61,25 +69,25 @@ function EditTaskForm({ project, task, setShowModal }) {
           <div>
             <div className="field">
               <div className="login-label-container">
-                <label>Title</label>
+                {/* <label>Title</label> */}
               </div>
               <input
-                className="input"
+                className="edit-task-input"
                 value={title}
                 type="text"
                 name="Name"
                 onChange={(e) => setTitle(e.target.value)}
-                maxLength="50"
+                maxLength="255"
               />
             </div>
             <div className="field">
               <div className="login-label-container">
-                <label>Content</label>
+                {/* <label>Content</label> */}
               </div>
-              <input
-                className="input"
+              <textarea
+                className="edit-description-input"
                 value={content}
-                type="text"
+                type="textarea"
                 name="Description"
                 onChange={(e) => setContent(e.target.value)}
                 maxLength="255"
@@ -87,14 +95,25 @@ function EditTaskForm({ project, task, setShowModal }) {
             </div>
           </div>
           <div className="post-cancel-button-container">
-            <button className="save-button" type="submit">
-              Save
-            </button>
+            <select
+              className="select-project-button"
+              value={project_id}
+              onChange={(e) => setProjectId(e.target.value)}
+            >
+              {filterProjectsArr.map((project) => (
+                <option key={project.id} value={project.id}>
+                  {project.title}
+                </option>
+              ))}
+            </select>
             <button
-              className="cancel-button"
+              className="cancel-task-button"
               onClick={() => setShowModal(false)}
             >
               Cancel
+            </button>
+            <button className="post-button" type="submit">
+              Save
             </button>
           </div>
         </form>

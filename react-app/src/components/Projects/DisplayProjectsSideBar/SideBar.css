@@ -7,22 +7,23 @@
     overflow: hidden;
     line-height: 21px;
     margin-top: 0;
+    padding-left: 10px;
 }
 
 .project-links {
     text-decoration: none;
+    cursor: pointer;
+    min-width: 90%;
+    padding: 10px 0;
 }
-
 
 .project-container {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    cursor: pointer;
     border-radius: 5px;
-    padding: 10px 10px;
-    margin: 0 20px;
+    margin: 0 10px;
 }
+
 
 .project-container:hover {
     background-color: rgb(238,238,238);

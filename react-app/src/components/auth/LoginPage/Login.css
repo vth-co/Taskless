@@ -4,7 +4,7 @@
 }
 
 .login-button {
-    border-radius: 3px;
+    border-radius: 5px;
     border: transparent;
     background-color: #E44232;
     color: white;
@@ -47,7 +47,7 @@
 }
 
 .input {
-    border-radius: 3px;
+    border-radius: 5px;
     border: 1px solid grey;
     padding-top: 9px;
     padding-bottom: 9px;
@@ -102,7 +102,6 @@ h2 {
     text-decoration: underline;
     cursor: pointer;
 }
-
 
 
 p {

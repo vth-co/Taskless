@@ -3,14 +3,14 @@
     min-width: 400px;
 }
 
-.cancel-project-button {
+.cancel-button {
     background-color: white;
     border: 1px solid rgba(128, 128, 128, 0.507);
     border-radius: 5px;
     font-weight: bold;
 }
 
-.cancel-project-button:hover {
+.cancel-button:hover {
     /* background-color: rgba(235, 235, 235); */
     border: 1px solid rgb(0, 0, 0);
     cursor: pointer;
@@ -41,10 +41,6 @@
     background-color: rgb(238,238,238);
 }
 
-.cancel-button {
-    border: transparent;
-    background-color: transparent;
-}
 
 .post-delete-buttons-container{
     display: flex;
@@ -67,21 +63,6 @@
     color: #E44232;
 }
 
-.task-input {
-    border-radius: 3px;
-    border: 1px solid grey;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-right: 10px;
-    padding-left: 10px;
-    outline: none;
-    border: none;
-}
-
-.task-input::placeholder {
-    font-weight: 500;
-    font-size: 14px;
-}
 
 .description-input {
     border-radius: 3px;
@@ -91,6 +72,8 @@
     padding-left: 10px;
     outline: none;
     border: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
 }
 
 .description-input::placeholder {

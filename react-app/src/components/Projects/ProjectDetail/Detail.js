@@ -1,9 +1,8 @@
 import { useState } from "react";
 import { useSelector } from "react-redux";
-import {  Redirect, useHistory, useParams } from "react-router-dom";
-import CreateTaskModal from "../../Tasks/CreateTask";
+import { Redirect, useHistory, useParams } from "react-router-dom";
 import CreateTaskForm from "../../Tasks/CreateTask/CreateTaskForm";
-import DisplayTasks from "../../Tasks/DisplayTask";
+import DisplayTasks from "../../Tasks/DisplayTask/TasksUnderProjs";
 import ProjectEditDeleteModal from "../ProjectEditDeleteModal";
 import "./ProjectDetail.css";
 
@@ -17,58 +16,40 @@ const ProjectDetail = () => {
   const filteredArr = projectsArr.filter((project) => project?.id === +id);
 
   if (filteredArr.length < 1) {
-    history.push('/404-Not-Found')
+    history.push("/404-Not-Found");
   }
 
   if (filteredArr.length >= 1) {
     if (filteredArr[0].user_id !== user?.id) {
-      history.push('/404-Not-Found')
+      history.push("/404-Not-Found");
     }
   }
 
   if (!user) {
     return <Redirect to="/" />;
   }
-  
 
   return (
-    <div  className="project-task-container">
+    <div className="main-content">
       {filteredArr.map((proj) => (
-        <div key={proj.id}>
+        <div >
           <div className="title-edit">
-            <h2>{proj?.title}</h2>
+            <h1 className="tasklist-title">{proj?.title}</h1>
             <ProjectEditDeleteModal key={proj.id} project={proj} />
           </div>
-          <div className="task-container">
+          <div>
             <DisplayTasks key={proj.id} project={proj} />
           </div>
           <div hidden={showModal}>
-          <a className="main-add" onClick={() => setShowModal(true)}>
-            <svg className="add-circle" onClick={() => setShowModal(true)}>
-              <g transform="translate(-.25 0)">
-                <line
-                  x1="3"
-                  y1="10"
-                  x2="18"
-                  y2="10"
-                  stroke="white"
-                  stroke-width="1.5"
-                ></line>
-                <line
-                  x1="10.5"
-                  y1="3"
-                  x2="10.5"
-                  y2="17"
-                  stroke="white"
-                  stroke-width="1.5"
-                ></line>
-                <g mask="url(#ahat)">
+            <a className="main-add" onClick={() => setShowModal(true)}>
+              <svg className="add-circle" onClick={() => setShowModal(true)}>
+                <g transform="translate(-.25 0)">
                   <line
                     x1="3"
                     y1="10"
                     x2="18"
                     y2="10"
-                    stroke="currentcolor"
+                    stroke="white"
                     stroke-width="1.5"
                   ></line>
                   <line
@@ -76,18 +57,35 @@ const ProjectDetail = () => {
                     y1="3"
                     x2="10.5"
                     y2="17"
-                    stroke="currentcolor"
+                    stroke="white"
                     stroke-width="1.5"
                   ></line>
+                  <g mask="url(#ahat)">
+                    <line
+                      x1="3"
+                      y1="10"
+                      x2="18"
+                      y2="10"
+                      stroke="currentcolor"
+                      stroke-width="1.5"
+                    ></line>
+                    <line
+                      x1="10.5"
+                      y1="3"
+                      x2="10.5"
+                      y2="17"
+                      stroke="currentcolor"
+                      stroke-width="1.5"
+                    ></line>
+                  </g>
                 </g>
-              </g>
-            </svg>
-            <div className="button-text">Add task</div>
-          </a>
-        </div>
-        <div hidden={!showModal}>
-          <CreateTaskForm setShowModal={setShowModal} />
-        </div>
+              </svg>
+              <div className="button-text">Add task</div>
+            </a>
+          </div>
+          <div hidden={!showModal}>
+            <CreateTaskForm setShowModal={setShowModal} />
+          </div>
         </div>
       ))}
     </div>

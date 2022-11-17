@@ -1,0 +1,40 @@
+.edit-task-button {
+  border-radius: 8px;
+  border: transparent;
+  background-color: #e44232;
+  color: white;
+  padding: 5px 30px;
+}
+
+.edit-task-form-container {
+  margin: 40px 25px;
+  width: 275px;
+  height: 275px;
+}
+
+.edit-task-input {
+  border-radius: 3px;
+  border: 1px solid grey;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 10px;
+  padding-left: 10px;
+  outline: none;
+  border: none;
+  font-weight: 600;
+  font-size: 14px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  
+}
+
+.edit-description-input {
+  border-radius: 3px;
+  border: 1px solid grey;
+  padding-bottom: 29px;
+  padding-right: 10px;
+  padding-left: 10px;
+  outline: none;
+  border: none;
+  font-size: 13px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

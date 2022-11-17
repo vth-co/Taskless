@@ -1,63 +1,54 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
-import { createProject } from "../../../store/projects";
-import "./CreateProject.css";
+import { editProject } from "../../../store/projects";
+import { useEditModal } from "../ProjectEditDeleteModal";
 
-function CreateProjectForm({ setShowModal }) {
+function EditProjectForm({ project, setShowModal }) {
   const dispatch = useDispatch();
-  const [title, setTitle] = useState("");
+  const [title, setTitle] = useState(project.title);
   const [errors, setErrors] = useState([]);
+  const { setShowEditModal } = useEditModal();
   const user = useSelector((state) => state.session.user);
-  const history = useHistory();
 
-  // useEffect(() => {
-  //   if (title.length >= 50) {
-  //     setErrors(["Max length of 50 characters reached."]);
-  //   } else if (title.length < 1) {
-  //     setErrors(["Please input a title of 1 or more characters."]);
-  //   } else {
-  //     setErrors([]);
-  //   }
-  // }, [title]);
+  useEffect(() => {
+    if (title.length >= 50) {
+      setErrors(["Max length of 50 characters reached."]);
+    } else if (title.length < 3) {
+      setErrors(["Please input a title of 3 or more characters."]);
+    } else {
+      setErrors([]);
+    }
+  }, [title]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const new_project = {
+    const edit_project = {
+      id: project.id,
+      user_id: user.id,
       title,
-      user_id: user?.id,
     };
-
-    const data = await dispatch(createProject(new_project));
+    const data = await dispatch(editProject(edit_project));
     if (data.errors) {
       setErrors(data.errors);
     } else {
       setShowModal(false);
-      // showTaskForm()
-      setTitle("");
-      history.push(`/app`);
+      setShowEditModal(false);
     }
-  };
-
-  const handleCancel = async () => {
-    setShowModal(false);
-
-    // showTaskForm()
-    setTitle("");
   };
 
   return (
     <div>
-      <h4 className="form-title">Add project</h4>
+      <h4 className="form-title">Edit project</h4>
       <div className="form-container">
         <form onSubmit={handleSubmit}>
           <div>
-            {errors.map((error, ind) => (
-              <div className="errors" key={ind}>
-                {error}
-              </div>
-            ))}
+            {errors &&
+              errors.map((error, ind) => (
+                <div className="errors" key={ind}>
+                  {error}
+                </div>
+              ))}
           </div>
           <div className="field-label-button-container">
             <div className="field">
@@ -66,20 +57,22 @@ function CreateProjectForm({ setShowModal }) {
               </div>
               <input
                 className="input"
-                // placeholder="Title"
                 value={title}
                 type="text"
                 name="Name"
                 onChange={(e) => setTitle(e.target.value)}
-                maxLength="50"
+                maxLength="255"
               />
             </div>
             <div className="post-cancel-button-container">
-              <button className="cancel-project-button" onClick={handleCancel}>
+              <button
+                className="cancel-button"
+                onClick={() => setShowModal(false)}
+              >
                 Cancel
               </button>
               <button className="post-button" type="submit">
-                Add
+                Save
               </button>
             </div>
           </div>
@@ -89,4 +82,4 @@ function CreateProjectForm({ setShowModal }) {
   );
 }
 
-export default CreateProjectForm;
+export default EditProjectForm;

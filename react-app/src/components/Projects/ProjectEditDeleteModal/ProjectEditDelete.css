@@ -10,15 +10,17 @@
 }
 
 
-.delete-button {
+.delete-modal-button {
   border: transparent;
   background-color: white;
   padding: 10px 10px;
-  margin: 5px 10px;
+  margin: 1px 3px;
   cursor: pointer;
+  border-radius: 5px;
+
 }
 
-.delete-button:hover {
+.delete-modal-button:hover {
   background-color: rgba(211, 211, 211, 0.459);
 }
 
@@ -29,11 +31,11 @@
 
 .edit-buttons-container {
   min-width: 250px;
-  min-height: 100px;
+  max-height: 200px;
 }
 
 .menu_separator {
-  margin: 4px;
+  margin: 2px;
   border-bottom: 1px solid #ddd;
   list-style: none;
 }

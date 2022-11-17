@@ -3,7 +3,7 @@ import { Redirect } from "react-router-dom";
 import Checkbox from "../../Checkbox";
 import TaskEditDeleteModal from "../TaskEditDeleteModal";
 
-function DisplayTasks2({ task }) {
+function DisplayTasks2({ task, project }) {
   const user = useSelector((state) => state.session.user);
 
 

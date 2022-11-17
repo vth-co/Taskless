@@ -1,6 +1,7 @@
 import { useDispatch } from "react-redux";
 import { deleteTask } from "../../../store/tasks";
-import EditTaskFormModal from "../EditTaskFormModal";
+import DeleteFormModal from "../../DeleteTask/DeleteModal";
+import EditTaskFormModal from "../EditTask/EditModal";
 
 function TaskEditDelete({ project, task }) {
   const dispatch = useDispatch();
@@ -15,9 +16,7 @@ function TaskEditDelete({ project, task }) {
       <div className="edit-delete-container">
         <EditTaskFormModal project={project} task={task} />
         <li class="menu_separator"></li>
-        <button className="delete-button" onClick={handleClick}>
-          <i className="fa-solid fa-trash-can"></i> Delete
-        </button>
+        <DeleteFormModal task={task} />
       </div>
     </div>
   );
