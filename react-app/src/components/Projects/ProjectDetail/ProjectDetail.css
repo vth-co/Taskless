@@ -12,6 +12,11 @@
     
 }
 
+.edit {
+    display: flex;
+    margin-top: 25px;
+}
+
 /* .task-container {
     display: flex;
 } */

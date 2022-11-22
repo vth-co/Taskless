@@ -13,27 +13,28 @@ function CreateTaskForm({ project, setShowModal }) {
 
   const projects = useSelector((state) => state.projects);
   const projectsArr = Object.values(projects);
+  const [project_id, setProjectId] = useState(project?.id);
 
-  const projectId = projectsArr[0]?.id;
-  const [project_id, setProjectId] = useState(projectId);
+  const projectId = project?.id;
+  if (!projectId) projectId = projectsArr[0]?.id;
 
   const filterProjectsArr = projectsArr.filter(
     (project) => project.user_id === user?.id
   );
 
-  useEffect(() => {
-    if (title.length >= 255) {
-      setErrors(["Title: Max length of 255 characters reached."]);
-    } else if (title.length < 1) {
-      setErrors(["Please input a title of 1 or more characters."]);
-    // } else if (content.length < 3) {
-    //   setErrors(["Please input a content of 3 or more characters."]);
-    // } else if (content.length >= 255) {
-    //   setErrors(["Content: Max length of 255 characters reached."]);
-    } else {
-      setErrors([]);
-    }
-  }, [title]);
+  // useEffect(() => {
+  //   if (title.length >= 255) {
+  //     setErrors(["Title: Max length of 255 characters reached."]);
+  //   } else if (title.length < 1) {
+  //     setErrors(["Please input a title of 1 or more characters."]);
+  //   // } else if (content.length < 3) {
+  //   //   setErrors(["Please input a content of 3 or more characters."]);
+  //   // } else if (content.length >= 255) {
+  //   //   setErrors(["Content: Max length of 255 characters reached."]);
+  //   } else {
+  //     setErrors([]);
+  //   }
+  // }, [title]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -52,6 +53,7 @@ function CreateTaskForm({ project, setShowModal }) {
       setShowModal(false);
       setTitle("");
       setContent("");
+      setErrors([]);
       // history.push(`/app`);
     }
   };
@@ -62,6 +64,7 @@ function CreateTaskForm({ project, setShowModal }) {
     // showTaskForm()
     setTitle("");
     setContent("");
+    setErrors([]);
   };
 
   return (

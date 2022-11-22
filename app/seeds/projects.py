@@ -6,12 +6,12 @@ from app.models import db, Project
 def seed_projects():
 
     project1 = Project(
-        title = "Inbox",
+        title = "Project 1",
         user_id = 1
     )
 
     project2 = Project(
-        title = "Project 1",
+        title = "Project 2",
         user_id = 1
     )
 

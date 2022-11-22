@@ -32,10 +32,12 @@ const ProjectDetail = () => {
   return (
     <div className="main-content">
       {filteredArr.map((proj) => (
-        <div >
+        <div>
           <div className="title-edit">
             <h1 className="tasklist-title">{proj?.title}</h1>
-            <ProjectEditDeleteModal key={proj.id} project={proj} />
+            <div className="edit">
+              <ProjectEditDeleteModal key={proj.id} project={proj} />
+            </div>
           </div>
           <div>
             <DisplayTasks key={proj.id} project={proj} />
@@ -84,7 +86,7 @@ const ProjectDetail = () => {
             </a>
           </div>
           <div hidden={!showModal}>
-            <CreateTaskForm setShowModal={setShowModal} />
+            <CreateTaskForm setShowModal={setShowModal} project={proj}/>
           </div>
         </div>
       ))}
