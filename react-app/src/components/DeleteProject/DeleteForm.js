@@ -12,6 +12,7 @@ const DeleteForm = ({ project, setShowModal }) => {
 
     const data = await dispatch(deleteProject(project.id));
     if (data) {
+      setShowModal(false)
       history.push(`/app`);
     }
   };

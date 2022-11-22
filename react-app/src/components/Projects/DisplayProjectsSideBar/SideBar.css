@@ -13,7 +13,7 @@
 .project-links {
     text-decoration: none;
     cursor: pointer;
-    min-width: 90%;
+    min-width: 85%;
     padding: 10px 0;
 }
 
@@ -35,3 +35,5 @@
 .project-container .project-edit-button {
     display: none;
 }
+
+

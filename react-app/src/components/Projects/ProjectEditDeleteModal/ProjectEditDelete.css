@@ -3,6 +3,7 @@
   background-color: transparent;
   cursor: pointer;
   color: gray;
+  font-size: 20px;
 }
 
 .project-edit-button:hover {

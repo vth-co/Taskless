@@ -11,13 +11,13 @@ function DisplayProjectsSideBar({ project }) {
 
   return (
     <div className="project-container">
-        <NavLink
-          className="project-links"
-          to={`/app/project/${project.id}`}
-          project={project}
-        >
-          <li className="project-titles">{project.title}</li>
-        </NavLink>
+      <NavLink
+        className="project-links"
+        to={`/app/project/${project.id}`}
+        project={project}
+      >
+        <li className="project-titles">{project.title}</li>
+      </NavLink>
       <ProjectEditDeleteModal project={project} />
     </div>
   );
