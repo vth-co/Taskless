@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 import { deleteTask } from "../../../store/tasks";
-import DeleteFormModal from "../../DeleteTask/DeleteModal";
+import DeleteFormModal from "../DeleteTask/DeleteModal";
 import EditTaskFormModal from "../EditTask/EditModal";
 
 function TaskEditDelete({ project, task }) {

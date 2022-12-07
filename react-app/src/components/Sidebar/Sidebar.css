@@ -20,3 +20,16 @@ h3 {
     justify-content: space-between;
     margin: 0 20px;
 }
+
+.completed-link {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: black;
+    font-size: 14px;
+    word-wrap: break-word;
+    word-break: break-all;
+    overflow: hidden;
+    line-height: 21px;
+    margin-top: 0;
+    padding-left: 10px;
+    text-decoration: none;
+}

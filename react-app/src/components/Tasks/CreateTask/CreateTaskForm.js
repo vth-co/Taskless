@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { createTask } from "../../../store/tasks";
 import "./CreateTask.css";
@@ -13,10 +13,9 @@ function CreateTaskForm({ project, setShowModal }) {
 
   const projects = useSelector((state) => state.projects);
   const projectsArr = Object.values(projects);
+
   const [project_id, setProjectId] = useState(project?.id);
 
-  const projectId = project?.id;
-  if (!projectId) projectId = projectsArr[0]?.id;
 
   const filterProjectsArr = projectsArr.filter(
     (project) => project.user_id === user?.id
@@ -65,6 +64,7 @@ function CreateTaskForm({ project, setShowModal }) {
     setTitle("");
     setContent("");
     setErrors([]);
+    // setProjectId(project?.id)
   };
 
   return (

@@ -1,9 +1,8 @@
-from cmath import log
-from crypt import methods
-from flask import Blueprint, json, jsonify, redirect, request
-from flask_login import login_required
-from app.models import db, Task
+from flask import Blueprint, jsonify, request
+from flask_login import login_required, current_user
+from app.models import db, Task, Project
 from app.forms import TaskForm
+from datetime import datetime
 
 
 task_routes = Blueprint('tasks', __name__)
@@ -57,16 +56,23 @@ def edit_task(id):
     else:
         return {"errors": validation_errors_to_error_messages(form.errors)}, 400
 
-@task_routes.route('/finished/<int:id>', methods=["PUT"])
+@task_routes.route('/<int:id>/completed', methods=["PUT"])
 @login_required
-def finish_task(id):
-    boolean = request.get_json()["check"]
+def complete_task(id):
     task = Task.query.get(id)
-
-    task.is_finished = boolean
+    if not task:
+        return {"errors": ['Task does not exist']}, 400
+    task.completed = not task.completed
+    
     db.session.commit()
 
     return task.to_dict()
+
+@task_routes.route('/completed')
+def completed_task():
+    tasks = Task.query.join(Project).filter(Project.user_id == current_user.id).filter(Task.completed).all()
+    return {"tasks": [task.to_dict() for task in tasks]}
+    
 
 @task_routes.route('/<int:id>', methods=['DELETE'])
 @login_required

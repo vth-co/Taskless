@@ -1,7 +1,7 @@
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { deleteProject } from "../../../store/projects";
-import DeleteFormModal from "../../DeleteProject/DeleteModal";
+import DeleteFormModal from "../DeleteProject/DeleteModal";
 import EditProjectFormModal from "../EditProjectFormModal/EditModal"
 
 function ProjectEditDelete({ project }) {

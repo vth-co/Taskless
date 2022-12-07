@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Switch } from "react-router-dom";
 import Split from "react-split";
 import ProtectedRoute from "../auth/ProtectedRoute";
+import CompletedTasks from "../CompletedTasks";
 import Content from "../Content";
 import ProjectDetail from "../Projects/ProjectDetail/Detail";
 import Sidebar from "../Sidebar";
@@ -30,6 +31,9 @@ function HomePage() {
         </ProtectedRoute>
         <ProtectedRoute path='/app/project/:id' exact={true}>
           <ProjectDetail />
+        </ProtectedRoute>
+        <ProtectedRoute path='/app/completed' exact={true}>
+          <CompletedTasks />
         </ProtectedRoute>
       </Switch>
     </Split>

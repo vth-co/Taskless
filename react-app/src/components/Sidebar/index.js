@@ -1,10 +1,10 @@
 import { useSelector } from "react-redux";
-import { Redirect } from "react-router-dom";
+import { NavLink, Redirect } from "react-router-dom";
 import CreateProjectModal from "../Projects/CreateProject/CreateModal";
 import DisplayProjectsSideBar from "../Projects/DisplayProjectsSideBar";
 import "./Sidebar.css";
 
-function Sidebar() {
+const Sidebar = () => {
   const user = useSelector((state) => state.session.user);
 
   const projects = useSelector((state) => state.projects);
@@ -30,6 +30,7 @@ function Sidebar() {
           </div>
         ))}
       </div>
+      <NavLink to={"/app/completed"} className="completed-link">Completed Tasks</NavLink>
     </div>
   );
 }

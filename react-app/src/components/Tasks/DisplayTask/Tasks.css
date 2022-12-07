@@ -20,7 +20,7 @@
     word-break: break-all;
     overflow: hidden;
     line-height: 21px;
-    margin-top: 0;
+    margin-top: 2px;
 }
 
 .task-content {
@@ -71,3 +71,26 @@
     overflow: hidden;
     width: 800px;
 }
+
+
+ /* .checkbox-button:hover .fa-circle-check {
+    display: block;
+ }
+
+ .checkbox-button .fa-circle-check {
+    display: none;
+ }
+
+ .checkbox-button:hover .fa-circle {
+    display: none;
+ }
+
+ .checkbox-button .fa-circle {
+    display: block;
+ } */
+
+ .checkbox-button:hover {
+    cursor: pointer;
+    color: black;
+
+ }
