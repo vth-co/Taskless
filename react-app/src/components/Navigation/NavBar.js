@@ -7,7 +7,6 @@ import "./NavBar.css";
 
 const NavBar = () => {
   const user = useSelector((state) => state.session.user);
-  // const [toggleSideBar, setToggleSideBar] = useState(false)
 
   let location = useLocation();
   let sessionLinks;
@@ -35,9 +34,8 @@ const NavBar = () => {
       <div className="icon-name-loggedin-container">
         <div className="icon-buttons-container">
           <div>
-            <svg 
+            {/* <svg 
             className="toggle" 
-            // onClick={toggleSideBar}
             >
               <line
                 x1="4"
@@ -63,7 +61,7 @@ const NavBar = () => {
                 stroke="white"
                 stroke-width="1"
               ></line>
-            </svg>
+            </svg> */}
           </div>
           <div>
             <NavLink to={"/app"}>
@@ -146,7 +144,6 @@ const NavBar = () => {
         </div>
         <div className="user-buttons-container">
           <div>
-            {/* <CreateProjectModal /> */}
             <CreateTaskModal />
           </div>
           <div>

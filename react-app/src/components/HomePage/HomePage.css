@@ -1,21 +1,13 @@
+.split {
+  z-index: 5;
+}
 
-.gutter.gutter-horizontal {
+.gutter .gutter-vertical {
+  position: relative;
   cursor: ew-resize;
 }
 
-.gutter.gutter-horizontal:hover {
+.gutter .gutter-horizontal:hover {
   background-color: rgba(78, 78, 78, 0.143);
-}
-
-.sidebar-close {
-  width: 0px;
-  transition: all 0.2s ease-out;
-}
-.sidebar-open {
-  width: 372px;
-  transition: all 0.2s ease-out;
-}
-
-.content-close {
-
+  cursor: col-resize;
 }
