@@ -10,15 +10,15 @@ A live deployment of [Taskless](https://taskless-app.herokuapp.com/) is hosted o
 
 ### Welcome
 
-![](https://i.gyazo.com/e91a927ba75f2a467ab8a465fde27c00.jpg)
+![](https://i.gyazo.com/57cb715b5f798273d2322284a6c41f79.jpg)
 
-### Tasklists
+### Home
 
-![](https://i.gyazo.com/1313ba55e614ee039c7fa8612a6b9807.png)
+![](https://i.gyazo.com/b6ae0ebc170ad474fee23f1b8ef53786.png)
 
-### Tasks
+### Create Task
 
-![](https://i.gyazo.com/bddd9de8c87cc813608c48d022c107e5.png)
+![](https://i.gyazo.com/206430bad8a99424e4e2c2efe8df31f4.png)
 
 ## Features
 
