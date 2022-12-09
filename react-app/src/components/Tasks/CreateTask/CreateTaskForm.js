@@ -9,17 +9,13 @@ function CreateTaskForm({ project, setShowModal }) {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [errors, setErrors] = useState([]);
-  // const history = useHistory();
 
   const projects = useSelector((state) => state.projects);
   const projectsArr = Object.values(projects);
-
-  const [project_id, setProjectId] = useState(project?.id);
-
-
   const filterProjectsArr = projectsArr.filter(
     (project) => project.user_id === user?.id
-  );
+    );
+  const [project_id, setProjectId] = useState(projects.id);
 
   // useEffect(() => {
   //   if (title.length >= 255) {
@@ -59,8 +55,6 @@ function CreateTaskForm({ project, setShowModal }) {
 
   const handleCancel = async () => {
     setShowModal(false);
-
-    // showTaskForm()
     setTitle("");
     setContent("");
     setErrors([]);
@@ -114,6 +108,7 @@ function CreateTaskForm({ project, setShowModal }) {
             value={project_id}
             onChange={(e) => setProjectId(e.target.value)}
             >
+              <option value="">Select a project</option>
               {filterProjectsArr.map((project) => (
                 <option key={project.id} value={project.id}>
                  {project.title}
