@@ -8,7 +8,7 @@ def seed_tasks():
         content = "Rinse, soap up, lather, rinse and repeat",
         project_id = 1,
         user_id = 1,
-        finished=False,
+        completed=False,
     )
 
     task2 = Task(
@@ -16,7 +16,7 @@ def seed_tasks():
         content = "Tie trash bag, take out trash can, take out to bigger trash can outside",
         project_id = 2,
         user_id = 1,
-        finished=False,
+        completed=False,
     )
 
     task3 = Task(
@@ -24,7 +24,7 @@ def seed_tasks():
         content = "Rinse, soap up, lather, rinse and repeat",
         project_id = 3,
         user_id = 1,
-        finished=False,
+        completed=True,
     )
 
     task4 = Task(
@@ -32,7 +32,7 @@ def seed_tasks():
         content = "Get leash, call for Haru, tie leash, bring waste bags",
         project_id = 4,
         user_id = 2,
-        finished=False,
+        completed=False,
     )
 
     task5 = Task(
@@ -40,7 +40,7 @@ def seed_tasks():
         content = "Throw away trash, dust and declutter, organize things",
         project_id = 4,
         user_id = 2,
-        finished=False,
+        completed=False,
     )
     
 

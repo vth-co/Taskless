@@ -63,7 +63,7 @@ img {
   background-color: rgb(61, 61, 61);
   align-items: center;
   height: 45px;
-  z-index: 1;
+  /* z-index: 1; */
 }
 
 .icon-buttons-container {

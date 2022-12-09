@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { deleteProject } from "../../store/projects";
+import { deleteProject } from "../../../store/projects";
 import "./DeleteForm.css";
 
 const DeleteForm = ({ project, setShowModal }) => {
@@ -25,7 +25,7 @@ const DeleteForm = ({ project, setShowModal }) => {
           <button className="cancel-button" onClick={() => setShowModal(false)}>
             Cancel
           </button>
-          <button className="delete-button" onClick={handleClick}>
+          <button className="post-button" onClick={handleClick}>
             Delete
           </button>
         </div>

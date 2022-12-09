@@ -12,10 +12,10 @@ function CreateProjectForm({ setShowModal }) {
   const history = useHistory();
 
   useEffect(() => {
-    if (title.length >= 255) {
-      setErrors(["Max length of 255 characters reached."]);
-    } else if (title.length < 1) {
-      setErrors(["Please input a title of 1 or more characters."]);
+    if (title.length >= 50) {
+      setErrors(["Max length of 50 characters reached."]);
+    // } else if (title.length < 1) {
+    //   setErrors(["Please input a title of 1 or more characters."]);
     } else {
       setErrors([]);
     }
@@ -71,7 +71,7 @@ function CreateProjectForm({ setShowModal }) {
                 type="text"
                 name="Name"
                 onChange={(e) => setTitle(e.target.value)}
-                maxLength="255"
+                maxLength="50"
               />
             </div>
             <div className="post-cancel-button-container">

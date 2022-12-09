@@ -1,27 +1,32 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+import { completeATask } from "../../store/tasks";
 import "./Checkbox.css";
 
 function Checkbox({ task }) {
+  const [completed, setCompleted] = useState(task?.completed);
   const dispatch = useDispatch();
-  const [finished, setFinished] = useState(task.finished);
+
+  const handleComplete = async (e) => {
+    e.preventDefault();
+
+    dispatch(completeATask(task?.id));
+    setCompleted(!completed);
+  };
 
   return (
     <div>
-      {/* <input
-        type="checkbox"
-        value={finished}
-        checked={task?.finished === true}
-        onChange={(e) => setFinished(e.target.value)}
-      /> */}
-      <div className="checkbox-container">
-        <button className="checkbox-button" id="empty">
-          <i class="fa-regular fa-circle"></i>
-        </button>
-        <button className="checkbox-button" id="checked">
-          <i class="fa-regular fa-circle-check"></i>
-        </button>
-      </div>
+      <form onClick={handleComplete}>
+        <div className="checkbox-container">
+          <button className="checkbox-button" value={completed}>
+            <i
+              className={
+                completed ? "fa-solid fa-circle-check" : "fa-regular fa-circle"
+              }
+            ></i>
+          </button>
+        </div>
+      </form>
     </div>
   );
 }

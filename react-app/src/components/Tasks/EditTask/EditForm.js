@@ -14,9 +14,7 @@ function EditTaskForm({ project, task, setShowModal }) {
 
   const projects = useSelector((state) => state.projects);
   const projectsArr = Object.values(projects);
-
   const [project_id, setProjectId] = useState(task.project_id);
-
   const filterProjectsArr = projectsArr.filter(
     (project) => project.user_id === user?.id
   );

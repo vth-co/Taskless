@@ -1,35 +1,36 @@
-import { useState } from "react";
 import { Switch } from "react-router-dom";
-import Split from "react-split";
+import Split from 'react-split'
 import ProtectedRoute from "../auth/ProtectedRoute";
+import CompletedTasks from "../CompletedTasks";
 import Content from "../Content";
 import ProjectDetail from "../Projects/ProjectDetail/Detail";
 import Sidebar from "../Sidebar";
 import "./HomePage.css";
 
 function HomePage() {
-  const [toggleSideBar, setToggleSideBar] = useState(false);
-
   return (
     <Split
+    className="split"
       sizes={[15, 85]}
-      minSize={[200]}
-      maxSize={[400]}
+      minSize={100}
+      expandToMin={false}
+      gutterSize={10}
+      gutterAlign="center"
+      snapOffset={30}
+      dragInterval={1}
       direction="horizontal"
       cursor="col-resize"
     >
-      <Sidebar
-        toggleSideBar={() => setToggleSideBar(!toggleSideBar)}
-        //  className={toggleSideBar ? "sidebar-open" : "sidebar-close"}
-      />
+      <Sidebar />
       <Switch>
         <ProtectedRoute path="/app" exact={true}>
-          <Content
-          //  className={toggleSideBar ? "content-close" : "content-open"}
-          />
+          <Content />
         </ProtectedRoute>
-        <ProtectedRoute path='/app/project/:id' exact={true}>
+        <ProtectedRoute path="/app/project/:id" exact={true}>
           <ProjectDetail />
+        </ProtectedRoute>
+        <ProtectedRoute path="/app/completed" exact={true}>
+          <CompletedTasks />
         </ProtectedRoute>
       </Switch>
     </Split>

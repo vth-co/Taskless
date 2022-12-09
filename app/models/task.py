@@ -9,7 +9,7 @@ class Task(db.Model):
     project_id = db.Column(db.Integer, db.ForeignKey("projects.id"), nullable=False)
     title = db.Column(db.String, nullable=False)
     content = db.Column(db.String, nullable=False)
-    finished = db.Column(db.Boolean)
+    completed = db.Column(db.Boolean)
     created_at = db.Column(db.DateTime, nullable=False, server_default=db.func.now())
     updated_at = db.Column(db.DateTime, nullable=False, server_default=db.func.now(), server_onupdate=db.func.now())
 
@@ -22,7 +22,7 @@ class Task(db.Model):
             "project_id": self.project_id,
             "title": self.title,
             "content": self.content,
-            "finished": self.finished,
+            "completed": self.completed,
             "user_id": self.user_id,
         }
 

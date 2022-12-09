@@ -2,11 +2,11 @@ const LOAD = '/tasks/load'
 const ADD = '/tasks/add'
 const UPDATE = '/tasks/edit'
 const REMOVE = '/tasks/remove'
-// const LOAD_FINISHED = '/tasks/loadFinished'
+const COMPLETE = '/tasks/complete'
 
 const loadTasks = tasks => ({ type: LOAD, tasks })
 
-// const loadFinishedTasks = finished_tasks => ({ type: LOAD, finished_tasks})
+const completeTask = complete_task => ({ type: COMPLETE, complete_task })
 
 const addTask = new_task => ({ type: ADD, new_task })
 
@@ -55,6 +55,8 @@ export const createTask = (payload) => async dispatch => {
 //     return response;
 // }
 
+
+
 // export const finishedTask = (payload) => async dispatch => {
 //     const response = await fetch(`/api/tasks/finished/${payload.id}`, {
 //         method: 'PUT',
@@ -84,7 +86,7 @@ export const editTask = (payload) => async dispatch => {
         },
         body: JSON.stringify(payload)
     });
-    if(response.ok) {
+    if (response.ok) {
         const edit_task = await response.json();
         dispatch(updateTask(edit_task));
         return edit_task;
@@ -97,6 +99,26 @@ export const editTask = (payload) => async dispatch => {
     return response;
 }
 
+export const completeATask = (id) => async dispatch => {
+    const response = await fetch(`/api/tasks/${id}/completed`, {
+        method: 'PUT',
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(id)
+    });
+    if (response.ok) {
+        const complete_task = await response.json();
+        dispatch(completeTask(complete_task));
+        return complete_task;
+    } else if (response.status < 500) {
+        const data = await response.json();
+        if (data.errors) {
+            return data;
+        }
+    }
+    return response;
+}
 
 export const deleteTask = (id) => async dispatch => {
     const response = await fetch(`/api/tasks/${id}`, {
@@ -109,6 +131,7 @@ export const deleteTask = (id) => async dispatch => {
     }
     return response;
 }
+
 
 
 const tasksReducer = (state= {}, action) => {
@@ -129,6 +152,10 @@ const tasksReducer = (state= {}, action) => {
         case REMOVE:
             newState = {...state};
             delete newState[action.remove_task];
+            return newState;
+        case COMPLETE:
+            newState = {...state};
+            newState[action.complete_task.id] = action.complete_task;
             return newState;
         // case LOAD_FINISHED:
         //     newState = {};

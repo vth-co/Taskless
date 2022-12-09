@@ -5,7 +5,7 @@
 }
 
 .sidebar-container {
-    margin-top: 70px;
+    margin-top: 40px;
 }
 
 h3 {
@@ -18,5 +18,46 @@ h3 {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin: 0 25px;
+    margin-top: 15px;
+}
+
+.completed-link {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: black;
+    font-size: 14px;
+    word-wrap: break-word;
+    word-break: break-all;
+    overflow: hidden;
+    line-height: 21px;
+    margin-top: 0;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.completed-link:hover {
+    background-color: rgb(230, 230, 230);
+}
+
+.sidebar-links {
+    display: flex;
+    flex-direction: column;
     margin: 0 20px;
+}
+
+.fa-inbox {
+    margin: 10px 10px;
+    color: #6C9EE9;
+}
+
+.fa-list-check {
+    margin: 10px 10px;
+    color: #9F7BD7;
+}
+
+.number {
+    position: relative;
+    float: right;
+    margin-top: 6px;
+    margin-right: 7px;
 }
