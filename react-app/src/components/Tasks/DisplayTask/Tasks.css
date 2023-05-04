@@ -34,6 +34,17 @@
     margin-top: 5px;
 }
 
+.task-date {
+    font-size: 12px;
+    word-wrap: break-word;
+    word-break: break-all;
+    overflow: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(200, 0, 0);
+    margin-left: 25px;
+    margin-top: 5px;
+}
+
 .task-checkbox {
     display: flex;
     flex-direction: row;

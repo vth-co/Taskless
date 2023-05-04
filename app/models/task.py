@@ -10,6 +10,7 @@ class Task(db.Model):
     title = db.Column(db.String, nullable=False)
     content = db.Column(db.String, nullable=False)
     completed = db.Column(db.Boolean)
+    due_date = db.Column(db.DateTime)
     created_at = db.Column(db.DateTime, nullable=False, server_default=db.func.now())
     updated_at = db.Column(db.DateTime, nullable=False, server_default=db.func.now(), server_onupdate=db.func.now())
 
@@ -23,6 +24,7 @@ class Task(db.Model):
             "title": self.title,
             "content": self.content,
             "completed": self.completed,
+            "due_date": self.due_date,
             "user_id": self.user_id,
         }
 
