@@ -26,7 +26,7 @@ function Content() {
         ))}
         <div hidden={showModal}>
           <a className="main-add" onClick={() => setShowModal(true)}>
-            <svg className="add-circle" onClick={() => setShowModal(true)}>
+            <svg className="add-circle">
               <g transform="translate(-.25 0)">
                 <line
                   x1="3"

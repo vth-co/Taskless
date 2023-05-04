@@ -97,7 +97,7 @@ img {
   background-color: transparent;
   color: white;
   border-radius: 2px;
-  margin-bottom: 4px;
+  margin-bottom: 2px;
 }
 
 .logout-button:hover {
@@ -123,12 +123,39 @@ h2 {
   border-radius: 2px;
 }
 
+.task-button-container {
+  margin-right: 15px;
+}
+
+
+.task-button-container .tooltip-task {
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: small;
+}
+
+.task-button-container:hover .tooltip-task {
+  visibility:visible;
+  opacity: 1;
+  position: absolute;
+  background-color: black;
+  color: white;
+  top: 45px;
+  right: 60px;
+  padding: 5px 5px;
+  border-radius: 3px;
+  font-family: sans-serif;
+}
+
+
 .button-container .tooltip {
   position: absolute;
   visibility: hidden;
   opacity: 0;
-  transition: opacity .5s;
-  transition-delay: 1s;
+  transition: opacity 0.3s;
+  font-size: small;
 }
 
 .button-container:hover .tooltip {
@@ -138,8 +165,8 @@ h2 {
   background-color: black;
   color: white;
   top: 45px;
-  right: 10px;
-  padding: 10px 10px;
+  right: 16px;
+  padding: 5px 5px;
   border-radius: 3px;
   font-family: sans-serif;
 }

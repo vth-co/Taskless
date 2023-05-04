@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, IntegerField
+from wtforms import StringField, IntegerField, DateField
 from wtforms.validators import DataRequired, Length
 
 class TaskForm(FlaskForm):
@@ -11,3 +11,4 @@ class TaskForm(FlaskForm):
         Length(max=255, message="Content must be between 3-255 characters.")])
     project_id = IntegerField("project_id", validators=[DataRequired(message="A project is required")])
     user_id = IntegerField("user_id")
+    due_date = DateField("due_date")

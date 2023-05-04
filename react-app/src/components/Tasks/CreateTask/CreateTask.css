@@ -79,3 +79,7 @@
     font-weight: 500;
     font-size: 14px;
 }
+
+.date-picker-container {
+    margin-right: 75px;
+}

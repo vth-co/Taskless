@@ -4,6 +4,9 @@ import Checkbox from "../../Checkbox";
 import TaskEditDeleteModal from "../TaskEditDeleteModal";
 import "./Tasks.css";
 
+import moment from "moment";
+
+
 function DisplayTasks({ project }) {
   const tasks = useSelector((state) => state.tasks);
   const tasksArr = Object.values(tasks);
@@ -23,6 +26,7 @@ function DisplayTasks({ project }) {
             <TaskEditDeleteModal project={project} task={task} />
           </div>
           <p className="task-content">{task.content}</p>
+          <p className="task-content">{moment(task.due_date).format("MM")}</p>
         </div>
       ))}
     </div>
