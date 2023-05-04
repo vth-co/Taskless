@@ -25,8 +25,8 @@ function DisplayTasks({ project }) {
             </div>
             <TaskEditDeleteModal project={project} task={task} />
           </div>
-          <p className="task-content">{task.content}</p>
-          <p className="task-content">{moment(task.due_date).format("MM")}</p>
+          {/* <p className="task-content">{task.content}</p>
+          <p className="task-content">{moment(task.due_date).format("MM")}</p> */}
         </div>
       ))}
     </div>

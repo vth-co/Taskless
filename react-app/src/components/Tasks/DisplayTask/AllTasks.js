@@ -26,8 +26,8 @@ function DisplayTasks2({ task, project }) {
         </div>
         <TaskEditDeleteModal task={task} />
       </div>
-      <p className="task-content">{task.content}</p>
-      <p className="task-date"><i class="fa-regular fa-calendar"></i> {edit}</p>
+      {/* <p className="task-content">{task.content}</p>
+      <p className="task-date"><i class="fa-regular fa-calendar"></i> {edit}</p> */}
     </div>
   );
 }
