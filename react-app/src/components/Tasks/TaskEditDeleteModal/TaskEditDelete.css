@@ -2,8 +2,10 @@
     border: transparent;
     background-color: transparent;
     cursor: pointer;
+    color: gray;
+    font-size: 18px;
 }
 
 .task-edit-delete-button:hover {
-    background-color: lightgrey;
+    color: black;
 }
