@@ -4,7 +4,7 @@ Taskless is a clone of [Todoist](https://todoist.com/) allowing users to create 
 
 ## Live Site
 
-A live deployment of [Taskless](https://taskless-app.herokuapp.com/) is hosted on heroku.
+A live deployment of [Taskless](https://taskless.onrender.com/) is hosted on Render.
 
 ## Screenshots 
 
