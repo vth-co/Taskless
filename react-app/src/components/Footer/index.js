@@ -14,7 +14,7 @@ const Footer = () => {
         <li>React</li>
         <li>Redux</li>
       </ul>
-      <div className="link-and-icon">
+      <ul className="footer-ul">
         <p className="footer-section">Company</p>
         <a
           href="https://github.com/vth-co/Taskless"
@@ -23,7 +23,7 @@ const Footer = () => {
           rel="noopener noreferrer"
         >
           <i className="fa-brands fa-github-square"></i>
-          <p>Github</p>
+          <li>Github</li>
         </a>
         <a
           href="https://www.linkedin.com/in/vu-co/"
@@ -32,9 +32,9 @@ const Footer = () => {
           rel="noopener noreferrer"
         >
           <i class="fa-brands fa-linkedin"></i>
-          <p>Linkedin</p>
+          <li>Linkedin</li>
         </a>
-      </div>
+      </ul>
     </div>
   );
 };

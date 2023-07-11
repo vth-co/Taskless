@@ -125,7 +125,7 @@ function CreateTaskForm({ project, setShowModal }) {
             />
           </div>
           <div className="post-cancel-button-container">
-            <div className="date-picker-container">
+            {/* <div className="date-picker-container">
               <SingleDatePicker
                 date={due_date} // momentPropTypes.momentObj or null
                 onDateChange={dateChange} // PropTypes.func.isRequired
@@ -136,7 +136,7 @@ function CreateTaskForm({ project, setShowModal }) {
                 numberOfMonths={1}
                 // noBorder={true}
               />
-            </div>
+            </div> */}
             <select
               className="select-project-button"
               value={project_id}
