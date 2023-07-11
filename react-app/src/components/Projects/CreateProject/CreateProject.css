@@ -1,6 +1,6 @@
 .form-container {
     padding: 15px 15px;
-    min-width: 400px;
+    min-width: 450px;
 }
 
 .cancel-button {
@@ -8,6 +8,7 @@
     border: 1px solid rgba(128, 128, 128, 0.507);
     border-radius: 5px;
     font-weight: bold;
+    
 }
 
 .cancel-button:hover {

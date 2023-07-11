@@ -15,9 +15,10 @@
     background-color: rgb(177, 177, 177);
     color: white;
     font-weight: bold;
-    padding: 8px 15px;
     border-radius: 5px;
     margin-left: 12px;
+    height: 45px;
+
 }
 
 .post-button:hover {
@@ -30,6 +31,8 @@
     border: 1px solid rgba(128, 128, 128, 0.507);
     border-radius: 5px;
     font-weight: 600;
+    height: 45px;
+
 }
 
 .cancel-task-button:hover {
@@ -55,6 +58,7 @@
     border-radius: 5px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     cursor: pointer;
+    height: 45px;
 }
 
 .select-project-button:hover {
