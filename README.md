@@ -35,7 +35,7 @@ A live deployment of [Taskless](https://taskless.onrender.com/) is hosted on Ren
 * React.js
 * Python
 * Flask
-* Heroku
+* Render
 * Docker
 * PostgreSQL
 
