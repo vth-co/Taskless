@@ -48,7 +48,6 @@ const NavBar = () => {
                   x2="20"
                   y2="18"
                   stroke="white"
-                  stroke-width="1"
                 ></line>
                 <line
                   x1="4"
@@ -56,7 +55,6 @@ const NavBar = () => {
                   x2="20"
                   y2="11.5"
                   stroke="white"
-                  stroke-width="1"
                 ></line>
                 <line
                   x1="4"
@@ -64,7 +62,6 @@ const NavBar = () => {
                   x2="20"
                   y2="5"
                   stroke="white"
-                  stroke-width="1"
                 ></line>
               </svg>
             </button>
@@ -78,7 +75,6 @@ const NavBar = () => {
                   x2="12.25"
                   y2="4"
                   stroke="white"
-                  stroke-width="1"
                 ></line>
                 <line
                   x1="4"
@@ -86,7 +82,6 @@ const NavBar = () => {
                   x2="4"
                   y2="19"
                   stroke="white"
-                  stroke-width="1"
                 ></line>
                 <line
                   x1="10"
@@ -94,7 +89,6 @@ const NavBar = () => {
                   x2="3.5"
                   y2="19"
                   stroke="white"
-                  stroke-width="1"
                 ></line>
                 <line
                   x1="9.5"
@@ -102,7 +96,6 @@ const NavBar = () => {
                   x2="9.5"
                   y2="13"
                   stroke="white"
-                  stroke-width="1"
                 ></line>
                 <line
                   x1="11.75"
@@ -110,7 +103,6 @@ const NavBar = () => {
                   x2="20"
                   y2="11.5"
                   stroke="white"
-                  stroke-width="1"
                 ></line>
                 <line
                   x1="15"
@@ -118,7 +110,6 @@ const NavBar = () => {
                   x2="9"
                   y2="13"
                   stroke="white"
-                  stroke-width="1"
                 ></line>
                 <line
                   x1="14.5"
@@ -126,7 +117,6 @@ const NavBar = () => {
                   x2="14.5"
                   y2="19"
                   stroke="white"
-                  stroke-width="1"
                 ></line>
                 <line
                   x1="20.5"
@@ -134,7 +124,6 @@ const NavBar = () => {
                   x2="14"
                   y2="19"
                   stroke="white"
-                  stroke-width="1"
                 ></line>
                 <line
                   x1="20"
@@ -142,7 +131,6 @@ const NavBar = () => {
                   x2="20"
                   y2="11.25"
                   stroke="white"
-                  stroke-width="1"
                 ></line>
               </svg>
             </NavLink>

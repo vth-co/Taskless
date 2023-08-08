@@ -32,7 +32,7 @@ const ProjectDetail = () => {
   return (
     <div className="main-content">
       {filteredArr.map((proj) => (
-        <div>
+        <div key={proj.id}>
           <div className="title-edit">
             <h1 className="tasklist-title">{proj?.title}</h1>
             <div className="edit">
@@ -52,7 +52,6 @@ const ProjectDetail = () => {
                     x2="18"
                     y2="10"
                     stroke="white"
-                    stroke-width="1.5"
                   ></line>
                   <line
                     x1="10.5"
@@ -60,7 +59,6 @@ const ProjectDetail = () => {
                     x2="10.5"
                     y2="17"
                     stroke="white"
-                    stroke-width="1.5"
                   ></line>
                   <g mask="url(#ahat)">
                     <line
@@ -69,7 +67,6 @@ const ProjectDetail = () => {
                       x2="18"
                       y2="10"
                       stroke="currentcolor"
-                      stroke-width="1.5"
                     ></line>
                     <line
                       x1="10.5"
@@ -77,7 +74,6 @@ const ProjectDetail = () => {
                       x2="10.5"
                       y2="17"
                       stroke="currentcolor"
-                      stroke-width="1.5"
                     ></line>
                   </g>
                 </g>

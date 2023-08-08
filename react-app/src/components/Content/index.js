@@ -34,7 +34,6 @@ function Content() {
                   x2="18"
                   y2="10"
                   stroke="white"
-                  stroke-width="1.5"
                 ></line>
                 <line
                   x1="10.5"
@@ -42,7 +41,6 @@ function Content() {
                   x2="10.5"
                   y2="17"
                   stroke="white"
-                  stroke-width="1.5"
                 ></line>
                 <g mask="url(#ahat)">
                   <line
@@ -51,7 +49,6 @@ function Content() {
                     x2="18"
                     y2="10"
                     stroke="currentcolor"
-                    stroke-width="1.5"
                   ></line>
                   <line
                     x1="10.5"
@@ -59,7 +56,6 @@ function Content() {
                     x2="10.5"
                     y2="17"
                     stroke="currentcolor"
-                    stroke-width="1.5"
                   ></line>
                 </g>
               </g>

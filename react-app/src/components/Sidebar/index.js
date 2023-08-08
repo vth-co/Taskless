@@ -28,15 +28,15 @@ const Sidebar = () => {
 
   return (
     <div className="sidebar">
-      <div class="collapse show collapse-horizontal" id="collapseWidthExample">
+      <div className="collapse show collapse-horizontal" id="collapseWidthExample">
         <div className="sidebar-container" >
           <div className="sidebar-links">
             <NavLink to={"/app"} className="completed-link">
-              <i class="fa-solid fa-inbox"></i> All
+              <i className="fa-solid fa-inbox"></i> All
               <span className="number">{numberOfAllTasks}</span>
             </NavLink>
             <NavLink to={"/app/completed"} className="completed-link">
-              <i class="fa-solid fa-list-check"></i>Completed Tasks
+              <i className="fa-solid fa-list-check"></i>Completed Tasks
               <span className="number">{numberOfCompletedTasks}</span>
             </NavLink>
           </div>

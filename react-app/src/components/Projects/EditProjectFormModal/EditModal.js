@@ -9,7 +9,7 @@ function EditProjectFormModal({ project }) {
   return (
     <>
       <button className="edit-button" onClick={() => setShowModal(true)}>
-        <i class="fa-regular fa-pen-to-square"></i> Edit project
+        <i className="fa-regular fa-pen-to-square"></i> Edit project
       </button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>

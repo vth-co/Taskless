@@ -11,7 +11,7 @@ function DeleteFormModal({ project }) {
         className="delete-modal-button"
         onClick={() => setShowModal(true)}
       >
-        <i class="fa-regular fa-trash-can"></i> Delete
+        <i className="fa-regular fa-trash-can"></i> Delete
       </button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>

@@ -9,7 +9,7 @@ function EditTaskFormModal({ project, task }) {
   return (
     <>
       <button className="edit-button" onClick={() => setShowModal(true)}>
-        <i class="fa-regular fa-pen-to-square"></i> Edit task
+        <i className="fa-regular fa-pen-to-square"></i> Edit task
       </button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>

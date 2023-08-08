@@ -6,7 +6,7 @@ function TaskEditDelete({ project, task }) {
     <>
       <div className="edit-buttons-container">
           <EditTaskFormModal project={project} task={task} />
-          <li class="menu_separator"></li>
+          <li className="menu_separator"></li>
           <DeleteFormModal task={task} />
       </div>
     </>

@@ -6,7 +6,7 @@ function ProjectEditDelete({ project }) {
     <>
       <div className="edit-buttons-container">
           <EditProjectFormModal project={project} />
-          <li class="menu_separator"></li>
+          <li className="menu_separator"></li>
           <DeleteFormModal project={project} />
       </div>
     </>

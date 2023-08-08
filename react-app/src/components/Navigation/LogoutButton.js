@@ -16,7 +16,7 @@ const LogoutButton = () => {
       <div className="button-container">
         <button onClick={onLogout} className="logout-button">
           <svg width="24" height="24" aria-hidden="true">
-            <g fill="none" fill-rule="evenodd">
+            <g fill="none">
               <path
                 stroke="currentColor"
                 d="M6.5 8.3V5.63c0-1.17.9-2.13 2-2.13h7c1.1 0 2 .95 2 2.13v11.74c0 1.17-.9 2.13-2 2.13h-7c-1.1 0-2-.95-2-2.13V14.7"
@@ -32,7 +32,6 @@ const LogoutButton = () => {
       </div>
     </>
   );
-  // <button className='logout-button' onClick={onLogout}><i class="fa-solid fa-arrow-right-from-bracket"></i></button>;
 };
 
 export default LogoutButton;
