@@ -5,14 +5,12 @@ const Footer = () => {
     <div className="footer-container">
       <ul className="footer-ul">
         <p className="footer-section">Resources</p>
-        <li>Alembic</li>
-        <li>CSS</li>
+        <li>HTML/CSS</li>
         <li>Flask</li>
         <li>JavaScript</li>
         <li>PostgreSQL</li>
         <li>SQLAlchemy</li>
-        <li>React</li>
-        <li>Redux</li>
+        <li>React/Redux</li>
       </ul>
       <ul className="footer-ul">
         <p className="footer-section">Company</p>
