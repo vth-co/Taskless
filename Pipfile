@@ -29,6 +29,7 @@ markupsafe = "==2.0.1"
 sqlalchemy = "==1.4.19"
 werkzeug = "==2.0.1"
 wtforms = "==2.3.3"
+tk = "==0.1.0"
 
 [dev-packages]
 psycopg2-binary = "==2.8.6"
