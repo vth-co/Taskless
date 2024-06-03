@@ -3,11 +3,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { createTask } from "../../../store/tasks";
 
-import moment from "moment";
-import "react-dates/initialize";
-import "react-dates/lib/css/_datepicker.css";
+// import moment from "moment";
+// import "react-dates/initialize";
+// import "react-dates/lib/css/_datepicker.css";
 
-import { SingleDatePicker } from "react-dates";
+// import { SingleDatePicker } from "react-dates";
 import "./CreateTask.css";
 
 function CreateTaskForm({ project, setShowModal }) {
